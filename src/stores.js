@@ -1,18 +1,14 @@
-import { writable } from 'svelte/store';
+import { readable, writable } from "svelte/store";
+import { dataStructure } from "./dataStructure.js";
 
 function createSelectedStore() {
   const { subscribe, set, update } = writable(new Set());
 
   return {
     subscribe,
-    
-    toggleSelection: (category, item) => update((selected) => {
-        if(selected[category].has(item)) {
-            selected[category].delete(item);
-        } else {
-            selected[category].add(item);
-        }
-        
+
+    toggleSelection: (item) =>
+      update((selected) => {
         if (selected.has(item)) {
           selected.delete(item); // Remove item if it's selected
         } else {
@@ -20,8 +16,20 @@ function createSelectedStore() {
         }
         return new Set(selected); // Return new set to trigger reactivity
       }),
-    
-    clearSelection: () => set(new Set())
+    isRelatedToSelection: (key) => {
+      let related = false;
+      subscribe((selected) => {
+        selected.forEach((s) => {
+          if (dataStructure.findNode(s).isRelated(key)) {
+            related = true;
+            return related;
+          }
+        });
+      })();
+      return related;
+    },
+
+    clearSelection: () => set(new Set()),
   };
 }
 

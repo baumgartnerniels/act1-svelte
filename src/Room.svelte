@@ -1,7 +1,8 @@
 <script>
   import { onMount, createEventDispatcher } from "svelte";
   import { scaleLinear, interpolateRgb } from "d3";
-  import { selectedStore } from './stores.js';
+  import { selectedStore } from "./stores.js";
+  import { dataStructure } from "./dataStructure.js";
 
   let selected = false;
 
@@ -75,7 +76,12 @@
   });
 </script>
 
-<div class="room" class:inactive={!$selectedStore.has(data[0]['eco_key']) || !$selectedStore.has('Economies')} bind:this={room}>
+<div
+  class="room"
+  class:inactive={!$selectedStore.has(data[0]["eco_key"]) ||
+    !$selectedStore.has("Economies")}
+  bind:this={room}
+>
   {#each data as dot}
     <button
       class="dot"
@@ -84,20 +90,19 @@
       data-key={dot.key}
       data-parent={dot.parent_key}
       style={style(dot)}
-        on:click={() => {
-          if($selectedStore.has("Economies")) {
-        selectedStore.toggleSelection("Economies");
-        selectedStore.toggleSelection(dot.key);
-      } else {
-      selectedStore.toggleSelection(dot.key);
+      on:click={() => {
+        if ($selectedStore.has("Economies")) {
+          selectedStore.toggleSelection("Economies");
+          selectedStore.toggleSelection(dot.key);
+        } else {
+          selectedStore.toggleSelection(dot.key);
         }
-        }
-        }
-        on:mouseenter={(e) => {
+      }}
+      on:mouseenter={(e) => {
         setHovered(e, dot);
       }}
       class:selected={$selectedStore.has(dot.key)}
-      class:highlighted={$selectedStore.has(dot.parent_key)}
+      class:inactive={dataStructure.isRelatedToAny($selectedStore, dot.key)}
     ></button>
   {/each}
 </div>

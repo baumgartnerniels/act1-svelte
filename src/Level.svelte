@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import { selectedStore } from './stores.js';
+  import { selectedStore } from "./stores.js";
 
   let selected = false;
   let hovered = false;
@@ -8,11 +8,15 @@
 
   export let label = "";
   export let selectable = false;
-
 </script>
 
 <div class="level-container">
-  <div class="level" class:hovered class:selected={$selectedStore.has(label)} bind:this={level}>
+  <div
+    class="level"
+    class:hovered
+    class:selected={$selectedStore.has(label)}
+    bind:this={level}
+  >
     <slot />
   </div>
   <button
@@ -20,16 +24,15 @@
     on:mouseenter={() => (hovered = selectable)}
     on:mouseleave={() => (hovered = false)}
     on:click={() => {
-      if($selectedStore.has("KOS")){
-        selectedStore.toggleSelection("KOS");
+      if ($selectedStore.has("KOS")) {
         selectedStore.toggleSelection(label);
       } else {
-      selectedStore.toggleSelection(label);
+        selectedStore.toggleSelection(label);
       }
-      }}
+    }}
   >
     <p>{label}</p>
-</button>
+  </button>
 </div>
 
 <style>
