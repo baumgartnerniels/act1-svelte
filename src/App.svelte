@@ -27,6 +27,14 @@
     height: 100%;
   }
 
+  .details {
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 1em;
+    text-align: left;
+  }
+
   h1 {
     color: #ff3e00;
     text-transform: uppercase;

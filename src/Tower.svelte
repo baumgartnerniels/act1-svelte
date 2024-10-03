@@ -3,15 +3,30 @@
   import Level from "./Level.svelte";
   import Room from "./Room.svelte";
   import panzoom from "panzoom";
+  import { selectedStore } from './stores.js';
 
   export let data;
 
   let tower;
   let zoom;
 
+  let selected;
+  selectedStore.subscribe(value => selected = value);
+
+    // Toggle selection of individual items
+    /* const toggleSelection = (label) => {
+    if (selected.has(label)) {
+      selectedStore.removeSelected(label); // Remove item if it's selected
+    } else {
+      selectedStore.addSelected(label); // Add item if it's not selected
+    }
+    console.log(selected);
+  }; */
+
   function handleSelected(m) {
     console.log("clicked on " + m.detail.data.key);
     console.log(m.detail.data);
+    selectedStore.toggleSelection(m.detail.data.key);
     //zoomTo(m.detail.element);
   }
 
@@ -89,8 +104,8 @@
     selectable={true}
     label="Economies"
     --main-color="#E0E722"
-    on:selected={handleLevelSelected}
   >
+  <!-- on:selected={() => toggleSelection('Economies')} -->
     {#each countries as country}
       <Room
         on:selected={handleSelected}
@@ -102,8 +117,6 @@
   <Level --z="50" label="Dimensions" --main-color="#db3eb1">
     {#each countries as country}
       <Room
-        on:selected={handleSelected}
-        on:hovered={handleHovered}
         data={data.dimensions[country]}
       />
     {/each}
@@ -135,7 +148,9 @@
       />
     {/each}
   </Level>
+  <!-- <p>Selected: {[...selected].join(', ')}</p> -->
 </div>
+
 
 <style>
   .tower {
@@ -146,4 +161,6 @@
     /* transform: scale(var(--zoom)); */
     --margin-top: -14vh;
   }
+
+  
 </style>

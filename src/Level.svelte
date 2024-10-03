@@ -1,37 +1,28 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { selectedStore } from './stores.js';
+
+  let selected = false;
+  let hovered = false;
+  let level;
 
   export let label = "";
   export let selectable = false;
-  const dispatch = createEventDispatcher();
-  let level;
-  function handleSelected() {
-    if (!selectable) return;
-    document
-      .querySelectorAll(".level.selected")
-      .forEach((e) => e.classList.remove("selected"));
-    level.classList.add("selected");
-    dispatch("selected", {
-      element: level,
-    });
-  }
-  $: hovered = false;
+
 </script>
 
 <div class="level-container">
-  <div class="level" class:hovered bind:this={level}>
+  <div class="level" class:hovered class:selected={$selectedStore.has(label)} bind:this={level}>
     <slot />
   </div>
-  <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div
+  <button
     class="label"
-    on:mouseenter={() => (hovered = selectable ? true : false)}
+    on:mouseenter={() => (hovered = selectable)}
     on:mouseleave={() => (hovered = false)}
-    on:click={handleSelected}
+    on:click={() => selectedStore.toggleSelection(label)}
   >
     <p>{label}</p>
-  </div>
+</button>
 </div>
 
 <style>
@@ -59,9 +50,7 @@
     height: fit-content;
     padding: 5px;
   }
-  :is(.level.selected) {
-    outline: 2px solid var(--main-color);
-  }
+
   .level.hovered {
     outline: 2px solid var(--main-color);
   }
@@ -70,6 +59,7 @@
     margin-top: 3vh;
     padding-left: 3vh;
     grid-column: 2;
+    cursor: pointer;
   }
   .label p {
     color: var(--main-color);

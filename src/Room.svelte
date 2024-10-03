@@ -1,6 +1,9 @@
 <script>
   import { onMount, createEventDispatcher } from "svelte";
   import { scaleLinear, interpolateRgb } from "d3";
+  import { selectedStore } from './stores.js';
+
+  let selected = false;
 
   export let data = [];
 
@@ -74,22 +77,19 @@
 
 <div class="room" bind:this={room}>
   {#each data as dot}
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div
+    <button
       class="dot"
       data-score={dot.score}
       data-eco={dot.eco_key}
       data-key={dot.key}
       data-parent={dot.parent_key}
       style={style(dot)}
-      on:click={(e) => {
-        setSelected(e, dot);
-      }}
-      on:mouseenter={(e) => {
+        on:click={() => selectedStore.toggleSelection(dot.key)}
+        on:mouseenter={(e) => {
         setHovered(e, dot);
       }}
-    ></div>
+      class:selected={$selectedStore.has(dot.key)}
+    ></button>
   {/each}
 </div>
 
@@ -114,7 +114,7 @@
   .dot:hover {
     border: 1px solid var(--main-color);
   }
-  :is(.dot.selected) {
+  /* :is(.dot.selected) {
     border: 2px solid var(--main-color);
-  }
+  } */
 </style>
