@@ -2,6 +2,11 @@
   import { onMount } from "svelte";
   import Tower from "./Tower.svelte";
   import data from "../data/app_data.json";
+  import { selectedStore } from './stores.js';
+
+  let selected;
+  selectedStore.subscribe(value => selected = value);
+
   console.log(data);
 </script>
 
@@ -9,7 +14,14 @@
   <div class="tower">
     <Tower {data} />
   </div>
-  <div class="details"></div>
+  <div class="details">
+    <p>Selected items:</p>
+  <ul>
+    {#each Array.from(selected) as item}
+      <li>{item}</li>
+    {/each}
+  </ul>
+  </div>
 </main>
 
 <style>

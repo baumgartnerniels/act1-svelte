@@ -13,25 +13,11 @@
   let selected;
   selectedStore.subscribe(value => selected = value);
 
-    // Toggle selection of individual items
-    /* const toggleSelection = (label) => {
-    if (selected.has(label)) {
-      selectedStore.removeSelected(label); // Remove item if it's selected
-    } else {
-      selectedStore.addSelected(label); // Add item if it's not selected
-    }
-    console.log(selected);
-  }; */
-
   function handleSelected(m) {
     console.log("clicked on " + m.detail.data.key);
     console.log(m.detail.data);
-    selectedStore.toggleSelection(m.detail.data.key);
+    selectedStore.toggleSelection(m.detail.data);
     //zoomTo(m.detail.element);
-  }
-
-  function handleLevelSelected() {
-    //todo: clear room sleections here?
   }
 
   export function zoomTo(element, scale = 3) {
@@ -105,7 +91,6 @@
     label="Economies"
     --main-color="#E0E722"
   >
-  <!-- on:selected={() => toggleSelection('Economies')} -->
     {#each countries as country}
       <Room
         on:selected={handleSelected}

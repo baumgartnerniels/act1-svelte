@@ -84,7 +84,11 @@
       data-key={dot.key}
       data-parent={dot.parent_key}
       style={style(dot)}
-        on:click={() => selectedStore.toggleSelection(dot.key)}
+        on:click={() => {
+        selectedStore.toggleSelection(dot);
+        console.log(dot);
+        }
+        }
         on:mouseenter={(e) => {
         setHovered(e, dot);
       }}
