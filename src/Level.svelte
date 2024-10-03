@@ -3,7 +3,7 @@
 
   export let label = "";
   export let selectable = false;
-
+  const dispatch = createEventDispatcher();
   let level;
   function handleSelected() {
     if (!selectable) return;
@@ -11,6 +11,9 @@
       .querySelectorAll(".level.selected")
       .forEach((e) => e.classList.remove("selected"));
     level.classList.add("selected");
+    dispatch("selected", {
+      element: level,
+    });
   }
   $: hovered = false;
 </script>
@@ -57,10 +60,10 @@
     padding: 5px;
   }
   :is(.level.selected) {
-    outline: 5px solid white;
+    outline: 2px solid var(--main-color);
   }
   .level.hovered {
-    outline: 2px solid white;
+    outline: 2px solid var(--main-color);
   }
   .label {
     position: relative;
@@ -69,6 +72,7 @@
     grid-column: 2;
   }
   .label p {
+    color: var(--main-color);
     position: absolute;
     transform-origin: top left;
     left: 0;

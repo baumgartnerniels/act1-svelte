@@ -12,17 +12,21 @@
   function handleSelected(m) {
     console.log("clicked on " + m.detail.data.key);
     console.log(m.detail.data);
-    // zoomTo(m.detail.element);
+    //zoomTo(m.detail.element);
   }
 
-  export function zoomTo(element) {
+  function handleLevelSelected() {
+    //todo: clear room sleections here?
+  }
+
+  export function zoomTo(element, scale = 3) {
     let targetRect = element.getBoundingClientRect();
     let containerRect = tower.parentElement.getBoundingClientRect();
     let t = zoom.getTransform();
     console.log(zoom);
     console.log(tower);
-    if (t.scale < 3) {
-      zoom.smoothZoom(targetRect.x, targetRect.y, 4);
+    if (t.scale < scale) {
+      zoom.smoothZoom(targetRect.x, targetRect.y, scale);
     } else {
       var cx = targetRect.left + targetRect.width / 2;
       var cy = targetRect.top + targetRect.height / 2;
@@ -44,7 +48,7 @@
   }
 
   function setupZoom(el) {
-    let pz = panzoom(tower, {
+    let pz = panzoom(el, {
       minZoom: 1,
       maxZoom: 4,
       bounds: false,
@@ -79,7 +83,14 @@
 </script>
 
 <div class="tower" bind:this={tower}>
-  <Level --margin-top="-2vh" --z="60" selectable={true} label="Economies">
+  <Level
+    --margin-top="-2vh"
+    --z="60"
+    selectable={true}
+    label="Economies"
+    --main-color="#E0E722"
+    on:selected={handleLevelSelected}
+  >
     {#each countries as country}
       <Room
         on:selected={handleSelected}
@@ -88,7 +99,7 @@
       />
     {/each}
   </Level>
-  <Level --z="50" label="Dimensions">
+  <Level --z="50" label="Dimensions" --main-color="#db3eb1">
     {#each countries as country}
       <Room
         on:selected={handleSelected}
@@ -97,7 +108,7 @@
       />
     {/each}
   </Level>
-  <Level --z="40" label="Subdimensions">
+  <Level --z="40" label="Subdimensions" --main-color="#FFAD00">
     {#each countries as country}
       <Room
         on:selected={handleSelected}
@@ -106,7 +117,7 @@
       />
     {/each}
   </Level>
-  <Level --z="30" label="Indicators">
+  <Level --z="30" label="Indicators" --main-color="#D22730">
     {#each countries as country}
       <Room
         on:selected={handleSelected}
@@ -115,7 +126,7 @@
       />
     {/each}
   </Level>
-  <Level --z="20" label="Levels">
+  <Level --z="20" label="Levels" --main-color="white">
     {#each countries as country}
       <Room
         on:selected={handleSelected}

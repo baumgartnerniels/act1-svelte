@@ -46,3 +46,7 @@ h1 {
   height: 100%;
   box-sizing: border-box;
 }
+
+:root {
+  --main-color: white;
+}

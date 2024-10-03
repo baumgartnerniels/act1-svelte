@@ -98,7 +98,7 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border: 2px solid #ffffff;
+    border: 2px solid var(--main-color);
     display: grid;
     grid-template-columns: repeat(var(--grid-size), 1fr);
     grid-template-rows: repeat(var(--grid-size), 1fr);
@@ -112,9 +112,9 @@
     height: 100%;
   }
   .dot:hover {
-    border: 1px solid #ffffff;
+    border: 1px solid var(--main-color);
   }
   :is(.dot.selected) {
-    border: 2px solid #ffffff;
+    border: 2px solid var(--main-color);
   }
 </style>
