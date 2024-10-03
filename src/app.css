@@ -67,3 +67,11 @@ button {
 .selected {
   outline: 2px solid var(--main-color);
 }
+
+.highlighted {
+  outline: 2px solid var(--main-color);
+}
+
+.inactive {
+  opacity: 0.5;
+}

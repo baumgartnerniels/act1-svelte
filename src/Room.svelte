@@ -75,7 +75,7 @@
   });
 </script>
 
-<div class="room" bind:this={room}>
+<div class="room" class:inactive={!$selectedStore.has(data[0]['eco_key']) || !$selectedStore.has('Economies')} bind:this={room}>
   {#each data as dot}
     <button
       class="dot"
@@ -85,14 +85,19 @@
       data-parent={dot.parent_key}
       style={style(dot)}
         on:click={() => {
-        selectedStore.toggleSelection(dot);
-        console.log(dot);
+          if($selectedStore.has("Economies")) {
+        selectedStore.toggleSelection("Economies");
+        selectedStore.toggleSelection(dot.key);
+      } else {
+      selectedStore.toggleSelection(dot.key);
+        }
         }
         }
         on:mouseenter={(e) => {
         setHovered(e, dot);
       }}
       class:selected={$selectedStore.has(dot.key)}
+      class:highlighted={$selectedStore.has(dot.parent_key)}
     ></button>
   {/each}
 </div>

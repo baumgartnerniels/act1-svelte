@@ -6,17 +6,13 @@ function createSelectedStore() {
   return {
     subscribe,
     
-/*     addSelected: (item) => update((selected) => {
-      selected.add(item);
-      return new Set(selected);//return new set to trigger reactivity
-    }),
-
-    removeSelected: (item) => update((selected) => {
-      selected.delete(item);
-      return new Set(selected); 
-    }), */
-
-    toggleSelection: (item) => update((selected) => {
+    toggleSelection: (category, item) => update((selected) => {
+        if(selected[category].has(item)) {
+            selected[category].delete(item);
+        } else {
+            selected[category].add(item);
+        }
+        
         if (selected.has(item)) {
           selected.delete(item); // Remove item if it's selected
         } else {

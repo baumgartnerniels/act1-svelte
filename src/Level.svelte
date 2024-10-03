@@ -19,7 +19,14 @@
     class="label"
     on:mouseenter={() => (hovered = selectable)}
     on:mouseleave={() => (hovered = false)}
-    on:click={() => selectedStore.toggleSelection(label)}
+    on:click={() => {
+      if($selectedStore.has("KOS")){
+        selectedStore.toggleSelection("KOS");
+        selectedStore.toggleSelection(label);
+      } else {
+      selectedStore.toggleSelection(label);
+      }
+      }}
   >
     <p>{label}</p>
 </button>

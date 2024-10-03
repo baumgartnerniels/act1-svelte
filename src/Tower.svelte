@@ -14,9 +14,9 @@
   selectedStore.subscribe(value => selected = value);
 
   function handleSelected(m) {
-    console.log("clicked on " + m.detail.data.key);
-    console.log(m.detail.data);
-    selectedStore.toggleSelection(m.detail.data);
+    //console.log("clicked on " + m.detail.data.key);
+    //console.log(m.detail.data);
+    //selectedStore.toggleSelection(m.detail.data);
     //zoomTo(m.detail.element);
   }
 
@@ -73,14 +73,18 @@
 
     return pz;
   }
+  let countries = ["ALB", "BIH", "KOS", "MNE", "MKD", "SRB"];
 
   onMount(() => {
     zoom = setupZoom(tower);
+    selectedStore.toggleSelection("Economies")
+/*     countries.forEach(country => {
+    selectedStore.toggleSelection(country);
+    }); */
     return () => {
       zoom.dispose();
     };
   });
-  let countries = ["ALB", "BIH", "KOS", "MNE", "MKD", "SRB"];
 </script>
 
 <div class="tower" bind:this={tower}>
