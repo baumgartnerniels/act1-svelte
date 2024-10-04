@@ -44,17 +44,14 @@ class TreeNode {
   }
 
   isRelated(key) {
-    return this.getRelatedNodes().includes(key);
+    return this.isChildOf(key) || this.isParentOf(key);
   }
 
-  isRelatedToAny(list, key) {
-    let related = false;
-    list.forEach((e) => {
-      if (this.findNode(e).isRelated(key)) {
-        related = true;
-      }
-    });
-    return related;
+  isRelatedToAny(list) {
+    for (let e of list) {
+      if (this.isRelated(e)) return true;
+    }
+    return false;
   }
 
   // Method to find all ancestors of the current node
