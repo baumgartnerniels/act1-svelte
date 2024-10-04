@@ -6,6 +6,8 @@
 
   export let data = {};
   export let store;
+  export let showLabels = false;
+
   let inStructure;
 
   let colorScale = scaleLinear()
@@ -53,7 +55,11 @@
   }}
   class:selected={$store.has(inStructure)}
   class:inactive
-></button>
+>
+  {#if showLabels}
+    <p>{data.label}</p>
+  {/if}
+</button>
 
 <style>
   button {
@@ -61,6 +67,7 @@
     background-color: var(--fill);
     width: 100%;
     height: 100%;
+    color: var(--main-color);
   }
   button:hover {
     border: 1px solid var(--main-color);

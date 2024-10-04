@@ -81,7 +81,11 @@
     --main-color="#E0E722"
   >
     {#each countries as country}
-      <Room data={data.economies[country]} store={countryStore} />
+      <Room
+        data={data.economies[country]}
+        store={countryStore}
+        showLabels={true}
+      />
     {/each}
   </Level>
   <Level --z="50" label="Dimensions" --main-color="#db3eb1">

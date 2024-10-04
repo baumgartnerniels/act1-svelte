@@ -4,6 +4,7 @@
 
   export let data = [];
   export let store;
+  export let showLabels = false;
 
   let gridSize = Math.ceil(Math.sqrt(data.length));
 
@@ -16,7 +17,7 @@
 
 <div class="room" bind:this={room}>
   {#each data as dot}
-    <DataPoint data={dot} {store} />
+    <DataPoint data={dot} {store} {showLabels} />
   {/each}
 </div>
 
