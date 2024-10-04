@@ -30,7 +30,6 @@
 
   onMount(() => {
     inStructure = dataStructure.findNode(data.eco_key).findNode(data.key);
-    //console.log(inStructure.isRelated("EDUCATION"));
   });
 </script>
 

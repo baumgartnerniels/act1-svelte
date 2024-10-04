@@ -1,8 +1,6 @@
 <script>
-  import { createEventDispatcher } from "svelte";
   import { selectedStore } from "./stores.js";
 
-  let selected = false;
   let hovered = false;
   let level;
 
@@ -24,11 +22,7 @@
     on:mouseenter={() => (hovered = selectable)}
     on:mouseleave={() => (hovered = false)}
     on:click={() => {
-      if ($selectedStore.has("KOS")) {
-        selectedStore.toggleSelection(label);
-      } else {
-        selectedStore.toggleSelection(label);
-      }
+      if (selectable) selectedStore.toggleSelection(label);
     }}
   >
     <p>{label}</p>

@@ -1,76 +1,12 @@
 <script>
-  import { onMount, createEventDispatcher } from "svelte";
-  import { scaleLinear, interpolateRgb } from "d3";
-  import { selectedStore } from "./stores.js";
+  import { onMount } from "svelte";
   import DataPoint from "./DataPoint.svelte";
-  import { dataStructure } from "./dataStructure.js";
-
-  let selected = false;
 
   export let data = [];
-
-  let colorScale = scaleLinear()
-    .domain([0, 0.5, 1])
-    .range(["red", "pink", "blue"])
-    .interpolate(interpolateRgb.gamma(2.2));
 
   let gridSize = Math.ceil(Math.sqrt(data.length));
 
   let room;
-  function style(e) {
-    let color = colorScale(e.score / 5.0);
-    return "background-color: " + color + ";";
-  }
-
-  const dispatch = createEventDispatcher();
-
-  function selectParents(parentKey, ecoKey) {
-    document
-      .querySelectorAll(
-        '[data-key="' + parentKey + '"][data-eco="' + ecoKey + '"]'
-      )
-      .forEach((e) => {
-        e.classList.add("selected");
-        e.classList.add("parent");
-        let newParentKey = e.getAttribute("data-parent");
-        if (newParentKey) {
-          selectParents(newParentKey, ecoKey);
-        }
-      });
-  }
-
-  function selectChildren(key, ecoKey) {
-    document
-      .querySelectorAll(
-        '[data-parent="' + key + '"][data-eco="' + ecoKey + '"]'
-      )
-      .forEach((e) => {
-        e.classList.add("selected");
-        e.classList.add("child");
-      });
-  }
-
-  function setSelected(event, data) {
-    document.querySelectorAll(".dot.selected").forEach((e) => {
-      e.classList.remove("selected");
-      e.classList.remove("parent");
-      e.classList.remove("child");
-    });
-    selectParents(data.parent_key, data.eco_key);
-    selectChildren(data.key, data.eco_key);
-    event.target.classList.add("selected");
-    dispatch("selected", {
-      element: event.target,
-      data: data,
-    });
-  }
-
-  function setHovered(event, data) {
-    dispatch("hovered", {
-      element: event.target,
-      data: data,
-    });
-  }
 
   onMount(() => {
     room.style = "--grid-size: " + gridSize;
@@ -95,8 +31,4 @@
     justify-content: center;
     align-items: center;
   }
-
-  /* :is(.dot.selected) {
-    border: 2px solid var(--main-color);
-  } */
 </style>
