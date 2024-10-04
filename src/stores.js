@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { writable, derived } from "svelte/store";
 import { dataStructure } from "./dataStructure.js";
 
 ////////////////////////////
@@ -98,3 +98,11 @@ function createSelectedStore(otherStore) {
 export const selectedStore = createSelectedStore(countryStore);
 
 export const hoveredStore = writable("");
+
+export const relatedStore = derived(selectedStore, ($selectedStore) => {
+  let family = [];
+  $selectedStore.forEach((el) => {
+    family.push(...el.getRelatedNodes());
+  });
+  return new Set(family);
+});

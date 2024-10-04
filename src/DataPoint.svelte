@@ -1,6 +1,6 @@
 <script>
   import { scaleLinear, interpolateRgb } from "d3";
-  import { hoveredStore } from "./stores.js";
+  import { hoveredStore, relatedStore } from "./stores.js";
   import { onMount } from "svelte";
   import { dataStructure } from "./dataStructure.js";
 
@@ -20,16 +20,7 @@
     return "background-color: " + color + ";";
   }
 
-  function isInactive(items) {
-    if (!inStructure) return false;
-    for (let item of items) {
-      if (!item.parent) continue;
-      if (inStructure.isRelatedUpDown(item)) return false;
-    }
-    return true;
-  }
-
-  $: inactive = isInactive($store);
+  $: inactive = !$relatedStore.has(inStructure);
 
   onMount(() => {
     inStructure = dataStructure
