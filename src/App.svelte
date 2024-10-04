@@ -2,10 +2,10 @@
   import { onMount } from "svelte";
   import Tower from "./Tower.svelte";
   import data from "../data/app_data.json";
-  import { selectedStore } from './stores.js';
+  import { selectedStore, hoveredStore } from "./stores.js";
 
   let selected;
-  selectedStore.subscribe(value => selected = value);
+  selectedStore.subscribe((value) => (selected = value));
 
   console.log(data);
 </script>
@@ -16,11 +16,12 @@
   </div>
   <div class="details">
     <p>Selected items:</p>
-  <ul>
-    {#each Array.from(selected) as item}
-      <li>{item}</li>
-    {/each}
-  </ul>
+    <ul>
+      {#each Array.from(selected) as item}
+        <li>{item}</li>
+      {/each}
+    </ul>
+    <p>Hovered: {$hoveredStore}</p>
   </div>
 </main>
 
