@@ -18,6 +18,7 @@
   }
 
   function isInactive(items) {
+    if (items.has(data.key)) return false;
     if (!inStructure) return true;
     for (let item of items) {
       if (inStructure.isRelated(item)) return false;
