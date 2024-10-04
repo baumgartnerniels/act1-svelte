@@ -45,6 +45,9 @@
   on:mouseenter={() => {
     hoveredStore.set(data.key);
   }}
+  on:mouseleave={() => {
+    hoveredStore.set("");
+  }}
   class:selected={$selectedStore.has(data.key)}
   class:inactive
 ></button>
