@@ -4,8 +4,6 @@
   import { onMount } from "svelte";
   import { dataStructure } from "./dataStructure.js";
 
-  let selected = false;
-
   export let data = {};
   let inStructure;
 
@@ -19,8 +17,19 @@
     return "background-color: " + color + ";";
   }
 
+  function isInactive(items) {
+    if (!inStructure) return true;
+    for (let item of items) {
+      if (inStructure.isRelated(item)) return false;
+    }
+    return true;
+  }
+
+  $: inactive = isInactive($selectedStore);
+
   onMount(() => {
     inStructure = dataStructure.findNode(data.eco_key).findNode(data.key);
+    //console.log(inStructure.isRelated("EDUCATION"));
   });
 </script>
 
@@ -37,12 +46,7 @@
     hoveredStore.set(data.key);
   }}
   class:selected={$selectedStore.has(data.key)}
-  class:inactive={() => {
-    for (let item of $selectedStore) {
-      if (inStructure.isRelated(item)) return false;
-      return true;
-    }
-  }}
+  class:inactive
 ></button>
 
 <style>
