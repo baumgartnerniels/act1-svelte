@@ -18,7 +18,7 @@
     <slot />
   </div>
   <button
-    class="label"
+    class:selectable
     on:mouseenter={() => (hovered = selectable)}
     on:mouseleave={() => (hovered = false)}
     on:click={() => {
@@ -58,14 +58,16 @@
   .level.hovered {
     outline: 2px solid var(--main-color);
   }
-  .label {
+  button {
     position: relative;
     margin-top: 3vh;
     padding-left: 3vh;
     grid-column: 2;
+  }
+  button.selectable {
     cursor: pointer;
   }
-  .label p {
+  button p {
     color: var(--main-color);
     position: absolute;
     transform-origin: top left;
