@@ -3,6 +3,7 @@
   import DataPoint from "./DataPoint.svelte";
 
   export let data = [];
+  export let store;
 
   let gridSize = Math.ceil(Math.sqrt(data.length));
 
@@ -15,7 +16,7 @@
 
 <div class="room" bind:this={room}>
   {#each data as dot}
-    <DataPoint data={dot} />
+    <DataPoint data={dot} {store} />
   {/each}
 </div>
 

@@ -1,10 +1,11 @@
 <script>
   import { scaleLinear, interpolateRgb } from "d3";
-  import { selectedStore, hoveredStore } from "./stores.js";
+  import { hoveredStore } from "./stores.js";
   import { onMount } from "svelte";
   import { dataStructure } from "./dataStructure.js";
 
   export let data = {};
+  export let store;
   let inStructure;
 
   let colorScale = scaleLinear()
@@ -18,18 +19,20 @@
   }
 
   function isInactive(items) {
-    if (items.has(data.key)) return false;
-    if (!inStructure) return true;
+    if (!inStructure) return false;
     for (let item of items) {
-      if (inStructure.isRelated(item)) return false;
+      if (!item.parent) continue;
+      if (inStructure.isRelatedUpDown(item)) return false;
     }
     return true;
   }
 
-  $: inactive = isInactive($selectedStore);
+  $: inactive = isInactive($store);
 
   onMount(() => {
-    inStructure = dataStructure.findNode(data.eco_key).findNode(data.key);
+    inStructure = dataStructure
+      .findNodeByKey(data.eco_key)
+      .findNodeByKey(data.key);
   });
 </script>
 
@@ -40,7 +43,7 @@
   data-parent={data.parent_key}
   style={style(data)}
   on:click={() => {
-    selectedStore.toggleSelection(data.key);
+    store.toggleSelection(inStructure);
   }}
   on:mouseenter={() => {
     hoveredStore.set(data.key);
@@ -48,7 +51,7 @@
   on:mouseleave={() => {
     hoveredStore.set("");
   }}
-  class:selected={$selectedStore.has(data.key)}
+  class:selected={$store.has(inStructure)}
   class:inactive
 ></button>
 

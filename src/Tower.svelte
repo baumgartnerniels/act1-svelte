@@ -3,22 +3,15 @@
   import Level from "./Level.svelte";
   import Room from "./Room.svelte";
   import panzoom from "panzoom";
-  import { selectedStore } from './stores.js';
+  import { dataStructure } from "./dataStructure.js";
+  import { selectedStore, countryStore } from "./stores.js";
 
   export let data;
 
   let tower;
   let zoom;
 
-  let selected;
-  selectedStore.subscribe(value => selected = value);
-
-  function handleSelected(m) {
-    //console.log("clicked on " + m.detail.data.key);
-    //console.log(m.detail.data);
-    //selectedStore.toggleSelection(m.detail.data);
-    //zoomTo(m.detail.element);
-  }
+  let rootNode = dataStructure;
 
   export function zoomTo(element, scale = 3) {
     let targetRect = element.getBoundingClientRect();
@@ -42,10 +35,6 @@
 
   export function resetZoom() {
     zoom.smoothZoom(0, 0, 1);
-  }
-
-  function handleHovered(m) {
-    //console.log("hovered over " + m.detail.data.key);
   }
 
   function setupZoom(el) {
@@ -77,10 +66,6 @@
 
   onMount(() => {
     zoom = setupZoom(tower);
-    selectedStore.toggleSelection("Economies")
-/*     countries.forEach(country => {
-    selectedStore.toggleSelection(country);
-    }); */
     return () => {
       zoom.dispose();
     };
@@ -96,50 +81,31 @@
     --main-color="#E0E722"
   >
     {#each countries as country}
-      <Room
-        on:selected={handleSelected}
-        on:hovered={handleHovered}
-        data={data.economies[country]}
-      />
+      <Room data={data.economies[country]} store={countryStore} />
     {/each}
   </Level>
   <Level --z="50" label="Dimensions" --main-color="#db3eb1">
     {#each countries as country}
-      <Room
-        data={data.dimensions[country]}
-      />
+      <Room data={data.dimensions[country]} store={selectedStore} />
     {/each}
   </Level>
   <Level --z="40" label="Subdimensions" --main-color="#FFAD00">
     {#each countries as country}
-      <Room
-        on:selected={handleSelected}
-        on:hovered={handleHovered}
-        data={data.subdimensions[country]}
-      />
+      <Room data={data.subdimensions[country]} store={selectedStore} />
     {/each}
   </Level>
   <Level --z="30" label="Indicators" --main-color="#D22730">
     {#each countries as country}
-      <Room
-        on:selected={handleSelected}
-        on:hovered={handleHovered}
-        data={data.indicators[country]}
-      />
+      <Room data={data.indicators[country]} store={selectedStore} />
     {/each}
   </Level>
   <Level --z="20" label="Levels" --main-color="white">
     {#each countries as country}
-      <Room
-        on:selected={handleSelected}
-        on:hovered={handleHovered}
-        data={data.levels[country]}
-      />
+      <Room data={data.levels[country]} store={selectedStore} />
     {/each}
   </Level>
   <!-- <p>Selected: {[...selected].join(', ')}</p> -->
 </div>
-
 
 <style>
   .tower {
@@ -150,6 +116,4 @@
     /* transform: scale(var(--zoom)); */
     --margin-top: -14vh;
   }
-
-  
 </style>

@@ -1,20 +1,15 @@
 <script>
-  import { selectedStore } from "./stores.js";
-
+  import { countryStore } from "./stores.js";
   let hovered = false;
   let level;
 
   export let label = "";
   export let selectable = false;
+  export let store = countryStore;
 </script>
 
 <div class="level-container">
-  <div
-    class="level"
-    class:hovered
-    class:selected={$selectedStore.has(label)}
-    bind:this={level}
-  >
+  <div class="level" class:hovered bind:this={level}>
     <slot />
   </div>
   <button
@@ -22,7 +17,7 @@
     on:mouseenter={() => (hovered = selectable)}
     on:mouseleave={() => (hovered = false)}
     on:click={() => {
-      if (selectable) selectedStore.toggleSelection(label);
+      if (selectable) store.resetSelection();
     }}
   >
     <p>{label}</p>

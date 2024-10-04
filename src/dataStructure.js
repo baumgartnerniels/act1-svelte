@@ -4,7 +4,7 @@ class TreeNode {
   constructor(key) {
     this.key = key;
     this.children = [];
-    this.parent = null;
+    this.parent = undefined;
   }
 
   // Method to add a child to the current node
@@ -13,24 +13,45 @@ class TreeNode {
     this.children.push(child);
   }
 
-  findNode(key) {
+  findNodeByKey(key) {
     if (this.key === key) {
       return this; // Found the node
     }
     for (const child of this.children) {
-      const result = child.findNode(key);
+      const result = child.findNodeByKey(key);
       if (result) {
         return result; // Recursively search in children
       }
     }
-    return null; // Node not found
+    return undefined; // Node not found
+  }
+
+  findNode(node, maxRecursions = Infinity) {
+    if (this == node) {
+      return this; // Found the node
+    }
+
+    // If maxRecursions is 0 or less, stop recursion
+    if (maxRecursions <= 0) {
+      return undefined;
+    }
+
+    // Recursively search in children with maxRecursions reduced by 1
+    for (const child of this.children) {
+      const result = child.findNode(node, maxRecursions - 1);
+      if (result) {
+        return result; // Found the node
+      }
+    }
+
+    return undefined; // Node not found within recursion limit
   }
 
   // Method to check if the current node is a child of another node with a given key
-  isChildOf(key) {
+  isChildOf(node) {
     let currentNode = this.parent; // Start from the parent
     while (currentNode) {
-      if (currentNode.key === key) {
+      if (currentNode == node) {
         return true; // Found the parent
       }
       currentNode = currentNode.parent; // Move up the tree
@@ -39,12 +60,39 @@ class TreeNode {
   }
 
   // Method to check if the current node is a parent of a node with a given key
-  isParentOf(key) {
-    return this.findNode(key) !== null; // Use findNode to check if the child exists in this subtree
+  isParentOf(node) {
+    return this.findNode(node) !== undefined; // Use findNode to check if the child exists in this subtree
   }
 
-  isRelated(key) {
-    return this.isChildOf(key) || this.isParentOf(key);
+  isSiblingOf(node) {
+    return this.parent.children.includes(node);
+  }
+
+  isCousinOf(node) {
+    this.parent?.parent?.findNode(node, 3) !== undefined;
+  }
+
+  isRelatedUpDown(node) {
+    return this.isChildOf(node) || this.isParentOf(node);
+  }
+
+  getDepth() {
+    let depth = 0;
+    let currentNode = this;
+
+    // Traverse upwards and count the levels
+    while (currentNode.parent !== undefined) {
+      currentNode = currentNode.parent;
+      depth++;
+    }
+
+    return depth; // Return the depth level
+  }
+
+  isRelated(node) {
+    return (
+      this.isChildOf(node) || this.isSiblingOf(node) || this.isParentOf(node)
+    );
   }
 
   isRelatedToAny(list) {
@@ -82,7 +130,7 @@ class TreeNode {
       this,
       ...this.getDescendants(),
     ];
-    return relatedNodes.map((node) => node.key); // Return the list of keys (optional)
+    return relatedNodes;
   }
 
   exportToJSON() {
