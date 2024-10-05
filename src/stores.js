@@ -49,8 +49,6 @@ function createSelectedStore(otherStore) {
   const { subscribe, set, update } = writable(new Set(init));
   let countries = new Set();
 
-  // todo: how to implement unsubscribe? we should unsubscribe from other by calling unsubOther()
-  //       docs say not doing this causes memory leak, do however not say hot to do it.
   // subscribe to changes in otherStore
   // when other country is selected, we update our own store
   let unsubOther = otherStore.subscribe((otherStore) => {
@@ -75,7 +73,16 @@ function createSelectedStore(otherStore) {
   });
 
   return {
-    subscribe,
+    subscribe(run) {
+      // Call the default subscribe behavior
+      const unsubscribe = subscribe(run);
+
+      // Return the unsubscribe function with custom logic
+      return () => {
+        unsubOther(); // Unsubscribe from our other store subscription
+        unsubscribe(); // Ensure to call the original unsubscribe
+      };
+    },
 
     toggleSelection: (item) =>
       update((selected) => {

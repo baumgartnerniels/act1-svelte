@@ -62,6 +62,9 @@
   button.selectable {
     cursor: pointer;
   }
+  button:focus {
+    outline: none;
+  }
   button p {
     color: var(--main-color);
     position: absolute;

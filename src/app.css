@@ -63,6 +63,10 @@ button {
   outline: none;
 }
 
+button:focus {
+  outline: 2px solid var(--main-color);
+}
+
 .selected {
   outline: 2px solid var(--main-color);
 }
