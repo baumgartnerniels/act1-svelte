@@ -1,9 +1,11 @@
 <script>
   import Tower from "./Tower.svelte";
+  import Hover from "./Hover.svelte";
   import { selectedStore, hoveredStore, countryStore } from "./stores.js";
 </script>
 
 <main>
+  <Hover />
   <div class="tower">
     <Tower />
   </div>
@@ -46,17 +48,4 @@
     margin: 1em;
     text-align: left;
   }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  /* @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  } */
 </style>

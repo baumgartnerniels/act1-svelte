@@ -1,4 +1,4 @@
-import { writable, derived } from "svelte/store";
+import { readable, writable, derived } from "svelte/store";
 import { dataStructure } from "./dataStructure.js";
 
 ////////////////////////////
@@ -102,12 +102,32 @@ function createSelectedStore(otherStore) {
   };
 }
 
+// Create a readable store for mouse position
+export const mousePosition = readable({ x: 0, y: 0 }, function start(set) {
+  // Function to update the mouse position
+  const updateMousePosition = (event) => {
+    set({
+      x: event.clientX,
+      y: event.clientY,
+    });
+  };
+
+  // Attach the mousemove event listener
+  window.addEventListener("mousemove", updateMousePosition);
+
+  // Return a cleanup function to remove the event listener when no subscribers exist
+  return function stop() {
+    window.removeEventListener("mousemove", updateMousePosition);
+  };
+});
+
 export const selectedStore = createSelectedStore(countryStore);
 
 export const hoveredStore = writable("");
 
 export const relatedStore = derived(selectedStore, ($selectedStore) => {
   let family = [];
+  // @ts-ignore
   $selectedStore.forEach((el) => {
     family.push(...el.getRelatedNodes());
   });
