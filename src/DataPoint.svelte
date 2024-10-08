@@ -7,8 +7,8 @@
   export let showLabels = false;
 
   let colorScale = scaleLinear()
-    .domain([0, 0.5, 1])
-    .range(["red", "pink", "blue"])
+    .domain([0, 1])
+    .range(["black", "white"])
     .interpolate(interpolateRgb.gamma(2.2));
 
   function style(e) {
@@ -28,7 +28,7 @@
     store.toggleSelection(data);
   }}
   on:mouseenter={() => {
-    hoveredStore.set(data.key);
+    hoveredStore.set(data.label);
   }}
   on:mouseleave={() => {
     hoveredStore.set("");
@@ -51,5 +51,10 @@
   }
   button:hover {
     border: 1px solid var(--main-color);
+  }
+  .inactive {
+    /* opacity: 100%; */
+    /* transform: scale(60%); */
+    filter: grayscale(100%);
   }
 </style>

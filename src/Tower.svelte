@@ -74,7 +74,7 @@
     --z="60"
     selectable={true}
     label="Economies"
-    --main-color="#E0E722"
+    --main-color="#464646"
   >
     {#each countries as country}
       <Room
@@ -84,7 +84,7 @@
       />
     {/each}
   </Level>
-  <Level --z="50" label="Dimensions" --main-color="#db3eb1">
+  <Level --z="50" label="Dimensions" --main-color="#787878">
     {#each countries as country}
       <Room
         data={data.findNodeByKey(country).findNodesBy("level", "dimensions")}
@@ -92,7 +92,7 @@
       />
     {/each}
   </Level>
-  <Level --z="40" label="Subdimensions" --main-color="#FFAD00">
+  <Level --z="40" label="Subdimensions" --main-color="#b9b9b9">
     {#each countries as country}
       <Room
         data={data.findNodeByKey(country).findNodesBy("level", "subdimensions")}
@@ -100,7 +100,7 @@
       />
     {/each}
   </Level>
-  <Level --z="30" label="Indicators" --main-color="#D22730">
+  <Level --z="30" label="Indicators" --main-color="#d7d7d7">
     {#each countries as country}
       <Room
         data={data.findNodeByKey(country).findNodesBy("level", "indicators")}
@@ -108,7 +108,7 @@
       />
     {/each}
   </Level>
-  <Level --z="20" label="Levels" --main-color="white">
+  <Level --z="20" label="Levels" --main-color="#ffffff">
     {#each countries as country}
       <Room
         data={data.findNodeByKey(country).findNodesBy("level", "levels")}
@@ -116,7 +116,6 @@
       />
     {/each}
   </Level>
-  <!-- <p>Selected: {[...selected].join(', ')}</p> -->
 </div>
 
 <style>
