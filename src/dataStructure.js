@@ -5,6 +5,10 @@ class TreeNode {
     this.key = key;
     this.children = [];
     this.parent = undefined;
+    this.id = undefined;
+    this.value = 0;
+    this.label = "";
+    this.level = "";
   }
 
   // Method to add a child to the current node
@@ -24,6 +28,17 @@ class TreeNode {
       }
     }
     return undefined; // Node not found
+  }
+
+  findNodesBy(prop, value) {
+    let nodes = [];
+    if (this[prop] === value) {
+      nodes.push(this); // Found the node
+    }
+    for (const child of this.children) {
+      nodes = nodes.concat(child.findNodesBy(prop, value)); // Recursively concatenate found nodes
+    }
+    return nodes;
   }
 
   findNode(node, maxRecursions = Infinity) {
@@ -137,6 +152,10 @@ class TreeNode {
     // Recursively build a JSON-friendly structure for this node
     const nodeObject = {
       key: this.key,
+      value: this.value,
+      label: this.label,
+      id: this.id,
+      level: this.level,
       children: this.children.map((child) => child.exportToJSON()), // Export children recursively
     };
     return nodeObject;
@@ -152,6 +171,11 @@ class TreeNode {
         node.addChild(childNode); // Add the child to the current node
       }
     }
+    node.id = jsonObject.id;
+    node.value = jsonObject.value;
+    node.label = jsonObject.label;
+    node.level = jsonObject.level;
+
     return node;
   }
 }

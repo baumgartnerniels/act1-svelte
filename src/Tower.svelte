@@ -3,15 +3,11 @@
   import Level from "./Level.svelte";
   import Room from "./Room.svelte";
   import panzoom from "panzoom";
-  import { dataStructure } from "./dataStructure.js";
   import { selectedStore, countryStore } from "./stores.js";
-
-  export let data;
+  import { dataStructure as data } from "./dataStructure.js";
 
   let tower;
   let zoom;
-
-  let rootNode = dataStructure;
 
   export function zoomTo(element, scale = 3) {
     let targetRect = element.getBoundingClientRect();
@@ -82,7 +78,7 @@
   >
     {#each countries as country}
       <Room
-        data={data.economies[country]}
+        data={[data.findNodeByKey(country)]}
         store={countryStore}
         showLabels={true}
       />
@@ -90,22 +86,34 @@
   </Level>
   <Level --z="50" label="Dimensions" --main-color="#db3eb1">
     {#each countries as country}
-      <Room data={data.dimensions[country]} store={selectedStore} />
+      <Room
+        data={data.findNodeByKey(country).findNodesBy("level", "dimensions")}
+        store={selectedStore}
+      />
     {/each}
   </Level>
   <Level --z="40" label="Subdimensions" --main-color="#FFAD00">
     {#each countries as country}
-      <Room data={data.subdimensions[country]} store={selectedStore} />
+      <Room
+        data={data.findNodeByKey(country).findNodesBy("level", "subdimensions")}
+        store={selectedStore}
+      />
     {/each}
   </Level>
   <Level --z="30" label="Indicators" --main-color="#D22730">
     {#each countries as country}
-      <Room data={data.indicators[country]} store={selectedStore} />
+      <Room
+        data={data.findNodeByKey(country).findNodesBy("level", "indicators")}
+        store={selectedStore}
+      />
     {/each}
   </Level>
   <Level --z="20" label="Levels" --main-color="white">
     {#each countries as country}
-      <Room data={data.levels[country]} store={selectedStore} />
+      <Room
+        data={data.findNodeByKey(country).findNodesBy("level", "levels")}
+        store={selectedStore}
+      />
     {/each}
   </Level>
   <!-- <p>Selected: {[...selected].join(', ')}</p> -->

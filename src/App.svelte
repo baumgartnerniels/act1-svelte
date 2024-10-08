@@ -1,15 +1,11 @@
 <script>
-  import { onMount } from "svelte";
   import Tower from "./Tower.svelte";
-  import data from "../data/app_data.json";
   import { selectedStore, hoveredStore, countryStore } from "./stores.js";
-
-  console.log(data);
 </script>
 
 <main>
   <div class="tower">
-    <Tower {data} />
+    <Tower />
   </div>
   <div class="details">
     <p>Selected countries:</p>
