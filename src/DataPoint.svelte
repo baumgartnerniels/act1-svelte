@@ -40,13 +40,19 @@
     width: 100%;
     height: 100%;
     color: var(--main-color);
+    /* border: 1px solid var(--main-color); */
+  }
+  .inactive p {
+    opacity: 1 !important;
   }
   button:hover {
     border: 1px solid var(--main-color);
   }
   .inactive {
-    opacity: 0.68;
-    transform: scale(85%);
+    /* opacity: 0.68; */
+    opacity: 0.2;
+    /* transform: scale(100%); */
+    /* border: none; */
     /* filter: grayscale(100%); */
   }
 </style>

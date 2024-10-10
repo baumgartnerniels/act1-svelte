@@ -2,7 +2,7 @@
   import Tower from "./Tower.svelte";
   import Hover from "./Hover.svelte";
   import Details from "./Details.svelte";
-  import { selectedStore, hoveredStore, countryStore } from "./stores.js";
+  import ColorLegend from "./ColorLegend.svelte";
 </script>
 
 <main>
@@ -10,21 +10,9 @@
   <div class="tower">
     <h1>Western Balkans<br />Competitiveness Data Hub</h1>
     <Tower />
+    <ColorLegend />
   </div>
   <Details />
-  <!-- <p>Selected countries:</p>
-    <ul>
-      {#each Array.from($countryStore) as item}
-        <li>{item.key}</li>
-      {/each}
-    </ul>
-    <p>Selected items:</p>
-    <ul>
-      {#each Array.from($selectedStore) as item}
-        <li>{item.key}</li>
-      {/each}
-    </ul>
-    <p>Hovered: {$hoveredStore}</p> -->
 </main>
 
 <style>

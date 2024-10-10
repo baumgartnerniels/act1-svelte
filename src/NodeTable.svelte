@@ -2,6 +2,7 @@
   import { colorScale, colorScaleBinary, styleBgColor } from "./colors.js";
   import { selectedStore, countryStore } from "./stores.js";
   export let data;
+  export let sheet;
 </script>
 
 {#if data.level != "economies"}
@@ -17,6 +18,7 @@
         class="label"
         on:click={() => {
           selectedStore.toggleSelection(data, false);
+          sheet.scollTop = 0;
         }}>{data.label}</button
       >
       {#each $countryStore as country}

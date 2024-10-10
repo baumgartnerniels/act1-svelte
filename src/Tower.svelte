@@ -88,7 +88,7 @@
       />
     {/each}
   </Level>
-  <Level --z="40" label="Dimensions" level="subdimensions">
+  <Level --z="40" label="Subdimensions" level="subdimensions">
     {#each countries as country}
       <Room
         data={data.findNodeByKey(country).findNodesBy("level", "subdimensions")}

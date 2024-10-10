@@ -51,9 +51,6 @@ h1 {
   box-sizing: border-box;
 }
 
-:root {
-}
-
 button {
   color: var(--main-color);
   background: none;
@@ -70,7 +67,7 @@ button:focus {
 }
 
 .selected {
-  outline: 2px solid var(--main-color);
+  outline: 2px solid var(--highlight-color);
 }
 
 .highlighted {

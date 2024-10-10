@@ -2,6 +2,7 @@
   import { selectedStore, countryStore } from "./stores.js";
   import { colorScale, colorScaleBinary, styleBgColor } from "./colors.js";
   export let data = {};
+  export let sheet;
   function getDataNode(country, node) {
     if (node.level == "economies") {
       return node;
@@ -17,6 +18,7 @@
         class="label"
         on:click={() => {
           selectedStore.toggleSelection(row);
+          sheet.scrollTop = 0;
         }}>{row.label}</button
       >
       {#each $countryStore as country}
@@ -40,9 +42,6 @@
     grid-template-columns: 1fr repeat(var(--num-countries), 3em);
     justify-content: center;
     align-items: center;
-  }
-  .row.header button {
-    height: auto;
   }
   .row button.label {
     width: auto;

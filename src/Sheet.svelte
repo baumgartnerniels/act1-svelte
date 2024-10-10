@@ -3,23 +3,23 @@
   import ChildTable from "./ChildTable.svelte";
   import NodeTable from "./NodeTable.svelte";
   export let data;
+  let sheet;
 </script>
 
-<div class="sheet">
-  <NodeTable {data} />
+<div class="sheet" bind:this={sheet}>
+  <NodeTable {data} {sheet} />
   <br />
   <br />
   <br />
-  <ChildTable {data} />
+  <ChildTable {data} {sheet} />
 </div>
 
 <style>
   .sheet {
-    overflow: scroll;
+    overflow: hidden;
     border: 1px solid var(--main-color);
     /* border-radius: 5px; */
     background-color: var(--background-color);
-
     position: absolute; /* Absolute positioning to allow overlap */
     left: 0;
     right: 0;
@@ -32,7 +32,7 @@
     padding: 1em;
     transition: margin-top 0.3s ease; /* Smooth transition */
     z-index: 1; /* Ensures that sheets overlap */
-    scrollbar-color: var(--highligh-color);
+    scrollbar-color: var(--highlight-color) var(--background-color);
   }
   .sheet:only-child {
     --sheet-bottom: 0em !important;
@@ -40,6 +40,7 @@
 
   .sheet:last-child {
     border: 1px solid var(--highlight-color);
+    overflow: scroll;
   }
 
   .sheet:nth-of-type(1) {
