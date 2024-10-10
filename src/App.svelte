@@ -1,6 +1,7 @@
 <script>
   import Tower from "./Tower.svelte";
   import Hover from "./Hover.svelte";
+  import Details from "./Details.svelte";
   import { selectedStore, hoveredStore, countryStore } from "./stores.js";
 </script>
 
@@ -9,8 +10,8 @@
   <div class="tower">
     <Tower />
   </div>
-  <div class="details">
-    <p>Selected countries:</p>
+  <Details />
+  <!-- <p>Selected countries:</p>
     <ul>
       {#each Array.from($countryStore) as item}
         <li>{item.key}</li>
@@ -22,8 +23,7 @@
         <li>{item.key}</li>
       {/each}
     </ul>
-    <p>Hovered: {$hoveredStore}</p>
-  </div>
+    <p>Hovered: {$hoveredStore}</p> -->
 </main>
 
 <style>
@@ -39,13 +39,5 @@
     grid-template-rows: 100%;
     width: 100%;
     height: 100%;
-  }
-
-  .details {
-    padding: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 1em;
-    text-align: left;
   }
 </style>

@@ -3,14 +3,29 @@
 
   $: visible = $hoveredStore != "";
   $: style =
-    "left: " + $mousePosition.x + "px; top: " + ($mousePosition.y - 30) + "px";
+    "left: " +
+    ($mousePosition.x + 10) +
+    "px; top: " +
+    ($mousePosition.y + 10) +
+    "px";
 </script>
 
-<div class="hoverLabel" class:visible {style}>{$hoveredStore}</div>
+<div class="hoverLabel" class:visible {style}><p>{$hoveredStore}</p></div>
 
 <style>
   .hoverLabel {
     z-index: 1000;
     position: absolute;
+    background-color: black;
+    max-width: 200px;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    text-align: left;
+    user-select: none;
+    width: fit-content;
   }
 </style>

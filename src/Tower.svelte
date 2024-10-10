@@ -13,8 +13,6 @@
     let targetRect = element.getBoundingClientRect();
     let containerRect = tower.parentElement.getBoundingClientRect();
     let t = zoom.getTransform();
-    console.log(zoom);
-    console.log(tower);
     if (t.scale < scale) {
       zoom.smoothZoom(targetRect.x, targetRect.y, scale);
     } else {
@@ -23,8 +21,6 @@
 
       var dx = containerRect.width / 2 - cx;
       var dy = containerRect.height / 2 - cy;
-      console.log(t);
-      console.log(targetRect);
       zoom.smoothMoveTo(dx + t.x, dy + t.y);
     }
   }

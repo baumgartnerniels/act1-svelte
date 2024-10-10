@@ -1,20 +1,10 @@
 <script>
-  import { scaleLinear, interpolateRgb } from "d3";
   import { hoveredStore, relatedStore } from "./stores.js";
+  import { styleBgColor } from "./colors.js";
 
   export let data = {};
   export let store;
   export let showLabels = false;
-
-  let colorScale = scaleLinear()
-    .domain([0, 1])
-    .range(["black", "white"])
-    .interpolate(interpolateRgb.gamma(2.2));
-
-  function style(e) {
-    let color = colorScale(e.value / 5.0);
-    return "background-color: " + color + ";";
-  }
 
   $: inactive = !$relatedStore.has(data);
 </script>
@@ -23,7 +13,7 @@
   data-score={data.value}
   data-id={data.id}
   data-key={data.key}
-  style={style(data)}
+  style={styleBgColor(data.value)}
   on:click={() => {
     store.toggleSelection(data);
   }}

@@ -1,11 +1,14 @@
 :root {
+  --background-color: #242424;
+  --main-color: white;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -48,7 +51,6 @@ h1 {
 }
 
 :root {
-  --main-color: white;
 }
 
 button {
@@ -77,4 +79,23 @@ button:focus {
 
 .inactive {
   opacity: 0.5;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+}
+tr {
+  max-height: 1em;
+}
+td:first-child {
+  text-align: left;
+}
+th {
+  text-align: right;
+  font-weight: inherit;
+  text-align: center;
+}
+td {
+  text-align: right;
 }
