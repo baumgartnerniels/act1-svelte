@@ -10,48 +10,49 @@
   }
 </script>
 
-{#if data.children.length > 1}
-  <table>
-    <tr>
-      <th />
-      {#each $countryStore as country}
-        <th>{country.key}</th>
-      {/each}
-    </tr>
+{#if data.level != "economies"}
+  <div class="table" style={`--num-countries: ${$countryStore.size};`}>
     {#each data.children as row}
-      <tr>
-        <td>
-          <button>
-            {row.label}
-          </button>
-        </td>
+      <div class="row">
+        <button class="label">{row.label}</button>
         {#each $countryStore as country}
           {@const node = getDataNode(country, row)}
-          <td style={styleBgColor(node.value)}
-            ><button>{node.value}</button
-            ></td
-          >
+          <button style={styleBgColor(node.value)}>
+            {node.value.toFixed(1)}
+          </button>
         {/each}
-      </tr>
+      </div>
     {/each}
-  </table>
+  </div>
 {/if}
 
 <style>
-  td button {
-    max-height: 1.5em;
-    height: 1.5em;
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
-    overflow: hidden;
+  .table {
+    display: grid;
+    grid-auto-rows: 1fr;
   }
-  td:first-child {
-    overflow: hidden;
+  .row {
+    display: grid;
+    grid-template-columns: 1fr repeat(var(--num-countries), 3em);
+    justify-content: center;
+    align-items: center;
   }
-  tr {
-    height: 1.5em;
+  .row.header button {
+    height: auto;
   }
-  td {
-    height: 1.5em;
+  .row button.label {
+    width: auto;
+    height: auto;
+    text-align: left;
+    justify-content: left;
+  }
+  .row button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0.25em;
+    text-align: center;
   }
 </style>

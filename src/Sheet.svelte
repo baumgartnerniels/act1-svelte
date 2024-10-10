@@ -8,6 +8,8 @@
 <div class="sheet">
   <NodeTable {data} />
   <br />
+  <br />
+  <br />
   <ChildTable {data} />
 </div>
 

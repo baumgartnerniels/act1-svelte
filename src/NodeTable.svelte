@@ -5,22 +5,46 @@
 </script>
 
 {#if data.level != "economies"}
-  <table>
-    <tr>
-      <th />
+  <div class="table" style={`--num-countries: ${$countryStore.size};`}>
+    <div class="row header">
+      <button class="label"></button>
       {#each $countryStore as country}
-        <th>{country.key}</th>
+        <button>{country.key}</button>
       {/each}
-    </tr>
-    <tr>
-      <td>{data.label}</td>
+    </div>
+    <div class="row">
+      <button class="label">{data.label}</button>
       {#each $countryStore as country}
-        {@const val = country.findNodeByKey(data.key).value}
-        <td style={styleBgColor(val)}>{val}</td>
+        {@const val = country.findNodeByKey(data.key).value.toFixed(1)}
+        <button style={styleBgColor(val)}>{val}</button>
       {/each}
-    </tr>
-  </table>
+    </div>
+  </div>
 {/if}
 
 <style>
+  .row {
+    display: grid;
+    grid-template-columns: 1fr repeat(var(--num-countries), 3em);
+    justify-content: center;
+  }
+  .row.header button {
+    height: auto;
+    font-weight: 600;
+  }
+  .row button.label {
+    width: auto;
+    height: auto;
+    text-align: left;
+    justify-content: left;
+  }
+  .row button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0.25em;
+    text-align: center;
+  }
 </style>
