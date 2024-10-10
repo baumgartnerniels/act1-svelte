@@ -16,7 +16,7 @@
 <style>
   .sheet {
     overflow: scroll;
-    border: 1px solid #ccc;
+    border: 1px solid var(--main-color);
     /* border-radius: 5px; */
     background-color: var(--background-color);
 
@@ -32,13 +32,21 @@
     padding: 1em;
     transition: margin-top 0.3s ease; /* Smooth transition */
     z-index: 1; /* Ensures that sheets overlap */
+    scrollbar-color: var(--highligh-color);
+  }
+  .sheet:only-child {
+    --sheet-bottom: 0em !important;
+  }
+
+  .sheet:last-child {
+    border: 1px solid var(--highlight-color);
   }
 
   .sheet:nth-of-type(1) {
     --sheet-top: 0em;
     --sheet-right: 0em;
     --sheet-left: 5em;
-    --sheet-bottom: 3em;
+    --sheet-bottom: 4em;
     z-index: 2;
   }
 
@@ -46,7 +54,7 @@
     --sheet-top: 6em;
     --sheet-right: 1em;
     --sheet-left: 4em;
-    --sheet-bottom: 2em;
+    --sheet-bottom: 3em;
     z-index: 2;
   }
 
@@ -54,7 +62,7 @@
     --sheet-top: 12em;
     --sheet-right: 2em;
     --sheet-left: 3em;
-    --sheet-bottom: 1em;
+    --sheet-bottom: 2em;
     z-index: 3;
   }
 
@@ -62,6 +70,14 @@
     --sheet-top: 18em;
     --sheet-right: 3em;
     --sheet-left: 2em;
+    --sheet-bottom: 1em;
+    z-index: 4;
+  }
+
+  .sheet:nth-of-type(5) {
+    --sheet-top: 24em;
+    --sheet-right: 4em;
+    --sheet-left: 1em;
     --sheet-bottom: 0em;
     z-index: 4;
   }

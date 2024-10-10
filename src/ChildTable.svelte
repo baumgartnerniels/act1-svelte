@@ -1,6 +1,6 @@
 <script>
   import { selectedStore, countryStore } from "./stores.js";
-  import { styleBgColor } from "./colors.js";
+  import { colorScale, colorScaleBinary, styleBgColor } from "./colors.js";
   export let data = {};
   function getDataNode(country, node) {
     if (node.level == "economies") {
@@ -21,7 +21,8 @@
       >
       {#each $countryStore as country}
         {@const node = getDataNode(country, row)}
-        <button style={styleBgColor(node.value)}>
+        {@const scale = row.level == "levels" ? colorScaleBinary : colorScale}
+        <button style={styleBgColor(node.value, scale)}>
           {node.value.toFixed(1)}
         </button>
       {/each}

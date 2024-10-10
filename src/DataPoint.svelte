@@ -1,10 +1,12 @@
 <script>
   import { hoveredStore, relatedStore } from "./stores.js";
-  import { styleBgColor } from "./colors.js";
+  import { colorScale, colorScaleBinary, styleBgColor } from "./colors.js";
 
   export let data = {};
   export let store;
   export let showLabels = false;
+
+  let scale = data.level == "levels" ? colorScaleBinary : colorScale;
 
   $: inactive = !$relatedStore.has(data);
 </script>
@@ -13,7 +15,7 @@
   data-score={data.value}
   data-id={data.id}
   data-key={data.key}
-  style={styleBgColor(data.value)}
+  style={styleBgColor(data.value, scale)}
   on:click={() => {
     store.toggleSelection(data);
   }}
@@ -43,8 +45,8 @@
     border: 1px solid var(--main-color);
   }
   .inactive {
-    /* opacity: 100%; */
-    /* transform: scale(60%); */
-    filter: grayscale(100%);
+    opacity: 0.68;
+    transform: scale(85%);
+    /* filter: grayscale(100%); */
   }
 </style>

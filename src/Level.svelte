@@ -1,18 +1,20 @@
 <script>
-  import { countryStore } from "./stores.js";
+  import { selectedStore, countryStore } from "./stores.js";
   let hovered = false;
-  let level;
-
+  export let level = "";
   export let label = "";
   export let selectable = false;
   export let store = countryStore;
+
+  $: active = level == Array.from($selectedStore)[0].level;
 </script>
 
 <div class="level-container">
-  <div class="level" class:hovered bind:this={level}>
+  <div class="level" class:hovered class:active>
     <slot />
   </div>
   <button
+    class:active
     class:selectable
     on:mouseenter={() => (hovered = selectable)}
     on:mouseleave={() => (hovered = false)}
@@ -26,7 +28,7 @@
 
 <style>
   :root {
-    --room-size: 14vh;
+    --room-size: 12vh;
     --rotation: 30deg;
   }
   .level-container {
@@ -37,6 +39,7 @@
     grid-template-rows: 100%;
     transform: rotateX(60deg) rotateZ(var(--rotation));
     position: relative;
+    height: fit-content;
     margin-top: var(--margin-top);
   }
   .level {
@@ -49,7 +52,9 @@
     height: fit-content;
     padding: 5px;
   }
-
+  .level.active.hovered {
+    outline: 2px solid var(--highlight-color);
+  }
   .level.hovered {
     outline: 2px solid var(--main-color);
   }
@@ -64,6 +69,9 @@
   }
   button:focus {
     outline: none;
+  }
+  button.active p {
+    color: var(--highlight-color);
   }
   button p {
     color: var(--main-color);

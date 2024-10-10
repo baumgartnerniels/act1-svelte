@@ -8,6 +8,7 @@
 <main>
   <Hover />
   <div class="tower">
+    <h1>Western Balkans<br />Competitiveness Data Hub</h1>
     <Tower />
   </div>
   <Details />

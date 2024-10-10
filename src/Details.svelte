@@ -8,7 +8,12 @@
       .getAncestors()
       .filter((n) => {
         //get the levels above up to dimension
-        return ["dimensions", "subdimensions", "indicators"].includes(n.level);
+        return [
+          "economies",
+          "dimensions",
+          "subdimensions",
+          "indicators",
+        ].includes(n.level);
       })
       .reverse(),
     Array.from($selectedStore)[0]

@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import DataPoint from "./DataPoint.svelte";
+  import { selectedStore } from "./stores";
 
   export let data = [];
   export let store;
@@ -10,12 +11,14 @@
 
   let room;
 
+  $: active = data[0].level == Array.from($selectedStore)[0].level;
+
   onMount(() => {
     room.style = "--grid-size: " + gridSize;
   });
 </script>
 
-<div class="room" bind:this={room}>
+<div class="room" class:active bind:this={room}>
   {#each data as dot}
     <DataPoint data={dot} {store} {showLabels} />
   {/each}
@@ -32,5 +35,8 @@
     grid-template-rows: repeat(var(--grid-size), 1fr);
     justify-content: center;
     align-items: center;
+  }
+  .room.active {
+    border: 2px solid var(--highlight-color);
   }
 </style>
