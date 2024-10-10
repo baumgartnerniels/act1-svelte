@@ -20,8 +20,8 @@
 </script>
 
 <div class="details">
-  {#each data as sheet}
-    <Sheet data={sheet} />
+  {#each data as sheetData}
+    <Sheet data={sheetData} />
   {/each}
 </div>
 

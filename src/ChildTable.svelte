@@ -10,21 +10,19 @@
   }
 </script>
 
-{#if data.level != "economies"}
-  <div class="table" style={`--num-countries: ${$countryStore.size};`}>
-    {#each data.children as row}
-      <div class="row">
-        <button class="label">{row.label}</button>
-        {#each $countryStore as country}
-          {@const node = getDataNode(country, row)}
-          <button style={styleBgColor(node.value)}>
-            {node.value.toFixed(1)}
-          </button>
-        {/each}
-      </div>
-    {/each}
-  </div>
-{/if}
+<div class="table" style={`--num-countries: ${$countryStore.size};`}>
+  {#each data.children as row}
+    <div class="row">
+      <button class="label">{row.label}</button>
+      {#each $countryStore as country}
+        {@const node = getDataNode(country, row)}
+        <button style={styleBgColor(node.value)}>
+          {node.value.toFixed(1)}
+        </button>
+      {/each}
+    </div>
+  {/each}
+</div>
 
 <style>
   .table {
