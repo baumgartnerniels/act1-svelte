@@ -1,6 +1,6 @@
 <script>
   import { styleBgColor } from "./colors.js";
-  import { countryStore } from "./stores.js";
+  import { selectedStore, countryStore } from "./stores.js";
   export let data;
 </script>
 
@@ -13,7 +13,12 @@
       {/each}
     </div>
     <div class="row">
-      <button class="label">{data.label}</button>
+      <button
+        class="label"
+        on:click={() => {
+          selectedStore.toggleSelection(data, false);
+        }}>{data.label}</button
+      >
       {#each $countryStore as country}
         {@const val = country.findNodeByKey(data.key).value.toFixed(1)}
         <button style={styleBgColor(val)}>{val}</button>

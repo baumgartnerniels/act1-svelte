@@ -84,9 +84,9 @@ function createSelectedStore(otherStore) {
       };
     },
 
-    toggleSelection: (item) =>
+    toggleSelection: (item, toggleParent = true) =>
       update((selected) => {
-        if (selected.has(item)) {
+        if (selected.has(item) && toggleParent) {
           for (let c of countries) {
             const countryItem = c.findNodeByKey(item.key);
             selected.delete(countryItem); // Remove item if it's selected

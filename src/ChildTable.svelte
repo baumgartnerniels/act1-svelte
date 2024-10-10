@@ -1,5 +1,5 @@
 <script>
-  import { countryStore } from "./stores.js";
+  import { selectedStore, countryStore } from "./stores.js";
   import { styleBgColor } from "./colors.js";
   export let data = {};
   function getDataNode(country, node) {
@@ -13,7 +13,12 @@
 <div class="table" style={`--num-countries: ${$countryStore.size};`}>
   {#each data.children as row}
     <div class="row">
-      <button class="label">{row.label}</button>
+      <button
+        class="label"
+        on:click={() => {
+          selectedStore.toggleSelection(row);
+        }}>{row.label}</button
+      >
       {#each $countryStore as country}
         {@const node = getDataNode(country, row)}
         <button style={styleBgColor(node.value)}>
