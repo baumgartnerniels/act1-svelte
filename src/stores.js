@@ -98,7 +98,7 @@ function createSelectedStore(otherStore) {
         }
         return new Set(selected); // Return new set to trigger reactivity
       }),
-    clearSelection: () => set(new Set()),
+    clearSelection: (newSet) => set(new Set(newSet)),
   };
 }
 

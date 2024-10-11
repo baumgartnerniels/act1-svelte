@@ -11,6 +11,7 @@
   }
 </script>
 
+<h3 class="title">{data.children.length ? data.children[0]?.level : ""}</h3>
 <div class="table" style={`--num-countries: ${$countryStore.size};`}>
   {#each data.children as row}
     <div class="row">
@@ -37,6 +38,12 @@
     display: grid;
     grid-auto-rows: 1fr;
   }
+
+  .title {
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+
   .row {
     display: grid;
     grid-template-columns: 1fr repeat(var(--num-countries), 3em);

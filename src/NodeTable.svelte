@@ -10,7 +10,9 @@
     <div class="row header">
       <button class="label"></button>
       {#each $countryStore as country}
-        <button>{country.key}</button>
+        <button>
+          {country.key}
+        </button>
       {/each}
     </div>
     <div class="row">
@@ -18,8 +20,11 @@
         class="label"
         on:click={() => {
           selectedStore.toggleSelection(data, false);
-          sheet.scollTop = 0;
-        }}>{data.label}</button
+          sheet.scrollTop = 0;
+        }}>
+          <div class="title">{data.level}</div>
+          <div>{data.label}</div>
+        </button
       >
       {#each $countryStore as country}
         {@const val = country.findNodeByKey(data.key).value.toFixed(1)}
@@ -28,9 +33,21 @@
       {/each}
     </div>
   </div>
+  {:else}
+    <button class="title label" on:click={() => {
+      //selectedStore.toggleSelection(data);
+      selectedStore.clearSelection($countryStore);
+      //console.log(new Set($countryStore))
+    }}>Economies</button>
 {/if}
 
+
 <style>
+
+  .title {
+    text-transform: capitalize;
+    font-weight: bold;
+  }
   .row {
     display: grid;
     grid-template-columns: 1fr repeat(var(--num-countries), 3em);
@@ -44,10 +61,11 @@
     width: auto;
     height: auto;
     text-align: left;
-    justify-content: left;
+    align-items: start;
   }
   .row button {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 2.5em;
