@@ -13,7 +13,7 @@
   <div class="level" class:hovered class:active>
     <slot />
   </div>
-  <button
+  <button class="level-button"
     class:active
     class:selectable
     on:mouseenter={() => (hovered = selectable)}
@@ -22,7 +22,7 @@
       if (selectable) store.resetSelection();
     }}
   >
-    <p>{label}</p>
+    <p class="level-label">{label}</p>
   </button>
 </div>
 
@@ -58,22 +58,22 @@
   .level.hovered {
     outline: 2px solid var(--main-color);
   }
-  button {
+  .level-button {
     position: relative;
     margin-top: 3vh;
     padding-left: 3vh;
     grid-column: 2;
   }
-  button.selectable {
+  .level-button.selectable {
     cursor: pointer;
   }
-  button:focus {
+  .level-button:focus {
     outline: none;
   }
-  button.active p {
+  .level-button.active .level-label {
     color: var(--highlight-color);
   }
-  button p {
+  .level-label {
     color: var(--main-color);
     position: absolute;
     transform-origin: top left;
