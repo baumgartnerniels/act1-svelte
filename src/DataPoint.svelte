@@ -40,6 +40,8 @@
     width: 100%;
     height: 100%;
     color: var(--main-color);
+    font-size: 1.7vh;
+    text-align: center;
     /* border: 1px solid var(--main-color); */
   }
   .inactive p {
@@ -55,4 +57,5 @@
     /* border: none; */
     /* filter: grayscale(100%); */
   }
+
 </style>

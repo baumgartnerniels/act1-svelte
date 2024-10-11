@@ -18,6 +18,7 @@
 <style>
   .tower {
     overflow: hidden;
+    margin: 2em;
   }
   main {
     text-align: center;
@@ -26,7 +27,7 @@
     /* grid-template-columns: 61.803% 38.197%; */
     grid-template-columns: 40% 60%;
     grid-template-rows: 100%;
-    width: 100%;
     height: 100%;
+    width: 100%;
   }
 </style>

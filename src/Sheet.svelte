@@ -29,7 +29,7 @@
     margin-left: var(--sheet-left);
     margin-top: var(--sheet-top);
     margin-bottom: var(--sheet-bottom);
-    padding: 1em;
+    padding: 2em;
     transition: margin-top 0.3s ease; /* Smooth transition */
     z-index: 1; /* Ensures that sheets overlap */
     scrollbar-color: var(--highlight-color) var(--background-color);

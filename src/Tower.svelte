@@ -63,10 +63,9 @@
     };
   });
 </script>
-
+<div class="tower-container">
 <div class="tower" bind:this={tower}>
   <Level
-    --margin-top="-2vh"
     --z="60"
     selectable={true}
     label="Economies"
@@ -113,14 +112,19 @@
     {/each}
   </Level>
 </div>
+</div>
 
 <style>
+  .tower-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  }
   .tower {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    /* transform: scale(var(--zoom)); */
-    --margin-top: -24vh;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr; 
+  grid-template-rows: repeat(5, 15vh);
   }
 </style>

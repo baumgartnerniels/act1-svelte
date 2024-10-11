@@ -32,15 +32,14 @@
     --rotation: 30deg;
   }
   .level-container {
+    width: fit-content;
     z-index: var(--z);
     display: grid;
     grid-template-columns: 95% 5%;
-
-    grid-template-rows: 100%;
+    grid-template-rows: 100%; 
     transform: rotateX(60deg) rotateZ(var(--rotation));
     position: relative;
     height: fit-content;
-    margin-top: var(--margin-top);
   }
   .level {
     display: grid;
@@ -79,8 +78,8 @@
     transform-origin: top left;
     left: 0;
     top: 0;
+    font-size: 1.6vh;
     transform: rotate(-90deg) translateX(-100%);
-
     margin: 0; /* Remove default margin */
   }
 </style>

@@ -35,8 +35,7 @@
     position: relative;
     /* padding: 1em; */
     box-sizing: border-box;
-
-    margin: 1em;
+    margin: 4em;
     text-align: left;
   }
 </style>
