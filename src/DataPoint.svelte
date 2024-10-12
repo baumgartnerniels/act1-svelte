@@ -1,14 +1,13 @@
 <script>
-  import { hoveredStore, relatedStore } from "./stores.js";
+  import { hoveredStore } from "./stores.js";
   import { colorScale, colorScaleBinary, styleBgColor } from "./colors.js";
 
   export let data = {};
   export let store;
   export let showLabels = false;
+  export let inactive = false;
 
   let scale = data.level == "levels" ? colorScaleBinary : colorScale;
-
-  $: inactive = !$relatedStore.has(data);
 </script>
 
 <button

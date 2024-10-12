@@ -3,31 +3,30 @@
 
   import { selectedStore } from "./stores.js";
 
-  $: data = [].concat(
-    Array.from($selectedStore)[0]
-      .getAncestors()
-      .filter((n) => {
-        //get the levels above up to dimension
-        return [
-          "economies",
-          "dimensions",
-          "subdimensions",
-          "indicators",
-        ].includes(n.level);
-      })
-      .reverse(),
-    Array.from($selectedStore)[0]
-  );
+  $: selected = Array.from($selectedStore)[0];
+  $: ancestors = selected
+    .getAncestors()
+    .filter((n) => {
+      //get the levels above up to economies
+      return [
+        "economies",
+        "dimensions",
+        "subdimensions",
+        "indicators",
+      ].includes(n.level);
+    })
+    .reverse();
 
   $: {
-    console.log(data);
+    console.log(ancestors);
   }
 </script>
 
 <div class="details">
-  {#each data as sheetData}
-    <Sheet data={sheetData} />
+  {#each ancestors as ancestor}
+    <Sheet data={ancestor} showChildren={false} />
   {/each}
+  <Sheet data={selected} showChildren={true} />
 </div>
 
 <style>

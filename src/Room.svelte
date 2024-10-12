@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import DataPoint from "./DataPoint.svelte";
-  import { selectedStore } from "./stores";
+  import { selectedStore, relatedStore } from "./stores";
 
   export let data = [];
   export let store;
@@ -20,7 +20,8 @@
 
 <div class="room" class:active bind:this={room}>
   {#each data as dot}
-    <DataPoint data={dot} {store} {showLabels} />
+    {@const inactive = !$relatedStore.has(dot)}
+    <DataPoint data={dot} {inactive} {store} {showLabels} />
   {/each}
 </div>
 

@@ -3,6 +3,7 @@
   import ChildTable from "./ChildTable.svelte";
   import NodeTable from "./NodeTable.svelte";
   export let data;
+  export let showChildren = true;
   let sheet;
 </script>
 
@@ -11,7 +12,9 @@
   <br />
   <br />
   <br />
-  <ChildTable {data} {sheet} />
+  {#if showChildren}
+    <ChildTable {data} {sheet} />
+  {/if}
 </div>
 
 <style>
@@ -30,7 +33,6 @@
     margin-top: var(--sheet-top);
     margin-bottom: var(--sheet-bottom);
     padding: 1em;
-    transition: margin-top 0.3s ease; /* Smooth transition */
     z-index: 1; /* Ensures that sheets overlap */
     scrollbar-color: var(--highlight-color) var(--background-color);
   }
