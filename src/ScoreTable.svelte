@@ -1,12 +1,13 @@
 <script>
   import { styleBgColorAuto } from "./colors.js";
+  import { hoveredStore } from "./stores.js";
 
   export let data; // Object with country names as keys and scores as values
   export let countries; // Array of selected countries
   export let showCountries = false; // Whether to show country names
 </script>
 
-<div class="score-table">
+<div class="score-table" class:hovered={data.label === $hoveredStore}>
   {#each countries as country}
     {@const score = data.scores[country]?.toFixed(1)}
     {#if score !== undefined}
@@ -29,6 +30,10 @@
     justify-content: flex-end;
     align-items: center;
     text-align: center;
+  }
+
+  .score-table.hovered {
+    box-shadow: orange 0 0 1em;
   }
 
   .score-button {
