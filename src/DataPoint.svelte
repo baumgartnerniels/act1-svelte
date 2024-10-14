@@ -1,35 +1,34 @@
 <script>
-  import { hoveredStore, relatedStore } from "./stores.js";
-  import { colorScale, colorScaleBinary, styleBgColor } from "./colors.js";
+  import { hoveredStore, selectedNodeDimStore } from "./stores.js";
+  import { styleBgColorAuto } from "./colors.js";
 
   export let data = {};
-  export let store;
   export let showLabels = false;
-
-  let scale = data.level == "levels" ? colorScaleBinary : colorScale;
-
-  $: inactive = !$relatedStore.has(data);
+  export let country;
+  export let active = false;
 </script>
 
 <button
-  data-score={data.value}
+  data-score={data.scores[country]}
   data-id={data.id}
   data-key={data.key}
-  style={styleBgColor(data.value, scale)}
+  style={styleBgColorAuto(data, country)}
   on:click={() => {
-    store.toggleSelection(data);
+    selectedNodeDimStore.toggleSelection(data);
   }}
   on:mouseenter={() => {
+    if (data.level === "levels") return;
     hoveredStore.set(data.label);
   }}
   on:mouseleave={() => {
     hoveredStore.set("");
   }}
-  class:selected={$store.has(data)}
-  class:inactive
+  class:selected={$selectedNodeDimStore === data}
+  class:active
+  class:connected={$hoveredStore === data.label}
 >
   {#if showLabels}
-    <p>{data.label}</p>
+    <div>{data.label}</div>
   {/if}
 </button>
 
@@ -40,22 +39,22 @@
     width: 100%;
     height: 100%;
     color: var(--main-color);
-    font-size: 1.7vh;
-    text-align: center;
+    font-size: 1.2vh;
+    opacity: 0.2;
     /* border: 1px solid var(--main-color); */
   }
-  .inactive p {
+  /*   .inactive p {
     opacity: 1 !important;
-  }
+  } */
   button:hover {
     border: 1px solid var(--main-color);
   }
-  .inactive {
-    /* opacity: 0.68; */
-    opacity: 0.2;
-    /* transform: scale(100%); */
-    /* border: none; */
-    /* filter: grayscale(100%); */
+  .active {
+    opacity: 1;
   }
 
+  .connected {
+    transform: translate(-0.2em, -0.3em);
+    text-shadow: 2px 2px 7px rgba(161, 68, 68, 0.363);
+  }
 </style>

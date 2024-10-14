@@ -19,3 +19,9 @@ export function styleBgColor(val, scale = colorScale) {
   let color = scale(val);
   return "background-color: " + color + ";";
 }
+
+export function styleBgColorAuto(data, country) {
+  const scale = data.level !== "levels" ? colorScale : colorScaleBinary;
+  let color = scale(data.scores[country]);
+  return "background-color: " + color + ";";
+}

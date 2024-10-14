@@ -1,10 +1,10 @@
 <script>
   import { onMount } from "svelte";
-  import Level from "./Level.svelte";
   import Room from "./Room.svelte";
   import panzoom from "panzoom";
-  import { selectedStore, countryStore } from "./stores.js";
-  import { dataStructure as data } from "./dataStructure.js";
+  import CategoryLevel from "./CategoryLevel.svelte";
+  import EconomyLevel from "./EconomyLevel.svelte";
+  import { categories, countries } from "./stores.js";
 
   let tower;
   let zoom;
@@ -54,7 +54,6 @@
 
     return pz;
   }
-  let countries = ["ALB", "BIH", "KOS", "MNE", "MKD", "SRB"];
 
   onMount(() => {
     zoom = setupZoom(tower);
@@ -63,68 +62,32 @@
     };
   });
 </script>
+
 <div class="tower-container">
-<div class="tower" bind:this={tower}>
-  <Level
-    --z="60"
-    selectable={true}
-    label="Economies"
-    level="economies"
-  >
-    {#each countries as country}
-      <Room
-        data={[data.findNodeByKey(country)]}
-        store={countryStore}
-        showLabels={true}
-      />
+  <div class="tower" bind:this={tower}>
+    <EconomyLevel --z={60} />
+
+    {#each categories as category, i}
+      <CategoryLevel --z={50 - i * 10} level={category}>
+        {#each countries as country}
+          <Room level={category} {country} />
+        {/each}
+      </CategoryLevel>
     {/each}
-  </Level>
-  <Level --z="50" label="Dimensions" level="dimensions">
-    {#each countries as country}
-      <Room
-        data={data.findNodeByKey(country).findNodesBy("level", "dimensions")}
-        store={selectedStore}
-      />
-    {/each}
-  </Level>
-  <Level --z="40" label="Subdimensions" level="subdimensions">
-    {#each countries as country}
-      <Room
-        data={data.findNodeByKey(country).findNodesBy("level", "subdimensions")}
-        store={selectedStore}
-      />
-    {/each}
-  </Level>
-  <Level --z="30" label="Indicators" level="indicators">
-    {#each countries as country}
-      <Room
-        data={data.findNodeByKey(country).findNodesBy("level", "indicators")}
-        store={selectedStore}
-      />
-    {/each}
-  </Level>
-  <Level --z="20" label="Levels" level="levels">
-    {#each countries as country}
-      <Room
-        data={data.findNodeByKey(country).findNodesBy("level", "levels")}
-        store={selectedStore}
-      />
-    {/each}
-  </Level>
-</div>
+  </div>
 </div>
 
 <style>
   .tower-container {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
   }
   .tower {
-  height: 100%;
-  display: grid;
-  justify-items: center;
-  grid-template-columns: 1fr; 
-  grid-template-rows: repeat(5, 15vh);
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 15vh);
   }
 </style>

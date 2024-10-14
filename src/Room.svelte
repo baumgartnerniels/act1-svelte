@@ -1,26 +1,44 @@
 <script>
   import { onMount } from "svelte";
   import DataPoint from "./DataPoint.svelte";
-  import { selectedStore } from "./stores";
+  import {
+    selectedCountryStore,
+    relatedNodesDimStore,
+    selectedNodeDimStore,
+  } from "./stores";
+  import { dataStructureDim as dataStructDim } from "./dataStructureDim.js";
 
-  export let data = [];
-  export let store;
+  export let level = "";
+  export let country;
   export let showLabels = false;
-
-  let gridSize = Math.ceil(Math.sqrt(data.length));
-
   let room;
+  let data = [];
+  let gridSize;
 
-  $: active = data[0].level == Array.from($selectedStore)[0].level;
+  async function fetchData() {
+    data = dataStructDim.findNodesBy("level", level);
+    gridSize = Math.ceil(Math.sqrt(data.length));
+  }
 
-  onMount(() => {
+  onMount(async () => {
+    await fetchData();
     room.style = "--grid-size: " + gridSize;
   });
 </script>
 
-<div class="room" class:active bind:this={room}>
+<div
+  class="room"
+  class:active={$selectedNodeDimStore.level === level}
+  class:inactive={!$selectedCountryStore.has(country)}
+  bind:this={room}
+>
   {#each data as dot}
-    <DataPoint data={dot} {store} {showLabels} />
+    <DataPoint
+      active={$relatedNodesDimStore.has(dot)}
+      data={dot}
+      {country}
+      {showLabels}
+    />
   {/each}
 </div>
 
@@ -38,5 +56,9 @@
   }
   .room.active {
     border: 2px solid var(--highlight-color);
+  }
+
+  .room.inactive {
+    opacity: 0.2;
   }
 </style>

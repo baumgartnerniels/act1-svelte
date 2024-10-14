@@ -1,41 +1,44 @@
 <script>
   import Sheet from "./Sheet.svelte";
+  import { dataStructureDim as dataStructDim } from "./dataStructureDim.js";
 
-  import { selectedStore } from "./stores.js";
+  import { selectedNodeDimStore, selectedCountryStore } from "./stores.js";
 
-  $: data = [].concat(
-    Array.from($selectedStore)[0]
+  $: dataDim = [].concat(
+    $selectedNodeDimStore
       .getAncestors()
       .filter((n) => {
         //get the levels above up to dimension
         return [
-          "economies",
           "dimensions",
           "subdimensions",
           "indicators",
-        ].includes(n.level);
+        ].includes(n.level) || n.key === "Dimensions";
       })
       .reverse(),
-    Array.from($selectedStore)[0]
+    $selectedNodeDimStore
   );
 
+
   $: {
-    console.log(data);
+    console.log(dataDim);
   }
 </script>
 
 <div class="details">
-  {#each data as sheetData}
-    <Sheet data={sheetData} />
+  {#each dataDim as sheetData, i (sheetData.id)}
+    <Sheet data={sheetData} n={i} />
   {/each}
 </div>
+
 
 <style>
   .details {
     position: relative;
-    /* padding: 1em; */
     box-sizing: border-box;
-    margin: 4em;
+    padding: 4em;
     text-align: left;
+    height: 100%;
+    width: 100%;
   }
 </style>

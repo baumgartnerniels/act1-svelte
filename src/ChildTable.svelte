@@ -1,68 +1,67 @@
 <script>
-  import { selectedStore, countryStore } from "./stores.js";
-  import { colorScale, colorScaleBinary, styleBgColor } from "./colors.js";
-  export let data = {};
-  export let sheet;
-  function getDataNode(country, node) {
-    if (node.level == "economies") {
-      return node;
-    }
-    return country.findNodeByKey(node.key);
-  }
+  import { selectedNodeDimStore } from "./stores.js";
+  import ScoreTable from "./ScoreTable.svelte";
+  import DataPoint from "./DataPoint.svelte";
+
+  export let children;
+  export let countries;
 </script>
 
-<h3 class="title">{data.children.length ? data.children[0]?.level : ""}</h3>
-<div class="table" style={`--num-countries: ${$countryStore.size};`}>
-  {#each data.children as row}
-    <div class="row">
-      <button
-        class="label"
-        on:click={() => {
-          selectedStore.toggleSelection(row);
-          sheet.scrollTop = 0;
-        }}>{row.label}</button
-      >
-      {#each $countryStore as country}
-        {@const node = getDataNode(country, row)}
-        {@const scale = row.level == "levels" ? colorScaleBinary : colorScale}
-        <button style={styleBgColor(node.value, scale)}>
-          {node.value.toFixed(1)}
-        </button>
-      {/each}
-    </div>
-  {/each}
+<div class="child-table">
+  <div class="child-table-title">
+    {#if children.length}
+      <div>{children[0].level}</div>
+      <p>Economy Score 2024</p>
+    {/if}
+  </div>
+  <div class="sheet-table">
+    {#each children as child}
+      <div class="child-table-entries">
+        <DataPoint
+          data={child}
+          showLabels={true}
+          country={countries[0]}
+          active={$selectedNodeDimStore === child}
+        />
+        <ScoreTable data={child} {countries} />
+      </div>
+    {/each}
+  </div>
 </div>
 
 <style>
-  .table {
-    display: grid;
-    grid-auto-rows: 1fr;
+  .child-table {
+    padding: 1em;
   }
 
-  .title {
-    text-transform: capitalize;
+  .child-table-title {
+    font-size: 1.2em;
     font-weight: bold;
+    text-transform: capitalize;
+    margin: 1em auto;
   }
 
-  .row {
-    display: grid;
-    grid-template-columns: 1fr repeat(var(--num-countries), 3em);
-    justify-content: center;
-    align-items: center;
+  .child-table-title p {
+    font-size: 0.8em;
+    font-weight: normal;
+    margin: 0;
   }
-  .row button.label {
-    width: auto;
-    height: auto;
-    text-align: left;
-    justify-content: left;
-  }
-  .row button {
+
+  .sheet-table {
     display: flex;
+    height: 70%;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .child-table-entries {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    width: 2.5em;
-    height: 2.5em;
-    margin: 0.25em;
-    text-align: center;
+  }
+
+  button:hover {
+    text-shadow: 0 0 1px black;
   }
 </style>

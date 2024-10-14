@@ -1,14 +1,15 @@
-import tree from "../data/app_data_structure.json";
+import tree from "../data/app_data_categories.json";
 
-class TreeNode {
+export class TreeNode {
   constructor(key) {
-    this.key = key;
-    this.children = [];
-    this.parent = undefined;
-    this.id = undefined;
-    this.value = 0;
-    this.label = "";
-    this.level = "";
+      // Regular constructor
+      this.key = key;
+      this.children = [];
+      this.parent = undefined;
+      this.id = undefined;
+      this.scores = {};
+      this.label = "";
+      this.level = "";
   }
 
   // Method to add a child to the current node
@@ -161,30 +162,12 @@ class TreeNode {
     return relatedNodes;
   }
 
-  getCountryKey() {
-    const ranges = [
-      { max: 3468, code: "ALB" },
-      { max: 5202, code: "BIH" },
-      { max: 6936, code: "KOS" },
-      { max: 8670, code: "MNE" },
-      { max: 10404, code: "MKD" },
-      { max: 12137, code: "SRB" }
-    ];
-  
-    const id = this.id;
-  
-    // Find the first range where id is less than or equal to max
-    const match = ranges.find(range => id < range.max);
-  
-    // Return the matching country code, or empty string if no match
-    return match ? match.code : "";
-  }
 
   exportToJSON() {
     // Recursively build a JSON-friendly structure for this node
     const nodeObject = {
       key: this.key,
-      value: this.value,
+      scores: this.scores,
       label: this.label,
       id: this.id,
       level: this.level,
@@ -204,7 +187,7 @@ class TreeNode {
       }
     }
     node.id = jsonObject.id;
-    node.value = jsonObject.value;
+    node.scores = jsonObject.scores;
     node.label = jsonObject.label;
     node.level = jsonObject.level;
 
@@ -212,4 +195,4 @@ class TreeNode {
   }
 }
 
-export let dataStructure = TreeNode.importFromJSON(tree);
+export let dataStructureDim = TreeNode.importFromJSON(tree);
