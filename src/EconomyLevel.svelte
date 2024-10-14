@@ -3,6 +3,7 @@
     selectedCountryStore,
     selectedNodeDimStore,
     countries,
+    countryLabels,
   } from "./stores.js";
   import { styleBgColorAuto } from "./colors.js";
   let hovered = false;
@@ -25,7 +26,7 @@
             selectedCountryStore.toggleSelection(country);
           }}
         >
-          {country}
+          {countryLabels[country]}
         </button>
       </div>
     {/each}

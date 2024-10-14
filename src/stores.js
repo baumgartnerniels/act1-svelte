@@ -2,6 +2,7 @@ import { readable, writable, derived } from "svelte/store";
 import { dataStructureDim as dataStructDim} from "./dataStructureDim.js";
 
 export let countries = ["ALB", "BIH", "KOS", "MNE", "MKD", "SRB"];
+export let countryLabels = {"ALB": "Albania", "BIH": "Bosnia and Herzegovina", "KOS": "Kosovo", "MNE": "Montenegro", "MKD": "North Macedonia", "SRB": "Serbia"};
 export let categories = ["dimensions", "subdimensions", "indicators", "levels"];
 
 ////////////////////////////
