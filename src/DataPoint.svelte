@@ -41,6 +41,7 @@
     color: var(--main-color);
     font-size: 1.2vh;
     opacity: 0.2;
+    /* flex-basis: 60%; */
     /* border: 1px solid var(--main-color); */
   }
   /*   .inactive p {
