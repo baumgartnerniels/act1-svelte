@@ -2,10 +2,10 @@
   import { selectedNodeDimStore } from "./stores.js";
   import ScoreTable from "./ScoreTable.svelte";
   import DataPoint from "./DataPoint.svelte";
+  import { styleBgColorAuto } from "./colors.js";
 
   export let children;
   export let countries;
-  let showScores = false;
 </script>
 
 <div class="child-table">
@@ -16,20 +16,15 @@
     {/if}
   </div>
   <div class="sheet-table">
-    <button on:click={() => (showScores = !showScores)} class="show-button"
-      >show scores</button
-    >
     {#each children as child}
       <div class="child-table-entries">
-        <DataPoint
-          data={child}
-          showLabels={true}
-          country={countries[0]}
-          active={$selectedNodeDimStore === child}
-        />
-        {#if showScores}
+        <button 
+        on:click={() => {
+          selectedNodeDimStore.toggleSelection(child);
+        }}>
+          {child.label}
+        </button>
           <ScoreTable data={child} {countries} />
-        {/if}
       </div>
     {/each}
   </div>
@@ -70,14 +65,5 @@
 
   button:hover {
     text-shadow: 0 0 1px black;
-  }
-
-  .show-button {
-    background-color: rgb(194, 194, 202);
-    border-radius: 0.5em;
-    font-size: small;
-    padding: 0.5em;
-    margin: 0.5em;
-    align-self: flex-end;
   }
 </style>
