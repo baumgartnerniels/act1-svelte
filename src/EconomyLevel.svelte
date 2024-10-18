@@ -40,7 +40,7 @@
           class="country-button"
           style={styleBgColorAuto($selectedNodeDimStore, country)}
           on:click={() => {
-            selectedCountryStore.toggleSelection(country);
+            selectedNodeDimStore.clearSelection();
           }}
         >
           {countryLabels[country]}
