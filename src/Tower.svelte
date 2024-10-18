@@ -4,7 +4,7 @@
   import panzoom from "panzoom";
   import CategoryLevel from "./CategoryLevel.svelte";
   import EconomyLevel from "./EconomyLevel.svelte";
-  import { categories, countries } from "./stores.js";
+  import { categories, countries, selectedCountryStore } from "./stores.js";
 
   let tower;
   let zoom;
@@ -69,7 +69,7 @@
 
     {#each categories as category, i}
       <CategoryLevel --z={50 - i * 10} level={category}>
-        {#each countries as country}
+        {#each Array.from($selectedCountryStore).reverse() as country}
           <Room level={category} {country} />
         {/each}
       </CategoryLevel>
