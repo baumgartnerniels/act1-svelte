@@ -1,22 +1,24 @@
 <script>
   import NodeTable from "./NodeTable.svelte";
   import ChildTable from "./ChildTable.svelte";
-  import { selectedCountryStore } from "./stores.js";
+  import { selectedCountryStore, selectedNodeDimStore } from "./stores.js";
 
   export let data;
   export let n;
   let sheet;
 </script>
 
-<div class="sheet" bind:this={sheet} style="--n: {n};">
+<div class="sheet" bind:this={sheet}>
   <NodeTable {data} countries={$selectedCountryStore} />
-  <ChildTable children={data.children} countries={$selectedCountryStore} />
+  {#if data.level == $selectedNodeDimStore.level}
+    <ChildTable children={data.children} countries={$selectedCountryStore} />
+  {/if}
 </div>
 
 <style>
   :root {
     --sheetGap: 7em;
-    --sheetOffset: 1em;
+    --sheetOffset: 0;
     --sheetPadding: 5em;
     --sheetHeightDiff: 5%;
   }
@@ -25,19 +27,9 @@
     overflow: hidden;
     border: 1px solid var(--main-color);
     background-color: var(--background-color);
-    position: absolute; /* Allow sheets to overlap */
-    margin: 1em;
-    width: 70%;
-    height: calc(75% - var(--n) * var(--sheetHeightDiff));
-    transition: margin-top 0.3s ease;
-    z-index: calc(1 + var(--n));
-    top: calc(var(--sheetGap) * var(--n) + var(--sheetPadding));
-    right: calc(var(--sheetOffset) * var(--n) + var(--sheetPadding));
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
     scrollbar-color: var(--highlight-color) var(--background-color);
-  }
-
-  .sheet:last-child {
-    border: 1px solid var(--highlight-color);
-    overflow: auto;
   }
 </style>

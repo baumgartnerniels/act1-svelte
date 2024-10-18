@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Inter";
   src: url("./assets/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
-  font-style: normal; 
+  font-style: normal;
   font-weight: 100 900;
 }
 
@@ -88,15 +88,6 @@ button:focus {
   opacity: 0.4;
 }
 
-.sheet * {
-  opacity: 68%;
-}
-
-.sheet:last-child * {
-  opacity: 100%;
-}
-
-
 /* ------LEVEL COMPONENT CSS------ */
 
 .level-container {
@@ -138,7 +129,6 @@ button:focus {
 .level-button.selectable {
   cursor: pointer;
 }
-
 
 .level-button:focus {
   outline: none;

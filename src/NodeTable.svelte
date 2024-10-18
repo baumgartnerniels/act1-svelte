@@ -30,15 +30,6 @@
     padding: 1em;
   }
 
-  .node-table.selectedTable {
-    background: linear-gradient(
-      to right,
-      rgb(199, 199, 199),
-      transparent,
-      transparent
-    );
-  }
-
   .node-table-title {
     font-size: 1.5em;
     font-weight: bold;

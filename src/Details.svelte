@@ -9,16 +9,14 @@
       .getAncestors()
       .filter((n) => {
         //get the levels above up to dimension
-        return [
-          "dimensions",
-          "subdimensions",
-          "indicators",
-        ].includes(n.level) || n.key === "Dimensions";
+        return (
+          ["dimensions", "subdimensions", "indicators"].includes(n.level) ||
+          n.key === "Dimensions"
+        );
       })
       .reverse(),
     $selectedNodeDimStore
   );
-
 
   $: {
     console.log(dataDim);
@@ -31,12 +29,10 @@
   {/each}
 </div>
 
-
 <style>
   .details {
     position: relative;
     box-sizing: border-box;
-    padding: 4em;
     text-align: left;
     height: 100%;
     width: 100%;
