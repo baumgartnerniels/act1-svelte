@@ -13,15 +13,26 @@
   export let showLabels = false;
   let room;
   let data = [];
+  let filtered = [];
   let gridSize;
 
-  async function fetchData() {
+  function uniq(a) {
+    return Array.from(new Set(a));
+  }
+
+  function fetchData() {
     data = dataStructDim.findNodesBy("level", level);
     gridSize = Math.ceil(Math.sqrt(data.length));
   }
 
-  onMount(async () => {
-    await fetchData();
+  $: {
+    filtered = data.filter((d) => $relatedNodesDimStore.has(d));
+    gridSize = Math.ceil(Math.sqrt(filtered.length));
+    if (room) room.style = "--grid-size: " + gridSize;
+  }
+
+  onMount(() => {
+    fetchData();
     room.style = "--grid-size: " + gridSize;
   });
 </script>
@@ -32,13 +43,8 @@
   class:inactive={!$selectedCountryStore.has(country)}
   bind:this={room}
 >
-  {#each data as dot}
-    <DataPoint
-      active={$relatedNodesDimStore.has(dot)}
-      data={dot}
-      {country}
-      {showLabels}
-    />
+  {#each filtered as dot}
+    <DataPoint active={true} data={dot} {country} {showLabels} />
   {/each}
 </div>
 

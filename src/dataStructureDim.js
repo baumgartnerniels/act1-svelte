@@ -2,14 +2,14 @@ import tree from "../data/app_data_categories.json";
 
 export class TreeNode {
   constructor(key) {
-      // Regular constructor
-      this.key = key;
-      this.children = [];
-      this.parent = undefined;
-      this.id = undefined;
-      this.scores = {};
-      this.label = "";
-      this.level = "";
+    // Regular constructor
+    this.key = key;
+    this.children = [];
+    this.parent = undefined;
+    this.id = undefined;
+    this.scores = {};
+    this.label = "";
+    this.level = "";
   }
 
   // Method to add a child to the current node
@@ -142,6 +142,17 @@ export class TreeNode {
     return ancestors;
   }
 
+  getAncestorsWithSiblings() {
+    const ancestors = [];
+    let currentNode = this.parent;
+    while (currentNode) {
+      ancestors.push(currentNode); // Add parent to the ancestors list
+      ancestors.push(...currentNode.children);
+      currentNode = currentNode.parent; // Move up the tree
+    }
+    return Array.from(new Set(ancestors));
+  }
+
   // Recursive method to get all descendants of the current node
   getDescendants() {
     const descendants = [];
@@ -155,13 +166,12 @@ export class TreeNode {
   // Method to get all related nodes (ancestors + descendants + self)
   getRelatedNodes() {
     const relatedNodes = [
-      ...this.getAncestors(),
+      ...this.getAncestorsWithSiblings(),
       this,
       ...this.getDescendants(),
     ];
     return relatedNodes;
   }
-
 
   exportToJSON() {
     // Recursively build a JSON-friendly structure for this node

@@ -1,8 +1,15 @@
 import { readable, writable, derived } from "svelte/store";
-import { dataStructureDim as dataStructDim} from "./dataStructureDim.js";
+import { dataStructureDim as dataStructDim } from "./dataStructureDim.js";
 
 export let countries = ["ALB", "BIH", "KOS", "MNE", "MKD", "SRB"];
-export let countryLabels = {"ALB": "Albania", "BIH": "Bosnia and Herzegovina", "KOS": "Kosovo", "MNE": "Montenegro", "MKD": "North Macedonia", "SRB": "Serbia"};
+export let countryLabels = {
+  ALB: "Albania",
+  BIH: "Bosnia and Herzegovina",
+  KOS: "Kosovo",
+  MNE: "Montenegro",
+  MKD: "North Macedonia",
+  SRB: "Serbia",
+};
 export let categories = ["dimensions", "subdimensions", "indicators", "levels"];
 
 ////////////////////////////
@@ -10,9 +17,7 @@ export let categories = ["dimensions", "subdimensions", "indicators", "levels"];
 //////////////////////////
 
 function createSelectedCountryStore() {
-  const init = new Set(
-    countries
-  );
+  const init = new Set(countries);
   const { subscribe, set, update } = writable(new Set(init));
 
   return {
@@ -44,7 +49,6 @@ function createSelectedCountryStore() {
   };
 }
 
-
 function createSelectedNodeDimStore() {
   const { subscribe, set, update } = writable(dataStructDim);
 
@@ -53,7 +57,7 @@ function createSelectedNodeDimStore() {
 
     toggleSelection: (node, toggleParent = true) =>
       update((selected) => {
-        if (selected === node && toggleParent ) {
+        if (selected === node && toggleParent) {
           return node.parent ? node.parent : node;
         } else {
           return node; // Return new set to trigger reactivity
@@ -82,14 +86,13 @@ export const mousePosition = readable({ x: 0, y: 0 }, function start(set) {
   };
 });
 
-
 export const hoveredStore = writable("");
 export const selectedCountryStore = createSelectedCountryStore();
 export const selectedNodeDimStore = createSelectedNodeDimStore();
 
-
-export const relatedNodesDimStore = derived(selectedNodeDimStore, ($selectedNodeDimStore) => {
-  let family = [];
-  family.push(...$selectedNodeDimStore.getRelatedNodes());
-  return new Set(family);
-});
+export const relatedNodesDimStore = derived(
+  selectedNodeDimStore,
+  ($selectedNodeDimStore) => {
+    return new Set($selectedNodeDimStore.getRelatedNodes());
+  }
+);
