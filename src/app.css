@@ -7,9 +7,9 @@
 }
 
 :root {
-  --background-color: #000000;
-  --main-color: #003e9d;
-  --highlight-color: #f2a039;
+  --background-color: #161616;
+  --main-color: #ffffff;
+  --highlight-color: #ffffff;
   --room-size: 12vh;
   --rotation: 30deg;
 
