@@ -41,6 +41,6 @@
     height: 2.7em;
     margin: 0.2em;
     text-align: center;
-    color: white;
+    color: rgb(22, 22, 22);
   }
 </style>
