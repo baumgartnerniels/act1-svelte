@@ -7,10 +7,10 @@
   export let showCountries = false; // Whether to show country names
 </script>
 
-<div class="score-table" class:hovered={data.label === $hoveredStore}>
+<div class="score-table">
   {#each countries as country}
     {@const score = data.scores[country]?.toFixed(1)}
-    {#if score !== undefined}
+    {#if score}
       <div>
         {#if showCountries}
           <div>{country}</div>
@@ -30,10 +30,6 @@
     justify-content: flex-end;
     align-items: center;
     text-align: center;
-  }
-
-  .score-table.hovered {
-    box-shadow: orange 0 0 1em;
   }
 
   .score-button {

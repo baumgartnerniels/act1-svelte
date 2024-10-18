@@ -1,6 +1,5 @@
 <script>
   import { selectedNodeDimStore } from "./stores.js";
-  import { colorScale, colorScaleBinary, styleBgColorAuto } from "./colors.js";
   import ScoreTable from "./ScoreTable.svelte";
 
   export let data;
@@ -13,13 +12,13 @@
 >
   <button on:click={() => selectedNodeDimStore.toggleSelection(data, false)}>
     {#if data.level !== "root"}
-      <div class="node-table-title">{data.level}</div>
-      <div>{data.label}</div>
+      <h1>{data.label}</h1>
+      <p class="node-table-title">{data.level}</p>
     {:else}
-      <h2 class="node-table-title">Economies</h2>
+      <h1 class="node-table-title">Economies</h1>
     {/if}
   </button>
-  <ScoreTable {data} {countries} showCountries={true} />
+  <ScoreTable {data} {countries} showCountries={false} />
 </div>
 
 <style>
@@ -27,17 +26,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1em;
+    padding: 0 1em 0 1em;
+    border-left: 1px solid var(--main-color);
   }
 
-  .node-table-title {
-    font-size: 1.5em;
-    font-weight: bold;
+  button h1 {
+    margin: 0;
+  }
+  button p {
     text-transform: capitalize;
-  }
-
-  .node-table-title h2 {
-    font-size: 1.5em;
-    font-weight: bold;
+    margin: 0;
   }
 </style>

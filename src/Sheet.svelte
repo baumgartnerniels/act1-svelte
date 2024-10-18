@@ -25,8 +25,8 @@
 
   .sheet {
     overflow: hidden;
-    border: 1px solid var(--main-color);
     background-color: var(--background-color);
+    border-bottom: 1px solid var(--main-color);
     position: relative;
     box-sizing: border-box;
     width: 100%;

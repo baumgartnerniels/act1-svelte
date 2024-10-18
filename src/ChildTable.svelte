@@ -1,7 +1,6 @@
 <script>
   import { selectedNodeDimStore } from "./stores.js";
   import ScoreTable from "./ScoreTable.svelte";
-  import DataPoint from "./DataPoint.svelte";
   import { styleBgColorAuto } from "./colors.js";
 
   export let children;
@@ -11,20 +10,21 @@
 <div class="child-table">
   <div class="child-table-title">
     {#if children.length}
-      <div>{children[0].level}</div>
+      <h1>{children[0].level}</h1>
       <p>Economy Score 2024</p>
     {/if}
   </div>
   <div class="sheet-table">
     {#each children as child}
       <div class="child-table-entries">
-        <button 
-        on:click={() => {
-          selectedNodeDimStore.toggleSelection(child);
-        }}>
+        <button
+          on:click={() => {
+            selectedNodeDimStore.toggleSelection(child);
+          }}
+        >
           {child.label}
         </button>
-          <ScoreTable data={child} {countries} />
+        <ScoreTable data={child} {countries} />
       </div>
     {/each}
   </div>
@@ -33,19 +33,8 @@
 <style>
   .child-table {
     padding: 1em;
-  }
-
-  .child-table-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    text-transform: capitalize;
-    margin: 1em auto;
-  }
-
-  .child-table-title p {
-    font-size: 0.8em;
-    font-weight: normal;
-    margin: 0;
+    border-left: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
   }
 
   .sheet-table {
@@ -53,6 +42,7 @@
     height: 70%;
     width: 100%;
     flex-direction: column;
+    overflow: scroll;
   }
 
   .child-table-entries {
@@ -65,5 +55,14 @@
 
   button:hover {
     text-shadow: 0 0 1px black;
+  }
+
+  h1 {
+    margin: 0;
+    text-transform: capitalize;
+  }
+  p {
+    text-transform: capitalize;
+    margin: 0;
   }
 </style>
