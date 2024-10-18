@@ -2,6 +2,7 @@
   import Tower from "./Tower.svelte";
   import Hover from "./Hover.svelte";
   import Details from "./Details.svelte";
+  import CountryList from "./CountryList.svelte";
   import ColorLegend from "./ColorLegend.svelte";
 </script>
 
@@ -9,6 +10,7 @@
   <Hover />
   <div class="tower">
     <h1>Western Balkans<br />Competitiveness Data Hub</h1>
+    <CountryList />
     <Tower />
     <ColorLegend />
   </div>
