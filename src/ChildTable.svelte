@@ -34,15 +34,12 @@
   .child-table {
     padding: 1em;
     border-left: 1px solid var(--main-color);
-    border-bottom: 1px solid var(--main-color);
   }
 
   .sheet-table {
     display: flex;
-    height: 70%;
     width: 100%;
     flex-direction: column;
-    overflow: scroll;
   }
 
   .child-table-entries {

@@ -28,6 +28,7 @@
     justify-content: space-between;
     padding: 0 1em 0 1em;
     border-left: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
   }
 
   button h1 {

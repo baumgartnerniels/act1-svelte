@@ -43,6 +43,8 @@
     color: var(--background-color);
     width: 100%;
     height: 1em;
+    display: flex;
+    align-content: center;
   }
   .logo {
     height: 1em;

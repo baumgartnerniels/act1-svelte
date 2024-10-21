@@ -16,7 +16,7 @@
   .hoverLabel {
     z-index: 1000;
     position: absolute;
-    background-color: #7f9cc7;
+    background-color: var(--main-color);
     max-width: 200px;
   }
   p {
@@ -27,6 +27,6 @@
     text-align: left;
     user-select: none;
     width: fit-content;
-    color: #fefaf1;
+    color: var(--background-color);
   }
 </style>
