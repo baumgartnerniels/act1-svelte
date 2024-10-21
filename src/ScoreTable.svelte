@@ -31,9 +31,6 @@
     justify-content: flex-end;
     align-items: stretch;
     text-align: center;
-    width: 100%;
-    flex-basis: 50%;
-
   }
 
   .score-button {

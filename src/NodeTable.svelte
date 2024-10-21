@@ -56,6 +56,7 @@
     border-left: 1px solid var(--main-color);
     border-bottom: 1px solid var(--main-color);
     align-items: center;
+    height: fit-content;
   }
 
   .scores {

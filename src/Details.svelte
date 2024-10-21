@@ -1,5 +1,6 @@
 <script>
-  import Sheet from "./Sheet.svelte";
+  import NodeTable from "./NodeTable.svelte";
+  import ChildTable from "./ChildTable.svelte";
   import { dataStructureDim as dataStructDim } from "./dataStructureDim.js";
 
   import { selectedNodeDimStore, selectedCountryStore } from "./stores.js";
@@ -24,16 +25,20 @@
 </script>
 
 <div class="details">
-  {#each dataDim as sheetData, i (sheetData.id)}
-    <Sheet data={sheetData} n={i} />
+  <div>
+    {#each dataDim as sheetData, i (sheetData.id)}
+  <NodeTable data={sheetData} countries={$selectedCountryStore} />
   {/each}
+  </div>
+  <ChildTable children={dataDim[dataDim.length -1].children} countries={$selectedCountryStore} />
 </div>
 
 <style>
   .details {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content auto;
     box-sizing: border-box;
     text-align: left;
     height: 100%;

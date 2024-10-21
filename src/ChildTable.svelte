@@ -32,18 +32,25 @@
 
 <style>
   .child-table {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5em 2em 1.5em 2em;
+    box-sizing: border-box;
     border-left: 1px solid var(--main-color);
+    overflow: hidden;
     height: 100%;
-    overflow: scroll;
+    display: grid;
+    padding: 1.5em 2em 1.5em 2em;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content auto;
+    gap: 2%;
   }
 
   .sheet-table {
     display: flex;
     width: 100%;
     flex-direction: column;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    gap: 2%;
   }
 
   .child-table-entries {
@@ -51,6 +58,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    gap: 5%;
   }
 
   button:hover {
