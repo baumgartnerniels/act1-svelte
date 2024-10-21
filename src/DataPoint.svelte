@@ -50,6 +50,10 @@
   button:hover {
     border: 1px solid var(--main-color);
   }
+
+  button:focus {
+  outline: 1px solid var(--main-color);
+}
   .active {
     opacity: 1;
   }

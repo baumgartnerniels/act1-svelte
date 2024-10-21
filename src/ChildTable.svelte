@@ -1,31 +1,44 @@
 <script>
-  import { selectedNodeDimStore } from "./stores.js";
+  import { selectedNodeDimStore, hoveredStore } from "./stores.js";
   import ScoreTable from "./ScoreTable.svelte";
   import { levelColors, styleBgColorAuto } from "./colors.js";
 
   export let children;
   export let countries;
   export let n;
+
+  let levelColor;
+  $: levelColor = levelColors[n];
+
 </script>
 
 <div class="child-table" style="--n: {n}">
-  <div class="child-table-title" style="color: {levelColors[n]}">
+  <div class="child-table-title" style="color: {levelColor}">
     {#if children.length}
       <h1>{children[0].level} Scoring</h1>
     {/if}
   </div>
   <div class="sheet-table">
     {#each children as child}
-      <div class="child-table-entries">
-        <button
-          on:click={() => {
-            selectedNodeDimStore.toggleSelection(child);
-          }}
-        >
+      <button
+        class="child-table-entries"
+        style="--levelColor: {levelColor}22"
+        on:click={() => {
+          selectedNodeDimStore.toggleSelection(child);
+        }}
+        on:mouseenter={() => {
+          if (child.level === "levels") return;
+          hoveredStore.set(child.label);
+        }}
+        on:mouseleave={() => {
+          hoveredStore.set("");
+        }}
+      >
+        <div>
           {child.label}
-        </button>
+        </div>
         <ScoreTable data={child} {countries} />
-      </div>
+      </button>
     {/each}
   </div>
 </div>
@@ -61,9 +74,9 @@
     gap: 5%;
   }
 
-  .child-table-entries button {
+  .child-table-entries div {
     margin-bottom: 1%;
-    margin-top: 1%;
+    margin: 1%;
   }
 
   .child-table-title {
@@ -71,16 +84,14 @@
     margin-bottom: 2%;
   }
 
-  button:hover {
-    text-shadow: 0 0 1px black;
+  .child-table-entries:hover {
+    background-color: var(--levelColor);
+    transform: translate(0, -2px);
   }
 
   h1 {
     margin: 0;
     text-transform: capitalize;
   }
-  p {
-    text-transform: capitalize;
-    margin: 0;
-  }
+
 </style>

@@ -18,10 +18,6 @@
       .reverse(),
     $selectedNodeDimStore
   );
-
-  $: {
-    console.log(dataDim);
-  }
 </script>
 
 <div class="details">

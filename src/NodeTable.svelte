@@ -25,11 +25,12 @@
 
 </script>
 
-<div
+<button
   class="node-table"
   class:selectedTable={$selectedNodeDimStore.level === data.level}
+  on:click={() => selectedNodeDimStore.toggleSelection(data, false)}
 >
-  <button on:click={() => selectedNodeDimStore.toggleSelection(data, false)} style="--n: {n}">
+  <button class="node-table-text" style="--n: {n}">
     {#if data.level !== "root"}
       <h1 style="color: {levelColors[n - 1]}">{getDataNumber(data)} {data.label}</h1>
     {:else}
@@ -46,7 +47,7 @@
   </div>
   {/if}
   
-</div>
+</button>
 
 <style>
   .node-table {
@@ -56,6 +57,7 @@
     border-bottom: 1px solid var(--main-color);
     align-items: center;
     height: fit-content;
+    width: 100%;
   }
 
   .node-table.selectedTable{
@@ -70,16 +72,13 @@
     padding-right: 3em;
   }
 
-  button {
+  .node-table-text {
     padding: 1.5em 2em 1.5em calc(2em + (var(--n) * 0.5em));
 
   }
 
-  button h1 {
+  .node-table-text h1 {
     margin: 0;
   }
-  button p {
-    text-transform: capitalize;
-    margin: 0;
-  }
+
 </style>

@@ -76,9 +76,6 @@ button {
   outline: none;
 }
 
-button:focus {
-  outline: 1px solid var(--main-color);
-}
 
 .selected {
   outline: 1px solid var(--highlight-color);
