@@ -58,9 +58,10 @@
     selectedNodeDimStore.set(node);
   }
   function addSlide() {
-    slides.splice(currentSlide - 1, 0, slide);
+    slides.splice(currentSlide, 0, slide);
     slides = slides;
     currentSlide++;
+    saveSlides();
   }
   function saveSlides() {
     slides[currentSlide - 1] = slide;
