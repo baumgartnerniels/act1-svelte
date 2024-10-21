@@ -131,10 +131,14 @@
   }
 
   .level.active.hovered {
-    outline: 2px solid var(--highlight-color);
+    outline: 1px solid var(--highlight-color);
   }
   .level.hovered {
-    outline: 2px solid var(--main-color);
+    outline: 1px solid var(--main-color);
+  }
+
+  .level.active {
+    outline: 1px solid var(--main-color);
   }
 
   .level-button {

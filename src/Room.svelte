@@ -47,7 +47,7 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border: 2px solid var(--main-color);
+    border: 1px solid var(--main-color);
     display: grid;
     grid-template-columns: repeat(var(--grid-size), 1fr);
     grid-template-rows: repeat(var(--grid-size), 1fr);
@@ -55,7 +55,7 @@
     align-items: center;
   }
   .room.active {
-    border: 2px solid var(--highlight-color);
+    border: 1px solid var(--highlight-color);
   }
 
   .room.inactive {

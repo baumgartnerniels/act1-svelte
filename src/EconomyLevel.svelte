@@ -159,10 +159,10 @@
   }
 
   .level.active.hovered {
-    outline: 2px solid var(--highlight-color);
+    outline: 1px solid var(--highlight-color);
   }
   .level.hovered {
-    outline: 2px solid var(--main-color);
+    outline: 1px solid var(--main-color);
   }
 
   .level-button {
@@ -199,10 +199,10 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border: 2px solid var(--main-color);
+    border: 1px solid var(--main-color);
   }
   .room.active {
-    border: 2px solid var(--highlight-color);
+    border: 1px solid var(--highlight-color);
   }
 
   .room:hover {
