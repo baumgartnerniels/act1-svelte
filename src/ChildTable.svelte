@@ -36,7 +36,7 @@
     overflow: hidden;
     height: 100%;
     display: grid;
-    padding: 1.5em 2em 1.5em calc(2em + (var(--n) * 0.5em));
+    padding: 1.5em 2em 1.5em calc(2.5em + (var(--n) * 0.5em));
     grid-template-columns: 1fr;
     grid-template-rows: max-content auto;
     gap: 2%;
@@ -50,7 +50,6 @@
     height: 100%;
     overflow: scroll;
     overflow-x: hidden;
-    gap: 2%;
   }
 
   .child-table-entries {
@@ -62,8 +61,14 @@
     gap: 5%;
   }
 
+  .child-table-entries button {
+    margin-bottom: 1%;
+    margin-top: 1%;
+  }
+
   .child-table-title {
     font-size: 90%;
+    margin-bottom: 2%;
   }
 
   button:hover {
