@@ -25,12 +25,12 @@
 </script>
 
 <div class="details">
-  <div>
+  <div class="node-tables">
     {#each dataDim as sheetData, i (sheetData.id)}
-  <NodeTable data={sheetData} countries={$selectedCountryStore} />
+  <NodeTable data={sheetData} countries={$selectedCountryStore} n={sheetData.getDepth()}/>
   {/each}
   </div>
-  <ChildTable children={dataDim[dataDim.length -1].children} countries={$selectedCountryStore} />
+  <ChildTable children={dataDim[dataDim.length -1].children} countries={$selectedCountryStore} n={dataDim[dataDim.length -1].getDepth()} />
 </div>
 
 <style>

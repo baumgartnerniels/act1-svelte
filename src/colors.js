@@ -2,6 +2,7 @@ import { scaleLinear, interpolateRgb } from "d3";
 
 export let mainColor = "#003e9d";
 export let highlightColor = "#f2a039";
+export let levelColors = ["#58C6F9", "#EA3ACA", "#F7D548", "#75FA4C"];
 
 export const colorScale = scaleLinear()
   .domain([0, 5])

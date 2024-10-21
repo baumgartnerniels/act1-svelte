@@ -1,6 +1,7 @@
 <script>
   import { selectedNodeDimStore, selectedCountryStore } from "./stores.js";
   export let level = "";
+  export let levelColor;
 
   $: nCountries = $selectedCountryStore.size;
   $: rooms1 = nCountries == 1;
@@ -28,7 +29,7 @@
     class="level-button"
     class:active={$selectedNodeDimStore.level === level}
   >
-    <p class="level-label">{level}</p>
+    <p class="level-label" style="--levelColor: {levelColor}">{level}</p>
   </button>
 </div>
 
@@ -151,10 +152,10 @@
   }
 
   .level-button.active .level-label {
-    color: var(--highlight-color);
+    color: var(--levelColor);
   }
   .level-label {
-    color: var(--main-color);
+    color: var(--levelColor);
     text-transform: capitalize;
     position: absolute;
     transform-origin: top left;

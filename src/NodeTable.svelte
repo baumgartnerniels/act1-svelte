@@ -2,9 +2,11 @@
   import { selectedNodeDimStore, detailsTitles } from "./stores.js";
   import ScoreTable from "./ScoreTable.svelte";
   import { dataStructureDim } from "./dataStructureDim.js";
+  import { levelColors } from "./colors.js";
 
   export let data;
   export let countries;
+  export let n;
 
   function getCategoryNumber(data){
     return data.parent.children.indexOf(data) + 1;
@@ -27,13 +29,11 @@
   class="node-table"
   class:selectedTable={$selectedNodeDimStore.level === data.level}
 >
-  <button on:click={() => selectedNodeDimStore.toggleSelection(data, false)}>
+  <button on:click={() => selectedNodeDimStore.toggleSelection(data, false)} style="--n: {n}">
     {#if data.level !== "root"}
-      <h1>{data.label}</h1>
-      <p class="node-table-title">{detailsTitles[data.level]} {getDataNumber(data)}</p>
+      <h1 style="color: {levelColors[n - 1]}">{getDataNumber(data)} {data.label}</h1>
     {:else}
       <h1 class="node-table-title">Economies</h1>
-      <p>Policy Dimensions</p>
     {/if}
   </button>
   {#if data.level === "root"}
@@ -53,10 +53,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-left: 1px solid var(--main-color);
     border-bottom: 1px solid var(--main-color);
     align-items: center;
     height: fit-content;
+  }
+
+  .node-table.selectedTable{
+    background-color: #242424;
+    border-bottom: none;
+    box-shadow: 0 5px 10px 0px rgb(18, 18, 18);
+    position: relative;
+    z-index: 100;
   }
 
   .scores {
@@ -64,7 +71,7 @@
   }
 
   button {
-    padding: 1.5em 2em 1.5em 2em;
+    padding: 1.5em 2em 1.5em calc(2em + (var(--n) * 0.5em));
 
   }
 

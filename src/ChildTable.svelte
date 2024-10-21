@@ -1,17 +1,17 @@
 <script>
   import { selectedNodeDimStore } from "./stores.js";
   import ScoreTable from "./ScoreTable.svelte";
-  import { styleBgColorAuto } from "./colors.js";
+  import { levelColors, styleBgColorAuto } from "./colors.js";
 
   export let children;
   export let countries;
+  export let n;
 </script>
 
-<div class="child-table">
-  <div class="child-table-title">
+<div class="child-table" style="--n: {n}">
+  <div class="child-table-title" style="color: {levelColors[n]}">
     {#if children.length}
-      <h1>{children[0].level}</h1>
-      <p>Economy Score 2024</p>
+      <h1>{children[0].level} Scoring</h1>
     {/if}
   </div>
   <div class="sheet-table">
@@ -33,14 +33,14 @@
 <style>
   .child-table {
     box-sizing: border-box;
-    border-left: 1px solid var(--main-color);
     overflow: hidden;
     height: 100%;
     display: grid;
-    padding: 1.5em 2em 1.5em 2em;
+    padding: 1.5em 2em 1.5em calc(2em + (var(--n) * 0.5em));
     grid-template-columns: 1fr;
     grid-template-rows: max-content auto;
     gap: 2%;
+    background-color: #242424;
   }
 
   .sheet-table {
@@ -60,6 +60,10 @@
     align-items: center;
     width: 100%;
     gap: 5%;
+  }
+
+  .child-table-title {
+    font-size: 90%;
   }
 
   button:hover {
