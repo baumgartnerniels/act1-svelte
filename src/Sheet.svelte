@@ -8,7 +8,7 @@
   let sheet;
 </script>
 
-<div class="sheet" bind:this={sheet}>
+<div class="sheet" bind:this={sheet} style="{(data.level == $selectedNodeDimStore.level ? "height: 100%;" : "height: auto;")} z-index: {100 - n*10}">
   <NodeTable {data} countries={$selectedCountryStore} />
   {#if data.level == $selectedNodeDimStore.level}
     <ChildTable children={data.children} countries={$selectedCountryStore} />
@@ -24,9 +24,7 @@
   }
 
   .sheet {
-    overflow: hidden;
     background-color: var(--background-color);
-    position: relative;
     box-sizing: border-box;
     width: 100%;
     scrollbar-color: var(--highlight-color) var(--background-color);

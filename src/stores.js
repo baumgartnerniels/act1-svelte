@@ -12,6 +12,8 @@ export let countryLabels = {
 };
 export let categories = ["dimensions", "subdimensions", "indicators", "levels"];
 
+export let detailsTitles = {"dimensions": "Policy-Dimension", "subdimensions": "Sub-Dimension", "indicators": "Indicator", "levels": "Level"};
+
 ////////////////////////////
 // WELCOME TO STATE HELL //
 //////////////////////////

@@ -32,8 +32,12 @@
 
 <style>
   .child-table {
-    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 2em 1.5em 2em;
     border-left: 1px solid var(--main-color);
+    height: 100%;
+    overflow: scroll;
   }
 
   .sheet-table {
@@ -47,7 +51,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 3em;
   }
 
   button:hover {

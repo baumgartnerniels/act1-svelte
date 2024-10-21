@@ -32,6 +32,8 @@
 <style>
   .details {
     position: relative;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     text-align: left;
     height: 100%;

@@ -6,13 +6,13 @@
   import ColorLegend from "./ColorLegend.svelte";
 </script>
 
-<header>
-  <div class="bar">
-    <img class="logo" src="public/oecd.svg" alt="OECD Logo" />
-  </div>
-  <h1 class="title">Western Balkans<br />Competitiveness Data Hub</h1>
-</header>
 <main>
+  <header>
+    <div class="bar">
+      <img class="logo" src="public/oecd.svg" alt="OECD Logo" />
+    </div>
+    <h1 class="title">Western Balkans<br />Competitiveness Data Hub</h1>
+  </header>
   <Hover />
   <div class="tower">
     <CountryList />
@@ -22,16 +22,18 @@
   <Details />
 </main>
 
+
 <style>
   .tower {
     overflow: hidden;
   }
   main {
+    position: relative;
     text-align: center;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows: 100%;
+    grid-template-rows: auto 1fr;
     height: 100%;
     width: 100%;
   }
@@ -47,6 +49,12 @@
     height: 1em;
     display: flex;
     align-content: center;
+    
+  }
+
+  header {
+    grid-column: 1 / span 2;
+
   }
   .logo {
     height: 1em;

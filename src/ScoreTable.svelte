@@ -18,6 +18,7 @@
         <button class="score-button" style={styleBgColorAuto(data, country)}>
           {score}
         </button>
+        
       </div>
     {/if}
   {/each}
@@ -30,13 +31,15 @@
     justify-content: flex-end;
     align-items: center;
     text-align: center;
+
   }
 
   .score-button {
-    width: 2.7em;
-    height: 2.7em;
+    width: 3em;
+    height: 3em;
     margin: 0.2em;
     text-align: center;
+    font-size: 1.3em;
     color: rgb(22, 22, 22);
   }
 </style>
