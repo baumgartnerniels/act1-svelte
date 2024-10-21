@@ -29,17 +29,20 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
+    width: 100%;
+    flex-basis: 50%;
 
   }
 
   .score-button {
-    width: 3em;
-    height: 3em;
+    width: 50px;
+    height: 50px;
     margin: 0.2em;
+    padding: 0.2em;
     text-align: center;
-    font-size: 1.3em;
     color: rgb(22, 22, 22);
+    flex-basis: 100%;
   }
 </style>
