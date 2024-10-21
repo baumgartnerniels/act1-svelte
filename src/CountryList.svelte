@@ -56,14 +56,14 @@
     transition: left 0.3s;
   }
   .countryList.hidden {
-    position: relative;
     text-align: left;
     left: -218px;
   }
 
-  button.active {
+  .country.active {
     background-color: var(--main-color);
     color: var(--background-color);
+    border-right: 1px solid var(--background-color);
   }
   button {
     box-sizing: border-box;

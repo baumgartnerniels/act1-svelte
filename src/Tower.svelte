@@ -89,5 +89,6 @@
     justify-items: center;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 15vh);
+    padding-top: 1.5em;
   }
 </style>

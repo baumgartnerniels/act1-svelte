@@ -10,6 +10,17 @@
   <header>
     <div class="bar">
       <img class="logo" src="/oecd.svg" alt="OECD Logo" />
+      <div class="infos">
+        <a href="https://westernbalkans-competitiveness.oecd.org/dimensions/"
+          >Policy Dimensions</a
+        >
+        <a href="https://westernbalkans-competitiveness.oecd.org/methodology/"
+          >Methodology</a
+        >
+        <a href="https://westernbalkans-competitiveness.oecd.org/about/"
+          >About</a
+        >
+      </div>
     </div>
     <h1 class="title">Western Balkans<br />Competitiveness Data Hub</h1>
   </header>
@@ -46,15 +57,21 @@
     background-color: var(--main-color);
     color: var(--background-color);
     width: 100%;
-    height: 1em;
+    height: 1.5em;
     display: flex;
     align-content: center;
+    justify-content: space-between;
+  }
+  .bar a {
+    color: var(--background-color);
+    margin-right: 0.5em;
   }
 
   header {
     grid-column: 1 / span 2;
   }
   .logo {
-    height: 1em;
+    height: 1.5em;
+    margin-left: 0.5em;
   }
 </style>
