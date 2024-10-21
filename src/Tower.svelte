@@ -69,7 +69,11 @@
     <EconomyLevel --z={60} />
 
     {#each categories as category, i}
-      <CategoryLevel --z={50 - i * 10} level={category} levelColor={levelColors[i]}>
+      <CategoryLevel
+        --z={50 - i * 10}
+        level={category}
+        levelColor={levelColors[i]}
+      >
         {#each Array.from($selectedCountryStore).reverse() as country}
           <Room level={category} {country} />
         {/each}

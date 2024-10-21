@@ -84,6 +84,7 @@
     grid-gap: 5px;
     gap: 1px;
     padding: 5px;
+    transition: height 0.2s;
   }
 
   .level.rooms1 {

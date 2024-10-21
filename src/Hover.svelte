@@ -1,14 +1,14 @@
 <script>
   import { hoveredStore, mousePosition } from "./stores.js";
- //half of the screen width
-  $: visible = $hoveredStore != "" && window.innerWidth * 0.4 > $mousePosition.x;
+  //half of the screen width
+  $: visible =
+    $hoveredStore != "" && window.innerWidth * 0.4 > $mousePosition.x;
   $: style =
     "left: " +
     ($mousePosition.x + 10) +
     "px; top: " +
     ($mousePosition.y + 10) +
     "px";
-
 </script>
 
 <div class="hoverLabel" class:visible {style}><p>{$hoveredStore}</p></div>
@@ -21,7 +21,9 @@
     max-width: 200px;
     display: none;
   }
-  .visible{display:block}
+  .visible {
+    display: block;
+  }
   p {
     margin-top: 0;
     margin-bottom: 0;
@@ -31,5 +33,6 @@
     user-select: none;
     width: fit-content;
     color: var(--background-color);
+    background-color: var(--main-color);
   }
 </style>
