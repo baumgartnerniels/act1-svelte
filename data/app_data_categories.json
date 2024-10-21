@@ -835,7 +835,7 @@
                                 },
                                 {
                                     "key": "INVESTMENT_I05_L31",
-                                    "label": "�Silence is consent� clause exists. ",
+                                    "label": "\u201cSilence is consent\u201d clause exists. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -1032,7 +1032,7 @@
                                 },
                                 {
                                     "key": "INVESTMENT_I06_L41",
-                                    "label": "The investment promotion agency, or relevant body, conducts ad hoc monitoring of investors� obligations. ",
+                                    "label": "The investment promotion agency, or relevant body, conducts ad hoc monitoring of investors\u2019 obligations. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -1186,7 +1186,7 @@
                                 },
                                 {
                                     "key": "INVESTMENT_I07_L21",
-                                    "label": "The national strategic policy framework for sustainable investment addresses investment-related objectives linked to the Sustainable Development Goals� \n",
+                                    "label": "The national strategic policy framework for sustainable investment addresses investment-related objectives linked to the Sustainable Development Goals\u00a0 \n",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -1398,7 +1398,7 @@
                                 },
                                 {
                                     "key": "INVESTMENT_I08_L51",
-                                    "label": "There is consistent and regular monitoring of the recipients� compliance with eligibility criteria and related obligations. ",
+                                    "label": "There is consistent and regular monitoring of the recipients\u2019 compliance with eligibility criteria and related obligations. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 0,
@@ -1629,7 +1629,7 @@
                                 },
                                 {
                                     "key": "TRADE_I01_L51",
-                                    "label": "Stakeholders� consultations are conducted at all stages of policymaking. ",
+                                    "label": "Stakeholders\u2019 consultations are conducted at all stages of policymaking. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -1871,7 +1871,7 @@
                                 },
                                 {
                                     "key": "TRADE_I02_L81",
-                                    "label": "Consultations regarding trade measures are open and mandatory to all affected groups and aim to measure the policies� impact and cost-effectiveness.",
+                                    "label": "Consultations regarding trade measures are open and mandatory to all affected groups and aim to measure the policies\u2019 impact and cost-effectiveness.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -2055,7 +2055,7 @@
                                 },
                                 {
                                     "key": "TRADE_I03_L71",
-                                    "label": "Programmes and policies relating to digital trade are fully funded from the government�s budget.   ",
+                                    "label": "Programmes and policies relating to digital trade are fully funded from the government\u2019s budget.   ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -2496,7 +2496,7 @@
                                 },
                                 {
                                     "key": "TRADE_I05_L91",
-                                    "label": "The entire territory of the economy is covered under the export promotion agency�s work programme. ",
+                                    "label": "The entire territory of the economy is covered under the export promotion agency\u2019s work programme. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -2738,7 +2738,7 @@
                                 },
                                 {
                                     "key": "TRADE_I06_L11",
-                                    "label": "The companies pay a fee for the export promotion agency�s services. ",
+                                    "label": "The companies pay a fee for the export promotion agency\u2019s services. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -2939,7 +2939,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I01_L81",
-                                    "label": "The legal framework�s quality and accuracy in the banking industry undergo periodic evaluations, with corrective actions as needed.",
+                                    "label": "The legal framework\u2019s quality and accuracy in the banking industry undergo periodic evaluations, with corrective actions as needed.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -3031,7 +3031,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I02_L41",
-                                    "label": "The legal framework for credit information ensures a fair collection of credit-related data, follows specific retention periods, and provides access to this information to relevant parties��.",
+                                    "label": "The legal framework for credit information ensures a fair collection of credit-related data, follows specific retention periods, and provides access to this information to relevant parties\u00a0\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -3061,7 +3061,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I02_L61",
-                                    "label": "Collected credit information data is comprehensive, updated and made available to credit institutions and the public��.",
+                                    "label": "Collected credit information data is comprehensive, updated and made available to credit institutions and the public\u00a0\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 0,
@@ -3106,7 +3106,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I02_L91",
-                                    "label": "The legal framework�s quality and accuracy in the registration and information systems undergo periodic evaluations, with corrective actions as needed.",
+                                    "label": "The legal framework\u2019s quality and accuracy in the registration and information systems undergo periodic evaluations, with corrective actions as needed.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -3213,7 +3213,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I03_L51",
-                                    "label": "Microfinance facilities can collect deposits��.",
+                                    "label": "Microfinance facilities can collect deposits\u00a0\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -3639,7 +3639,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I05_L61",
-                                    "label": "The legal framework�s quality and accuracy on private equity undergo regular reviews.",
+                                    "label": "The legal framework\u2019s quality and accuracy on private equity undergo regular reviews.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -3821,7 +3821,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I06_L61",
-                                    "label": "Factoring: Periodic reviews are conducted on the legal framework�s quality and accuracy for factoring, with corrective actions taken, as needed.",
+                                    "label": "Factoring: Periodic reviews are conducted on the legal framework\u2019s quality and accuracy for factoring, with corrective actions taken, as needed.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -3911,7 +3911,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I06_L21",
-                                    "label": "Leasing: Periodic reviews are conducted on the legal framework�s quality and accuracy for leasing, with corrective actions taken, as needed.",
+                                    "label": "Leasing: Periodic reviews are conducted on the legal framework\u2019s quality and accuracy for leasing, with corrective actions taken, as needed.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -4065,7 +4065,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I07_L71",
-                                    "label": "Digital payment and e-money services: A centralized digital platform using data pulled from individual bank�s systems existfor supervisory authorities.",
+                                    "label": "Digital payment and e-money services: A centralized digital platform using data pulled from individual bank\u2019s systems existfor supervisory authorities.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -4080,7 +4080,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I07_L81",
-                                    "label": "Digital payment and e-money services: Periodic reviews are conducted on the legal framework�s quality and accuracy for digital payment and e-money services, with corrective actions as needed.",
+                                    "label": "Digital payment and e-money services: Periodic reviews are conducted on the legal framework\u2019s quality and accuracy for digital payment and e-money services, with corrective actions as needed.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -4185,7 +4185,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I07_L51",
-                                    "label": "Crowdfunding: Periodic reviews are conducted on the legal framework�s quality and accuracy for crowdfunding, with corrective actions as needed.",
+                                    "label": "Crowdfunding: Periodic reviews are conducted on the legal framework\u2019s quality and accuracy for crowdfunding, with corrective actions as needed.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -4337,7 +4337,7 @@
                                 },
                                 {
                                     "key": "FINANCE_I08_L81",
-                                    "label": " Periodic reviews are conducted on the legal framework�s quality and accuracy for financing through blockchain technology, with corrective actions as needed.",
+                                    "label": " Periodic reviews are conducted on the legal framework\u2019s quality and accuracy for financing through blockchain technology, with corrective actions as needed.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -4767,7 +4767,7 @@
                                 },
                                 {
                                     "key": "TAX_I03_L31",
-                                    "label": "The economy has used tax and labour market data to analyse the impact of the PIT system and SSCs on informal employment, women�s labour force participation, and youth unemployment.",
+                                    "label": "The economy has used tax and labour market data to analyse the impact of the PIT system and SSCs on informal employment, women\u2019s labour force participation, and youth unemployment.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -5469,7 +5469,7 @@
                                 },
                                 {
                                     "key": "TAX_I08_L41",
-                                    "label": "The economy has a large taxpayers� unit to oversee the largest taxpayers. ",
+                                    "label": "The economy has a large taxpayers\u2019 unit to oversee the largest taxpayers. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -5514,7 +5514,7 @@
                                 },
                                 {
                                     "key": "TAX_I08_L71",
-                                    "label": "The economy conducts regular surveys that measure taxpayers� satisfaction with available services. ",
+                                    "label": "The economy conducts regular surveys that measure taxpayers\u2019 satisfaction with available services. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -5561,7 +5561,7 @@
                                 },
                                 {
                                     "key": "TAX_I09_L11",
-                                    "label": "The tax authority�s operational budget is either independent of annual budgeting processes or is derived from a fixed share of tax revenues. ",
+                                    "label": "The tax authority\u2019s operational budget is either independent of annual budgeting processes or is derived from a fixed share of tax revenues. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -5925,7 +5925,7 @@
                                 },
                                 {
                                     "key": "TAX_I11_L71",
-                                    "label": "The economy conducts regular surveys that measure taxpayers� satisfaction with available services.",
+                                    "label": "The economy conducts regular surveys that measure taxpayers\u2019 satisfaction with available services.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -6006,7 +6006,7 @@
                                 },
                                 {
                                     "key": "ENTERPRISE_I01_L11",
-                                    "label": "The SOE ownership policy defines the state�s overall ownership objectives.",
+                                    "label": "The SOE ownership policy defines the state\u2019s overall ownership objectives.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -6036,7 +6036,7 @@
                                 },
                                 {
                                     "key": "ENTERPRISE_I01_L31",
-                                    "label": "The SOE ownership policy specifies the state�s expectations from the companies. ",
+                                    "label": "The SOE ownership policy specifies the state\u2019s expectations from the companies. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -6081,7 +6081,7 @@
                                 },
                                 {
                                     "key": "ENTERPRISE_I01_L61",
-                                    "label": "SOEs are periodically evaluated based on quantifiable performance indicators against their fulfilment of the state�s expectations. ",
+                                    "label": "SOEs are periodically evaluated based on quantifiable performance indicators against their fulfilment of the state\u2019s expectations. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -6753,7 +6753,7 @@
                                 },
                                 {
                                     "key": "ENTERPRISE_I06_L51",
-                                    "label": "The government monitors SOEs� compliance with applicable financial and non-financial reporting requirements.\n*Monitoring outcomes not available",
+                                    "label": "The government monitors SOEs\u2019 compliance with applicable financial and non-financial reporting requirements.\n*Monitoring outcomes not available",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -6860,7 +6860,7 @@
                                 },
                                 {
                                     "key": "ENTERPRISE_I07_L41",
-                                    "label": "external auditors are required by law to be independent of SOEs� management and large shareholders.  ",
+                                    "label": "external auditors are required by law to be independent of SOEs\u2019 management and large shareholders.  ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -6905,7 +6905,7 @@
                                 },
                                 {
                                     "key": "ENTERPRISE_I07_L71",
-                                    "label": "SOEs� financial statements are in most cases determined by an external audit to appropriately and fairly present the operations and financial condition of the SOE.",
+                                    "label": "SOEs\u2019 financial statements are in most cases determined by an external audit to appropriately and fairly present the operations and financial condition of the SOE.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -7102,7 +7102,7 @@
                                 },
                                 {
                                     "key": "ENTERPRISE_I08_L11",
-                                    "label": "Legislation protects �whistle-blowers� in SOEs (which report unethical or illegal conduct) from retaliation. ",
+                                    "label": "Legislation protects \u201cwhistle-blowers\u201d in SOEs (which report unethical or illegal conduct) from retaliation. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -7348,7 +7348,7 @@
                                 },
                                 {
                                     "key": "ENTERPRISE_I10_L41",
-                                    "label": "Any derogations to SOEs� legal and regulatory treatment are made transparent and are narrowly established to avoid market distortions. ",
+                                    "label": "Any derogations to SOEs\u2019 legal and regulatory treatment are made transparent and are narrowly established to avoid market distortions. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -7716,7 +7716,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I01_L21",
-                                    "label": "Findings of evaluations are used for adjusting the planning and/or implementation of future actions�.",
+                                    "label": "Findings of evaluations are used for adjusting the planning and/or implementation of future actions\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -8099,7 +8099,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I04_L31",
-                                    "label": "The majority of the body�s staff received training over the past two years.",
+                                    "label": "The majority of the body\u2019s staff received training over the past two years.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 0,
@@ -8159,7 +8159,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I04_L71",
-                                    "label": "Independent evidence shows that the body is both financially and operationally independent�.",
+                                    "label": "Independent evidence shows that the body is both financially and operationally independent\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -8189,7 +8189,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I04_L91",
-                                    "label": "Independent evaluation of the body�s activities is carried out systematically and the results are published.",
+                                    "label": "Independent evaluation of the body\u2019s activities is carried out systematically and the results are published.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -8219,7 +8219,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I04_L11",
-                                    "label": "Findings of evaluations are used for further improvement of the body�s performance.",
+                                    "label": "Findings of evaluations are used for further improvement of the body\u2019s performance.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -8341,7 +8341,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I05_L51",
-                                    "label": "Independent assessments find the implementation and enforcement of conflict-of-interest rules to be impartial and consistent�.",
+                                    "label": "Independent assessments find the implementation and enforcement of conflict-of-interest rules to be impartial and consistent\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -8386,7 +8386,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I05_L81",
-                                    "label": "Evaluations of the performance of the conflict-of-interest law are carried out systematically�.\n*Results are not published",
+                                    "label": "Evaluations of the performance of the conflict-of-interest law are carried out systematically\u00a0.\n*Results are not published",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -8401,7 +8401,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I05_L91",
-                                    "label": "Findings of evaluations are used for further improvements of the law and practice�.",
+                                    "label": "Findings of evaluations are used for further improvements of the law and practice\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -8598,7 +8598,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I06_L01",
-                                    "label": "Findings of evaluations are used for further improvements of the law and practice�.",
+                                    "label": "Findings of evaluations are used for further improvements of the law and practice\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -8675,7 +8675,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I07_L11",
-                                    "label": "The law envisages protection regardless the motive of a whistleblower and is fully aligned with Directive (EU) 2019/1937�.",
+                                    "label": "The law envisages protection regardless the motive of a whistleblower and is fully aligned with Directive (EU) 2019/1937\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -8735,7 +8735,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I07_L51",
-                                    "label": "Whistleblowers can freely choose whether to report internally or through external channels�.",
+                                    "label": "Whistleblowers can freely choose whether to report internally or through external channels\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -8780,7 +8780,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I07_L81",
-                                    "label": "Findings of evaluations are used for further improvements of the law and practice�.",
+                                    "label": "Findings of evaluations are used for further improvements of the law and practice\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -8810,7 +8810,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I07_L01",
-                                    "label": "Most cases related to breaches of confidentiality of a whistleblower�s identity or instances of retaliation were investigated and appropriately remedied.",
+                                    "label": "Most cases related to breaches of confidentiality of a whistleblower\u2019s identity or instances of retaliation were investigated and appropriately remedied.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -8917,7 +8917,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I08_L51",
-                                    "label": "The effectiveness of particular awareness-raising and education measures is assessed, and corrective action is taken�.",
+                                    "label": "The effectiveness of particular awareness-raising and education measures is assessed, and corrective action is taken\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -8962,7 +8962,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I08_L81",
-                                    "label": "Findings of evaluations are used for further improvements of the practice�.",
+                                    "label": "Findings of evaluations are used for further improvements of the practice\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -9101,7 +9101,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I09_L41",
-                                    "label": "The laws and regulations define �beneficial owner� in line with international standards and require providing a state authority with information about beneficial owners.",
+                                    "label": "The laws and regulations define \u201cbeneficial owner\u201d in line with international standards and require providing a state authority with information about beneficial owners.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -9146,7 +9146,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I09_L71",
-                                    "label": "The authorities routinely verify beneficial ownership information and impose sanctions�.",
+                                    "label": "The authorities routinely verify beneficial ownership information and impose sanctions\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -9664,7 +9664,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I12_L31",
-                                    "label": "The majority of the body�s staff received training over the past two years.",
+                                    "label": "The majority of the body\u2019s staff received training over the past two years.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -9709,7 +9709,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I12_L61",
-                                    "label": "Independent assessments find the body�s work to be independent, impartial and effective.",
+                                    "label": "Independent assessments find the body\u2019s work to be independent, impartial and effective.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -9739,7 +9739,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I12_L81",
-                                    "label": "Independent evaluation of the body�s activities is carried out systematically and the results are published.",
+                                    "label": "Independent evaluation of the body\u2019s activities is carried out systematically and the results are published.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -9769,7 +9769,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I12_L01",
-                                    "label": "Findings of evaluations are used for further improvements of the body�s performance.",
+                                    "label": "Findings of evaluations are used for further improvements of the body\u2019s performance.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -9876,7 +9876,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I13_L41",
-                                    "label": "The procedures for selecting, appointing and dismissing the head of the body comprise safeguards against arbitrariness and ensure public accountability. \n*Only usual procedures as for units of the Prosecutor�s Office",
+                                    "label": "The procedures for selecting, appointing and dismissing the head of the body comprise safeguards against arbitrariness and ensure public accountability. \n*Only usual procedures as for units of the Prosecutor\u2019s Office",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -9921,7 +9921,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I13_L71",
-                                    "label": "Independent evaluation of the body�s activities is carried out systematically and the results are published.",
+                                    "label": "Independent evaluation of the body\u2019s activities is carried out systematically and the results are published.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -9951,7 +9951,7 @@
                                 },
                                 {
                                     "key": "ANTI_CORRUPTION_I13_L91",
-                                    "label": "Findings of evaluations are used for further improvements of the body�s performance.",
+                                    "label": "Findings of evaluations are used for further improvements of the body\u2019s performance.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -10092,7 +10092,7 @@
                                 },
                                 {
                                     "key": "EDUCATION_I01_L41",
-                                    "label": "A monitoring system is in place to assess the efficiency of the strategy vis-�-vis the implementation plan. ",
+                                    "label": "A monitoring system is in place to assess the efficiency of the strategy vis-\u00e0-vis the implementation plan. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -10274,7 +10274,7 @@
                                 },
                                 {
                                     "key": "EDUCATION_I02_L51",
-                                    "label": "Policies are adjusted based on research findings and system monitoring, as appropriate�. ",
+                                    "label": "Policies are adjusted based on research findings and system monitoring, as appropriate\u00a0. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -10289,7 +10289,7 @@
                                 },
                                 {
                                     "key": "EDUCATION_I02_L61",
-                                    "label": "All ECE staff has received a qualification and receives trainings regularly�. ",
+                                    "label": "All ECE staff has received a qualification and receives trainings regularly\u00a0. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -10319,7 +10319,7 @@
                                 },
                                 {
                                     "key": "EDUCATION_I02_L81",
-                                    "label": "Curriculum guidelines ensure continuity across transition years�.",
+                                    "label": "Curriculum guidelines ensure continuity across transition years\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -10334,7 +10334,7 @@
                                 },
                                 {
                                     "key": "EDUCATION_I02_L91",
-                                    "label": "Strategy or policy measures have undergone an evaluation, drawing on data from satisfaction surveys and/or schooling outcomes, as appropriate�.",
+                                    "label": "Strategy or policy measures have undergone an evaluation, drawing on data from satisfaction surveys and/or schooling outcomes, as appropriate\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -10655,7 +10655,7 @@
                                 },
                                 {
                                     "key": "EDUCATION_I04_L61",
-                                    "label": "Policies address structural issues to help raise competitiveness of the teaching profession�.",
+                                    "label": "Policies address structural issues to help raise competitiveness of the teaching profession\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -10747,7 +10747,7 @@
                                 },
                                 {
                                     "key": "EDUCATION_I05_L21",
-                                    "label": "Mechanisms existto identify teachers� development needs (e.g. teacher appraisal).",
+                                    "label": "Mechanisms existto identify teachers\u2019 development needs (e.g. teacher appraisal).",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -10837,7 +10837,7 @@
                                 },
                                 {
                                     "key": "EDUCATION_I05_L81",
-                                    "label": "A lifelong learning framework exists for teachers - connecting initial teacher education, induction and professional development through teacher standards�.",
+                                    "label": "A lifelong learning framework exists for teachers - connecting initial teacher education, induction and professional development through teacher standards\u00a0.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -11006,7 +11006,7 @@
                                 },
                                 {
                                     "key": "EDUCATION_I06_L61",
-                                    "label": "There are statistical tracking mechanisms, consultation processes and evidence from skills surveys that support planning and development of the VET sector�. ",
+                                    "label": "There are statistical tracking mechanisms, consultation processes and evidence from skills surveys that support planning and development of the VET sector\u00a0. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -11051,7 +11051,7 @@
                                 },
                                 {
                                     "key": "EDUCATION_I06_L91",
-                                    "label": "Employers� representatives deem that incentives for employers� participation in VET provision are sufficient and there is widespread participation in developing curricula, offering WBL placements and other forms of engagement.\n*Under development",
+                                    "label": "Employers\u2019 representatives deem that incentives for employers\u2019 participation in VET provision are sufficient and there is widespread participation in developing curricula, offering WBL placements and other forms of engagement.\n*Under development",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -11327,7 +11327,7 @@
                                 },
                                 {
                                     "key": "EDUCATION_I08_L41",
-                                    "label": "Performance indicators on students� digital skills development are collected regularly.",
+                                    "label": "Performance indicators on students\u2019 digital skills development are collected regularly.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -12166,7 +12166,7 @@
                                 },
                                 {
                                     "key": "EMPLOYMENT_I04_L11",
-                                    "label": "The policy framework/strategy/action plan/measures include: Measures to reconcile family and working lives (in particular childcare); vocational orientation; awareness raising on gender stereotypes (in schools, at the workplace).�",
+                                    "label": "The policy framework/strategy/action plan/measures include: Measures to reconcile family and working lives (in particular childcare); vocational orientation; awareness raising on gender stereotypes (in schools, at the workplace).\u00a0",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -12271,7 +12271,7 @@
                                 },
                                 {
                                     "key": "EMPLOYMENT_I04_L81",
-                                    "label": "In addition to regular �monitoring activities, regular evaluation activities assessing employment policy for vulnerable and disadvantaged groups are conducted. \n*Not all vulnerable groups are subject to evaluation activities",
+                                    "label": "In addition to regular \u00a0monitoring activities, regular evaluation activities assessing employment policy for vulnerable and disadvantaged groups are conducted. \n*Not all vulnerable groups are subject to evaluation activities",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -12425,7 +12425,7 @@
                                 },
                                 {
                                     "key": "EMPLOYMENT_I05_L71",
-                                    "label": "PES� human and financial resources are adequate for executing its responsibilities, and caseload is not higher than 200 jobseekers per counsellor.",
+                                    "label": "PES\u2019 human and financial resources are adequate for executing its responsibilities, and caseload is not higher than 200 jobseekers per counsellor.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -12943,7 +12943,7 @@
                                 },
                                 {
                                     "key": "EMPLOYMENT_I08_L71",
-                                    "label": "A system of skills validation and certification is in place or is being developed.�",
+                                    "label": "A system of skills validation and certification is in place or is being developed.\u00a0",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -13292,7 +13292,7 @@
                                 },
                                 {
                                     "key": "EMPLOYMENT_I10_L91",
-                                    "label": "Studies on the identification and classification of green jobs and �greening skills� have been conducted.\n*In progress",
+                                    "label": "Studies on the identification and classification of green jobs and \u201cgreening skills\u201d have been conducted.\n*In progress",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -13538,7 +13538,7 @@
                                 },
                                 {
                                     "key": "EMPLOYMENT_I12_L21",
-                                    "label": "The policy framework includes analysis of diaspora skills� profiles.",
+                                    "label": "The policy framework includes analysis of diaspora skills\u2019 profiles.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -14073,7 +14073,7 @@
                                 },
                                 {
                                     "key": "INNOVATION_I03_L71",
-                                    "label": "Regular monitoring and evaluation activities of the STI policy�s implementation body (innovation or science and technology agency) and its work  are in place.  ",
+                                    "label": "Regular monitoring and evaluation activities of the STI policy\u2019s implementation body (innovation or science and technology agency) and its work  are in place.  ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -14822,7 +14822,7 @@
                                 },
                                 {
                                     "key": "INNOVATION_I08_L61",
-                                    "label": "Cost-benefit analyses are carried out for all proposed �brick and mortar� infrastructure investments related to business-academia collaboration. ",
+                                    "label": "Cost-benefit analyses are carried out for all proposed \u201cbrick and mortar\u201d infrastructure investments related to business-academia collaboration. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -15085,7 +15085,7 @@
                                 },
                                 {
                                     "key": "DIGITAL_I01_L31",
-                                    "label": "The policy framework is broadly aligned with international connectivity agendas (such as the OECD Recommendation of the Council on Broadband Connectivity; the EU strategy for Connectivity and/or Digital Future priority agenda under European Commission�s Economic and Investment Plan for the Western Balkans).",
+                                    "label": "The policy framework is broadly aligned with international connectivity agendas (such as the OECD Recommendation of the Council on Broadband Connectivity; the EU strategy for Connectivity and/or Digital Future priority agenda under European Commission\u2019s Economic and Investment Plan for the Western Balkans).",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -15297,7 +15297,7 @@
                                 },
                                 {
                                     "key": "DIGITAL_I02_L41",
-                                    "label": "An independent communications regulator has been established. It has clearly defined responsibilities and objectives along with adequate human and financial resources to undertake them.\n* The Regulator�s independence is either not adequately ensured or challenged.",
+                                    "label": "An independent communications regulator has been established. It has clearly defined responsibilities and objectives along with adequate human and financial resources to undertake them.\n* The Regulator\u2019s independence is either not adequately ensured or challenged.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -15342,7 +15342,7 @@
                                 },
                                 {
                                     "key": "DIGITAL_I02_L71",
-                                    "label": "An effective system for the review of regulations� legality and procedural fairness and bodies issuing regulatory sanctions are in place.",
+                                    "label": "An effective system for the review of regulations\u2019 legality and procedural fairness and bodies issuing regulatory sanctions are in place.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -15372,7 +15372,7 @@
                                 },
                                 {
                                     "key": "DIGITAL_I02_L91",
-                                    "label": "There is evidence of advanced or full alignment with key pillars of the EU Electronic Communications Code, in particular for: 1) aligning voice termination rates across operators� fixed/wireless networks and 2) updating relevant product and service markets within the electronic communications sector.\n* Not fully implemented ",
+                                    "label": "There is evidence of advanced or full alignment with key pillars of the EU Electronic Communications Code, in particular for: 1) aligning voice termination rates across operators\u2019 fixed/wireless networks and 2) updating relevant product and service markets within the electronic communications sector.\n* Not fully implemented ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -15402,7 +15402,7 @@
                                 },
                                 {
                                     "key": "DIGITAL_I02_L11",
-                                    "label": "There is evidence of advanced or full alignment with key pillars of the EU Electronic Communications Code, in particular for: 1) creating a permit-exempt deployment regime to simplify and accelerate 5G network installations; 2) reducing the cost and increasing the speed of deployment of very high capacity networks (including fibre and 5G); 3) providing access to 5G radio spectrum and encouraging operator�s investments.\n* Limited alignment in either count (1), count (2) or (3) or all of the aforementioned",
+                                    "label": "There is evidence of advanced or full alignment with key pillars of the EU Electronic Communications Code, in particular for: 1) creating a permit-exempt deployment regime to simplify and accelerate 5G network installations; 2) reducing the cost and increasing the speed of deployment of very high capacity networks (including fibre and 5G); 3) providing access to 5G radio spectrum and encouraging operator\u2019s investments.\n* Limited alignment in either count (1), count (2) or (3) or all of the aforementioned",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -15464,7 +15464,7 @@
                                 },
                                 {
                                     "key": "DIGITAL_I03_L11",
-                                    "label": "The policy framework�s objectives are aligned with the socio-economic context and 1) provide clear policy governance for government body coordination; 2) were developed with inputs from stakeholders including the public and private sectors, and civil society. ",
+                                    "label": "The policy framework\u2019s objectives are aligned with the socio-economic context and 1) provide clear policy governance for government body coordination; 2) were developed with inputs from stakeholders including the public and private sectors, and civil society. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -16513,7 +16513,7 @@
                                 },
                                 {
                                     "key": "DIGITAL_I08_L91",
-                                    "label": "The policy framework�s implementation is being regularly monitored and evaluated.",
+                                    "label": "The policy framework\u2019s implementation is being regularly monitored and evaluated.",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -16682,7 +16682,7 @@
                                 },
                                 {
                                     "key": "DIGITAL_I09_L71",
-                                    "label": "There is evidence of an active implementation of the data protection authority�s work programme, or other policies, aiming to raise awareness and develop skills among citizens, businesses and the public sector related to data protection.\n* Limited evidence of the implementation of awareness-raising activities .",
+                                    "label": "There is evidence of an active implementation of the data protection authority\u2019s work programme, or other policies, aiming to raise awareness and develop skills among citizens, businesses and the public sector related to data protection.\n* Limited evidence of the implementation of awareness-raising activities .",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -16712,7 +16712,7 @@
                                 },
                                 {
                                     "key": "DIGITAL_I09_L91",
-                                    "label": "The data protection authority actively engages in international co-operation and exchange of good practices, with a goal of reaching international standards and good practices for privacy and data protection.\n* The Agency�s capacity to engage in international co-operation is limited due to the absence of relevant resources.",
+                                    "label": "The data protection authority actively engages in international co-operation and exchange of good practices, with a goal of reaching international standards and good practices for privacy and data protection.\n* The Agency\u2019s capacity to engage in international co-operation is limited due to the absence of relevant resources.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -16986,7 +16986,7 @@
                                 },
                                 {
                                     "key": "DIGITAL_I11_L11",
-                                    "label": "The framework is comprehensive and promotes managing digital security risk of the government�s own activities, mitigating cybercrime and the establishment of Computer Security Incident Response Teams in the public sector, as well as private sector counterparts. ",
+                                    "label": "The framework is comprehensive and promotes managing digital security risk of the government\u2019s own activities, mitigating cybercrime and the establishment of Computer Security Incident Response Teams in the public sector, as well as private sector counterparts. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -17444,7 +17444,7 @@
                                 },
                                 {
                                     "key": "TRANSPORT_I02_L31",
-                                    "label": "The project selection framework takes into account impact assessments of all of the above criteria�. ",
+                                    "label": "The project selection framework takes into account impact assessments of all of the above criteria\u00a0. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -17626,7 +17626,7 @@
                                 },
                                 {
                                     "key": "TRANSPORT_I03_L31",
-                                    "label": "Relevant bodies (e.g. national audit offices) have been given oversight roles in the procurement and monitoring of projects� implementation. ",
+                                    "label": "Relevant bodies (e.g. national audit offices) have been given oversight roles in the procurement and monitoring of projects\u2019 implementation. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -17838,7 +17838,7 @@
                                 },
                                 {
                                     "key": "TRANSPORT_I04_L61",
-                                    "label": "A monitoring body for efficient road maintenance has been established, as encouraged by the Transport Community Permanent Secretariat�s Action Plan for establishing a functioning and efficient road maintenance system. ",
+                                    "label": "A monitoring body for efficient road maintenance has been established, as encouraged by the Transport Community Permanent Secretariat\u2019s Action Plan for establishing a functioning and efficient road maintenance system. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -18007,7 +18007,7 @@
                                 },
                                 {
                                     "key": "TRANSPORT_I05_L51",
-                                    "label": "Implementation of the Regional Action Plans is well advanced � at least one of them has been fully implemented and all other are advancing without major delays.  ",
+                                    "label": "Implementation of the Regional Action Plans is well advanced \u2013 at least one of them has been fully implemented and all other are advancing without major delays.  ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 0,
@@ -18022,7 +18022,7 @@
                                 },
                                 {
                                     "key": "TRANSPORT_I05_L61",
-                                    "label": "Market opening has been approved in the rail sector � the oversight body is active in ensuring transparency and non-discrimination of market actors. ",
+                                    "label": "Market opening has been approved in the rail sector \u2013 the oversight body is active in ensuring transparency and non-discrimination of market actors. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -18037,7 +18037,7 @@
                                 },
                                 {
                                     "key": "TRANSPORT_I05_L71",
-                                    "label": "The EU Airport Charges Directive has been transposed and implemented � airport charges are set and monitored based on transparency principles established by EU legislation. ",
+                                    "label": "The EU Airport Charges Directive has been transposed and implemented \u2013 airport charges are set and monitored based on transparency principles established by EU legislation. ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -18281,7 +18281,7 @@
                                 },
                                 {
                                     "key": "TRANSPORT_I07_L11",
-                                    "label": "The strategy�s development process included a wide-ranging consultation process, including with the private sector, and key market participants and infrastructure operators.",
+                                    "label": "The strategy\u2019s development process included a wide-ranging consultation process, including with the private sector, and key market participants and infrastructure operators.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -18737,7 +18737,7 @@
                                 },
                                 {
                                     "key": "TRANSPORT_I09_L81",
-                                    "label": "Data collection on the environmental sustainability of the transport sector is comprehensive and robust (ex. transport�s contributions to greenhouse gas emissions, average age of motorised vehicles, etc.) and data is being regularly updated. ",
+                                    "label": "Data collection on the environmental sustainability of the transport sector is comprehensive and robust (ex. transport\u2019s contributions to greenhouse gas emissions, average age of motorised vehicles, etc.) and data is being regularly updated. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -18919,7 +18919,7 @@
                                 },
                                 {
                                     "key": "TRANSPORT_I10_L81",
-                                    "label": "Policy measures to make the transport system more just and inclusive are being implemented � advanced implementation of the related policy framework or individual policy initiatives.  ",
+                                    "label": "Policy measures to make the transport system more just and inclusive are being implemented \u2013 advanced implementation of the related policy framework or individual policy initiatives.  ",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -19302,7 +19302,7 @@
                                 },
                                 {
                                     "key": "ENERGY_I02_L41",
-                                    "label": "The energy regulator�s activities are carried out transparently and regular reports on its functioning and its decisions are published timely and publicly available.",
+                                    "label": "The energy regulator\u2019s activities are carried out transparently and regular reports on its functioning and its decisions are published timely and publicly available.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -19347,7 +19347,7 @@
                                 },
                                 {
                                     "key": "ENERGY_I02_L71",
-                                    "label": "The energy regulator�s staff have access to regular capacity building opportunities and salaries are competitive with comparable private sector positions.",
+                                    "label": "The energy regulator\u2019s staff have access to regular capacity building opportunities and salaries are competitive with comparable private sector positions.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -19362,7 +19362,7 @@
                                 },
                                 {
                                     "key": "ENERGY_I02_L81",
-                                    "label": "The regulator�s activity is regularly monitored based on inputs and outputs and results are evaluated based on the regulator�s objectives.",
+                                    "label": "The regulator\u2019s activity is regularly monitored based on inputs and outputs and results are evaluated based on the regulator\u2019s objectives.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -20124,7 +20124,7 @@
                                 },
                                 {
                                     "key": "ENERGY_I06_L71",
-                                    "label": "The implementation of the policy framework is advancing � at least 50% of planned activities have been implemented on schedule. ",
+                                    "label": "The implementation of the policy framework is advancing \u2013 at least 50% of planned activities have been implemented on schedule. ",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -21404,7 +21404,7 @@
                                 },
                                 {
                                     "key": "ENVIRONMENT_I02_L51",
-                                    "label": "Climate change adaptation measures are integrated into existingplans and processes (such as water management, land management, spatial planning, ecosystem, and biodiversity protection�).",
+                                    "label": "Climate change adaptation measures are integrated into existingplans and processes (such as water management, land management, spatial planning, ecosystem, and biodiversity protection\u00a0).",
                                     "scores": {
                                         "WB6_AVG": 0,
                                         "ALB": 5,
@@ -23489,7 +23489,7 @@
                                 },
                                 {
                                     "key": "AGRICULTURE_I02_L11",
-                                    "label": "Official definitions of �rural area� and �de-favourised rural areas� are available and applied.\n* Only has definition for one of these concepts",
+                                    "label": "Official definitions of \u201crural area\u201d and \u201cde-favourised rural areas\u201d are available and applied.\n* Only has definition for one of these concepts",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -24187,7 +24187,7 @@
                                 },
                                 {
                                     "key": "AGRICULTURE_I05_L81",
-                                    "label": "Stakeholders� feedback is incorporated into policy design, development and implementation\n* Only in design and development",
+                                    "label": "Stakeholders\u2019 feedback is incorporated into policy design, development and implementation\n* Only in design and development",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -24339,7 +24339,7 @@
                                 },
                                 {
                                     "key": "AGRICULTURE_I06_L61",
-                                    "label": "Specific programmes to promote farm and agrifood firms� adoption of innovations and knowledge transfer are in place.",
+                                    "label": "Specific programmes to promote farm and agrifood firms\u2019 adoption of innovations and knowledge transfer are in place.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -24384,7 +24384,7 @@
                                 },
                                 {
                                     "key": "AGRICULTURE_I06_L91",
-                                    "label": "Specific programmes that promote farms� adoption of innovations and knowledge transfer related to climate change are in place. \n*Partly",
+                                    "label": "Specific programmes that promote farms\u2019 adoption of innovations and knowledge transfer related to climate change are in place. \n*Partly",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -24538,7 +24538,7 @@
                                 },
                                 {
                                     "key": "AGRICULTURE_I07_L71",
-                                    "label": "Adequate human and financial resources support the government�s ability to implement food safety, animal and plant health measures.\n* There are adequate financial resources but insufficient human resources",
+                                    "label": "Adequate human and financial resources support the government\u2019s ability to implement food safety, animal and plant health measures.\n* There are adequate financial resources but insufficient human resources",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 0,
@@ -24553,7 +24553,7 @@
                                 },
                                 {
                                     "key": "AGRICULTURE_I07_L81",
-                                    "label": "There is an assessment of the government�s capacity to implement food safety, animal and plant health/SPS regulations and standards.",
+                                    "label": "There is an assessment of the government\u2019s capacity to implement food safety, animal and plant health/SPS regulations and standards.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -25058,7 +25058,7 @@
                                 },
                                 {
                                     "key": "TOURISM_I02_L11",
-                                    "label": "Local communities are involved in tourism policies� development and implementation.",
+                                    "label": "Local communities are involved in tourism policies\u2019 development and implementation.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
@@ -25895,7 +25895,7 @@
                                 },
                                 {
                                     "key": "TOURISM_I07_L81",
-                                    "label": "VET and higher education curricula are aligned with the tourism industry�s needs.",
+                                    "label": "VET and higher education curricula are aligned with the tourism industry\u2019s needs.",
                                     "scores": {
                                         "WB6_AVG": 5,
                                         "ALB": 5,
