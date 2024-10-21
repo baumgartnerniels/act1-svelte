@@ -22,8 +22,9 @@
         </button>
         {:else}
         <button class="score-button" style={styleBgColorAuto(data, country)}>
-          {score}
+          {data.level !== "levels" ? score : (score > 0 ? "✔" : "✘")}
         </button>
+        
         {/if}
       </div>
     {/if}
