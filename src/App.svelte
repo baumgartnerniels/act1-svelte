@@ -9,7 +9,7 @@
 <main>
   <header>
     <div class="bar">
-      <img class="logo" src="public/oecd.svg" alt="OECD Logo" />
+      <img class="logo" src="/oecd.svg" alt="OECD Logo" />
     </div>
     <h1 class="title">Western Balkans<br />Competitiveness Data Hub</h1>
   </header>
@@ -21,7 +21,6 @@
   </div>
   <Details />
 </main>
-
 
 <style>
   .tower {
@@ -50,12 +49,10 @@
     height: 1em;
     display: flex;
     align-content: center;
-    
   }
 
   header {
     grid-column: 1 / span 2;
-
   }
   .logo {
     height: 1em;
