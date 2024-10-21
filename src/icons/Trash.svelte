@@ -1,11 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 22 22">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 12 12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+  </defs>
   <!-- Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 1.2.0 Build 142)  -->
   <g>
     <g id="Layer_1">
-      <path d="M3.7,22V6.4h14.5v15.6H3.7ZM17.4,21.1V7.3H4.6v13.9h12.8Z" />
       <path
-        d="M14,18.3v-8.8h.9v8.8h-.9ZM10.6,18.3v-8.8h.9v8.8h-.9ZM7.2,18.3v-8.8h.9v8.8h-.9ZM2.2,4.3v-.9h5.7V0h6.2v3.4h5.7v.9H2.2ZM13.2,3.4V.9h-4.4v2.5h4.4Z"
+        d="M1.5,2.6v9.4h9V2.6H1.5ZM4.9,10.1h-.8v-5.6h.8v5.6ZM7.9,10.1h-.8v-5.6h.8v5.6Z"
       />
+      <path d="M7.9,1.1V0h-3.8v1.1H.8v.8h10.4v-.8" />
+      <path class="cls-1" d="M0,0h12v12H0V0Z" />
     </g>
   </g>
 </svg>
