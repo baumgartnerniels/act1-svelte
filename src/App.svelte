@@ -26,6 +26,7 @@
 <style>
   .tower {
     overflow: hidden;
+    position: relative;
   }
   main {
     position: relative;

@@ -46,7 +46,7 @@
 <style>
   .countryList {
     box-sizing: content-box;
-    position: relative;
+    position: absolute;
     text-align: left;
     left: 0;
     width: fit-content;
@@ -69,6 +69,7 @@
     box-sizing: border-box;
     padding-left: 0.1em;
     padding-right: 0.1em;
+    background-color: var(--background-color);
   }
   .country {
     border-right: 1px solid var(--main-color);
