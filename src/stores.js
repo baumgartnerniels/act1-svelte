@@ -29,7 +29,7 @@ function createSelectedCountryStore() {
 
   return {
     subscribe,
-
+    set,
     toggleSelection: (item) =>
       update((selected) => {
         if (selected.has(item)) {
@@ -61,7 +61,7 @@ function createSelectedNodeDimStore() {
 
   return {
     subscribe,
-
+    set,
     toggleSelection: (node, toggleParent = true) =>
       update((selected) => {
         if (selected === node && toggleParent) {
