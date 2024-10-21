@@ -1,5 +1,10 @@
 <script>
-  import { countries, selectedCountryStore } from "./stores.js";
+  import {
+    countries,
+    selectedCountryStore,
+    hoveredStore,
+    countryLabels,
+  } from "./stores.js";
   let hidden = false;
 </script>
 
@@ -9,7 +14,12 @@
       class="country"
       class:active={$selectedCountryStore.has(country)}
       on:click={() => selectedCountryStore.toggleSelection(country)}
-      >{country}</button
+      on:mouseenter={() => {
+        hoveredStore.set(countryLabels[country]);
+      }}
+      on:mouseleave={() => {
+        hoveredStore.set("");
+      }}>{country}</button
     >{/each}<button class="close" on:click={() => (hidden = !hidden)}
     ><svg
       xmlns="http://www.w3.org/2000/svg"

@@ -5,6 +5,7 @@
   import CategoryLevel from "./CategoryLevel.svelte";
   import EconomyLevel from "./EconomyLevel.svelte";
   import { categories, countries, selectedCountryStore } from "./stores.js";
+  import { scale } from "svelte/transition";
 
   let tower;
   let zoom;

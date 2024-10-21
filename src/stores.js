@@ -3,16 +3,21 @@ import { dataStructureDim as dataStructDim } from "./dataStructureDim.js";
 
 export let countries = ["ALB", "BIH", "KOS", "MNE", "MKD", "SRB"];
 export let countryLabels = {
-  ALB: "ALB",
-  BIH: "BIH",
-  KOS: "KOS",
-  MNE: "MNE",
-  MKD: "MKD",
-  SRB: "SRB",
+  ALB: "Albania",
+  BIH: "Bosnia and Herzegovina",
+  KOS: "Kosovo",
+  MNE: "Montenegro",
+  MKD: "North Macedonia",
+  SRB: "Serbia",
 };
 export let categories = ["dimensions", "subdimensions", "indicators", "levels"];
 
-export let detailsTitles = {"dimensions": "Policy-Dimension", "subdimensions": "Sub-Dimension", "indicators": "Indicator", "levels": "Level"};
+export let detailsTitles = {
+  dimensions: "Policy-Dimension",
+  subdimensions: "Sub-Dimension",
+  indicators: "Indicator",
+  levels: "Level",
+};
 
 ////////////////////////////
 // WELCOME TO STATE HELL //
