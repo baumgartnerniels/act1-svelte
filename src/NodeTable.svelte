@@ -39,7 +39,7 @@
   </button>
   {#if data.level === "root"}
   <div class="scores">
-    <ScoreTable {data} {countries} showCountries={true} />
+    <ScoreTable {data} {countries} countriesOnly={true} />
   </div>
   {:else}
   <div class="scores">
@@ -58,6 +58,10 @@
     align-items: center;
     height: fit-content;
     width: 100%;
+  }
+
+  .node-table:hover{
+    background-color: #242424;
   }
 
   .node-table.selectedTable{

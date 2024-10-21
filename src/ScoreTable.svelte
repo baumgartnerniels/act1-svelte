@@ -5,6 +5,7 @@
   export let data; // Object with country names as keys and scores as values
   export let countries; // Array of selected countries
   export let showCountries = false; // Whether to show country names
+  export let countriesOnly = false;
 </script>
 
 <div class="score-table">
@@ -15,10 +16,15 @@
         {#if showCountries}
           <div>{country}</div>
         {/if}
+        {#if countriesOnly}
+        <button class="score-button" style="background-color: transparent; color: var(--main-color);">
+          {country}
+        </button>
+        {:else}
         <button class="score-button" style={styleBgColorAuto(data, country)}>
           {score}
         </button>
-        
+        {/if}
       </div>
     {/if}
   {/each}
