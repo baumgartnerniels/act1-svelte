@@ -192,6 +192,7 @@
   }
   input[type="number"] {
     appearance: textfield;
+    font: inherit;
     width: 1.5em;
     height: 1.5em;
     text-align: center;
