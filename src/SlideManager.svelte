@@ -5,10 +5,12 @@
   import Presentation from "./icons/Presentation.svelte";
   import Save from "./icons/Save.svelte";
   import Trash from "./icons/Trash.svelte";
+  import Help from "./Help.svelte";
   import { selectedCountryStore, selectedNodeDimStore } from "./stores.js";
   import { dataStructureDim } from "./dataStructureDim.js";
   import { onMount } from "svelte";
   let currentSlide = 1;
+  let helpVisible = false;
   $: totalSlides = slides.length;
 
   $: slide = {
@@ -96,6 +98,10 @@
       });
   }
 
+  function closeHelp() {
+    helpVisible = false;
+  }
+
   onMount(() => {
     slides = loadSlides();
     loadSlide();
@@ -109,14 +115,21 @@
     <input type="number" bind:value={currentSlide} />
     <button class="right" on:click={nextSlide}><ArrowRight /></button>
   </div>
-  <span class="of">of &nbsp;</span>
+  <span class="of">of</span>
   <input type="number" bind:value={totalSlides} />&nbsp;
   <button on:click={addSlide}><Add /></button>
   <button on:click={saveSlides}><Save /></button>
   <button on:click={deleteSlide}><Trash /></button>
   <button on:click={startPresentation}><Presentation /></button>
-  <button class="help">?</button>
+  <button
+    on:click={() => {
+      helpVisible = true;
+    }}
+    class="help">?</button
+  >
 </div>
+
+<Help visible={helpVisible} on:closeHelp={closeHelp} />
 
 <svelte:window
   on:fullscreenchange={handleFullScreenChange}
@@ -145,15 +158,18 @@
   .slideManager *:last-child {
     margin-right: 0;
   }
+  .current {
+    margin: 0;
+  }
   .current * {
     margin: 0;
   }
-  .of {
+  /* .of {
     margin-right: 0;
-  }
+  } */
   .current :global(svg) {
     width: 1em;
-    padding-top: 2px;
+    padding-bottom: 2px;
   }
   .help {
     background-color: var(--main-color);
@@ -172,7 +188,6 @@
     fill: var(--main-color);
     width: 1.5em;
     height: 1.5em;
-    padding-bottom: 3px;
     vertical-align: middle;
   }
   input[type="number"] {
