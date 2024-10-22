@@ -5,6 +5,7 @@
     countries,
     countryLabels,
   } from "./stores.js";
+  import { dataStructureDim } from "./dataStructureDim.js";
   import { styleBgColorAuto } from "./colors.js";
   let hovered = false;
 
@@ -38,7 +39,7 @@
       >
         <button
           class="country-button"
-          style={styleBgColorAuto($selectedNodeDimStore, country)}
+          style={styleBgColorAuto(dataStructureDim, country)}
           on:click={() => {
             selectedNodeDimStore.clearSelection();
           }}
