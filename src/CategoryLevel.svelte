@@ -1,5 +1,5 @@
 <script>
-  import { selectedNodeDimStore, selectedCountryStore, categories } from "./stores.js";
+  import { selectedNodeDimStore, selectedCountryStore, categories, levelTitles } from "./stores.js";
   export let level = "";
   export let levelColor;
 
@@ -15,7 +15,7 @@
 <div class="level-container">
   <div
     class="level"
-    class:active={$selectedNodeDimStore.level === categories[categories.indexOf(level) - 1] || $selectedNodeDimStore.level === level}
+    class:active={$selectedNodeDimStore.level === categories[categories.indexOf(level) - 1]}
     class:rooms1
     class:rooms2
     class:rooms3
@@ -30,7 +30,7 @@
     class="level-button"
     class:active={$selectedNodeDimStore.level === level}
   >
-    <p class="level-label" style="--levelColor: {levelColor}">{level}</p>
+    <p class="level-label" style="--levelColor: {levelColor}">{levelTitles[level]}</p>
   </button>
 </div>
 
@@ -139,8 +139,9 @@
   }
 
   .level.active {
-    padding: 15px;
-    outline: 5px solid var(--levelColor);
+    padding: 1em;
+    outline: 4px solid var(--levelColor);
+    box-shadow: 4px 4px 2px var(--levelColor);
     background-color: var(--background-color);
 
   }

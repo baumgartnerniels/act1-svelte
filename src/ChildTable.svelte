@@ -1,5 +1,5 @@
 <script>
-  import { selectedNodeDimStore, hoveredStore } from "./stores.js";
+  import { selectedNodeDimStore, hoveredStore, levelTitles } from "./stores.js";
   import ScoreTable from "./ScoreTable.svelte";
   import { levelColors, styleBgColorAuto } from "./colors.js";
 
@@ -7,14 +7,13 @@
   export let countries;
   export let n;
 
-  let levelColor;
   $: levelColor = levelColors[n];
 </script>
 
 <div class="child-table" style="--n: {n}">
   <div class="child-table-title" style="color: {levelColor}">
     {#if children.length}
-      <h1>{children[0].level} Scoring</h1>
+      <h1>{levelTitles[children[0].level]} Scoring</h1>
     {/if}
   </div>
   <div class="sheet-table">
@@ -22,7 +21,6 @@
       <button
         class="child-table-entries"
         class:connected={$hoveredStore === child.label}
-        style="--levelColor: {levelColor}22"
         on:click={() => {
           selectedNodeDimStore.toggleSelection(child);
         }}
@@ -49,11 +47,11 @@
     overflow: hidden;
     height: 100%;
     display: grid;
-    padding: 1.5em 2em 1.5em 4em;
+    padding: 1.5em 1.1em 1.5em 4em;
     grid-template-columns: 1fr;
     grid-template-rows: max-content auto;
     gap: 2%;
-    background-color: #343434;
+    background-color: var(--background-color);
     margin-left: calc((var(--n) - 1) * 2% );
   }
 
@@ -86,11 +84,11 @@
   }
 
   .child-table-entries:hover {
-    background-color: var(--levelColor);
+    background-color: transparent;
     transform: translate(0, -2px);
+    text-decoration: underline;
   }
   .child-table-entries.connected {
-    background-color: var(--levelColor);
     transform: translate(0, -2px);
   }
 

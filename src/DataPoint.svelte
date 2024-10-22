@@ -23,8 +23,8 @@
   on:mouseleave={() => {
     hoveredStore.set("");
   }}
-  class:selected={$selectedNodeDimStore === data}
-  class:active
+  class:selected={$selectedNodeDimStore === data || $selectedNodeDimStore.getAncestors().includes(data)}
+  class:active={active}
   class:connected={$hoveredStore === data.label}
 >
   {#if showLabels}
@@ -41,30 +41,23 @@
     color: var(--main-color);
     font-size: 1.2vh;
     opacity: 0.2;
-    /* flex-basis: 60%; */
-    /* border: 1px solid var(--main-color); */
-  }
-  /*   .inactive p {
-    opacity: 1 !important;
-  } */
-  button:hover {
-    border: 1px solid var(--main-color);
   }
 
-  button:focus {
-  outline: 1px solid var(--main-color);
-}
+  button:hover {
+    border: 1px solid var(--levelColor);
+  }
   .active {
     opacity: 1;
     outline: none;
   }
 
   .selected {
-    box-shadow: 2px 2px var(--levelColor);
-    /* outline: 2px solid var(--parent-color); */
+    outline: 0.15em solid var(--levelColor);
+    transform: translate(-30%, -30%);
+
   }
   .connected {
-    transform: translate(-0.2em, -0.3em);
-    text-shadow: 2px 2px 7px rgba(161, 68, 68, 0.363);
+    transform: translate(-20%, -20%);
+    box-shadow: 2px 2px 4px var(--levelColor);
   }
 </style>

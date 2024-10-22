@@ -54,9 +54,6 @@
     justify-content: center;
     align-items: center;
   }
-  .room.active {
-    /* border: 1px solid var(--highlight-color); */
-  }
 
   .room.inactive {
     opacity: 0.2;

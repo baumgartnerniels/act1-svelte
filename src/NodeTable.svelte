@@ -1,30 +1,11 @@
 <script>
-  import { selectedNodeDimStore, detailsTitles, categories } from "./stores.js";
+  import { selectedNodeDimStore, hoveredStore } from "./stores.js";
   import ScoreTable from "./ScoreTable.svelte";
-  import { dataStructureDim } from "./dataStructureDim.js";
   import { levelColors } from "./colors.js";
 
   export let data;
   export let countries;
   export let n;
-
-  function getCategoryNumber(data) {
-    return data.parent.children.indexOf(data) + 1;
-  }
-
-  function getDataNumber(data) {
-    let dataNumber = [...Array(data.getDepth())]
-      .map(() => {
-        let num = getCategoryNumber(data);
-        data = data.parent;
-        return num;
-      })
-      .reverse()
-      .join(".");
-
-    let result = parseFloat(dataNumber).toFixed(1);
-    return result.endsWith(".0") ? result.slice(0, -2) : result;
-  }
 </script>
 
 <div
@@ -35,20 +16,26 @@
   <button
     class="node-table table-border"
     class:selectedTable={$selectedNodeDimStore.level === data.level}
-    on:click={() => selectedNodeDimStore.toggleSelection(data, false)}
+    on:click={() => selectedNodeDimStore.toggleSelection(data, true)}
+    on:mouseenter={() => {
+      if (data.level === "levels") return;
+      hoveredStore.set(data.label);
+      console.log($hoveredStore);
+    }}
+    on:mouseleave={() => {
+      hoveredStore.set("");
+    }}
     style="--border-width: {n * 3}%; --n: {n}"
   >
     <div>
-      <button class="node-table-text" style="--n: {n}">
+      <button class="node-table-text" style="--n: {n}; --levelColor: {levelColors[n - 1]};">
         {#if data.level !== "root"}
           {#if data.level == "dimensions" || data.level == "subdimensions"}
             <h1 style="color: {levelColors[n - 1]}">
-              {getDataNumber(data)}
               {data.label}
             </h1>
           {:else}
             <h1 style="color: {levelColors[n - 1]}">{data.label}</h1>
-            <!-- <p style="color: {levelColors[n - 1]}">{detailsTitles[data.level]}</p> -->
           {/if}
         {:else}
           <h1 class="node-table-title">Economies</h1>
@@ -72,18 +59,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* border-bottom: 1px solid var(--main-color) */
     align-items: center;
     height: fit-content;
     width: 100%;
   }
 
-  .node-table:hover {
-    background-color: rgb(50, 50, 50);
+  .node-table:hover .node-table-text {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--levelColor);
+  }
+
+  .node-table:hover .node-table-text::after {
+    text-decoration: none;
   }
 
   .node-table.selectedTable {
-    background-color: #343434;
     position: relative;
     z-index: 100;
   }
@@ -92,7 +83,7 @@
   }
 
   .table-wrapper.selectedTable {
-    margin-left: calc((var(--n) - 1) * 2%);
+    margin-left: calc((var(--n)) * 2%);
   }
 
   .table-border {
@@ -101,14 +92,12 @@
   }
 
   .table-border.selectedTable::after {
-    background: #343434;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--main-color);
     box-shadow: none;
   }
 
   .table-border.selectedTable {
-    background: #343434;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid var(--main-color);
     box-shadow: none;
   }
 
@@ -117,13 +106,8 @@
   }
 
   .node-table-text {
-    padding: 1.5em 2em 1.5em 0;
+    padding: 1.5em 2em 1.5em 0em;
   }
-
-  .node-table.selectedTable .node-table-text {
-    padding-left: 2em;
-  }
-
   .node-table-text h1 {
     margin: 0;
   }

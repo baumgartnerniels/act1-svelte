@@ -200,10 +200,6 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    /* border: 1px solid var(--main-color); */
-  }
-  .room.active {
-    /* border: 1px solid var(--highlight-color); */
   }
 
   .room:hover {
@@ -214,9 +210,10 @@
     background-color: var(--fill);
     width: 100%;
     height: 100%;
-    color: var(--main-color);
+    color: var(--background-color);
     font-size: 1.7vh;
     text-align: center;
+    font-weight: 300;
   }
 
   .inactive {

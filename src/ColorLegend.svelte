@@ -22,8 +22,8 @@
     <!-- Rectangle filled with the gradient -->
     <rect x="0" y="0" width="1" height="1" fill="url(#color-gradient)" />
   </svg>
-  <p class="label-1">Level 0</p>
-  <p class="label-2">Level 5</p>
+  <p class="label-1">Score 0</p>
+  <p class="label-2">Score 5</p>
 </div>
 
 <style>

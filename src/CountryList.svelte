@@ -53,9 +53,14 @@
   }
   button {
     box-sizing: border-box;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
     background-color: var(--background-color);
+    text-align: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  button:hover {
+    text-decoration: underline;
   }
   .country {
     border-right: 1px solid var(--main-color);
