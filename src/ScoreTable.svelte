@@ -60,11 +60,11 @@
     flex-basis: 100%;
     vertical-align: middle;
   }
-  .score-button :global(.check) {
+  .score-button :global(.Check) {
     margin-top: 8px;
     width: 1em;
   }
-  .score-button :global(.cross) {
+  .score-button :global(.Cross) {
     margin-top: 8px;
     fill: var(--main-color);
     width: 0.8em;
