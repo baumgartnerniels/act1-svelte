@@ -40,9 +40,6 @@
         <button
           class="country-button"
           style={styleBgColorAuto(dataStructureDim, country)}
-          on:click={() => {
-            selectedNodeDimStore.clearSelection();
-          }}
         >
           {countryLabels[country]}
         </button>
@@ -54,9 +51,6 @@
     class:active
     on:mouseenter={() => (hovered = true)}
     on:mouseleave={() => (hovered = false)}
-    on:click={() => {
-      selectedCountryStore.resetSelection();
-    }}
   >
     <p class="level-label">Economies</p>
   </button>
@@ -159,13 +153,6 @@
     grid-row: 3 / span 2;
   }
 
-  .level.active.hovered {
-    outline: 1px solid var(--highlight-color);
-  }
-  .level.hovered {
-    outline: 1px solid var(--main-color);
-  }
-
   .level-button {
     position: relative;
     margin-top: 3vh;
@@ -200,10 +187,6 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-  }
-
-  .room:hover {
-    border: 1px solid var(--main-color);
   }
   .room button {
     box-sizing: border-box;
