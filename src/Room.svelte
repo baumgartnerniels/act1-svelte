@@ -55,6 +55,10 @@
     align-items: center;
   }
 
+  .room:hover {
+    cursor: pointer;
+  }
+
   .room.inactive {
     opacity: 0.2;
   }

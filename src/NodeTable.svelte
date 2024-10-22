@@ -68,6 +68,7 @@
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-decoration-color: var(--levelColor);
+    cursor: pointer;
   }
 
   .node-table:hover .node-table-text::after {

@@ -183,6 +183,10 @@
     margin: 0; /* Remove default margin */
   }
 
+  button:hover {
+    cursor: default;
+  }
+
   .room {
     width: 100%;
     height: 100%;

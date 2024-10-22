@@ -87,6 +87,7 @@
     background-color: transparent;
     transform: translate(0, -2px);
     text-decoration: underline;
+    cursor: pointer
   }
   .child-table-entries.connected {
     transform: translate(0, -2px);
