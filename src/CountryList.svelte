@@ -1,4 +1,6 @@
 <script>
+  import ArrowLeft from "./icons/ArrowLeft.svelte";
+  import ArrowRight from "./icons/ArrowRight.svelte";
   import {
     countries,
     selectedCountryStore,
@@ -21,35 +23,9 @@
         hoveredStore.set("");
       }}>{country}</button
     >{/each}<button class="close" on:click={() => (hidden = !hidden)}
-    ><svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="white"
-      class="size-6"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M15.75 19.5 8.25 12l7.5-7.5"
-      />
-    </svg>
+    ><ArrowLeft />
   </button><button class="open" on:click={() => (hidden = !hidden)}>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="white"
-      class="size-6"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="m8.25 4.5 7.5 7.5-7.5 7.5"
-      />
-    </svg>
+    <ArrowRight />
   </button>
 </div>
 
@@ -93,10 +69,11 @@
   .hidden .close {
     display: none;
   }
-  button svg {
-    stroke: var(--main-color);
+  button :global(svg) {
+    fill: var(--main-color);
     width: 1em;
     height: 1em;
+    padding-bottom: 3px;
     vertical-align: middle;
   }
 </style>

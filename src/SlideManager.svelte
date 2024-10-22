@@ -8,7 +8,6 @@
   import { selectedCountryStore, selectedNodeDimStore } from "./stores.js";
   import { dataStructureDim } from "./dataStructureDim.js";
   import { onMount } from "svelte";
-  import SaveAs from "./icons/SaveAs.svelte";
   let currentSlide = 1;
   $: totalSlides = slides.length;
 
@@ -104,7 +103,7 @@
     <ArrowRight />
   </button>
   <span>of &nbsp;</span>
-  <input type="number" bind:value={totalSlides} />
+  <input type="number" bind:value={totalSlides} />&nbsp;
   <button on:click={addSlide}>
     <Add />
   </button>
@@ -148,6 +147,8 @@
     fill: var(--main-color);
     width: 1em;
     height: 1em;
+    padding-bottom: 3px;
+    vertical-align: middle;
   }
   input[type="number"] {
     appearance: textfield;
