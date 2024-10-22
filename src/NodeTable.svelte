@@ -8,21 +8,20 @@
   export let countries;
   export let n;
 
-  function getCategoryNumber(data){
+  function getCategoryNumber(data) {
     return data.parent.children.indexOf(data) + 1;
   }
 
-  function getDataNumber(data){
+  function getDataNumber(data) {
     let dataNumber = [];
     //dataNumberString = String(getAncestorNumber(data));
     let currentNode = data;
-    for (let i=0; i < data.getDepth(); i++){
+    for (let i = 0; i < data.getDepth(); i++) {
       dataNumber.push(getCategoryNumber(currentNode));
       currentNode = currentNode.parent;
     }
     return dataNumber.reverse().join(".");
   }
-
 </script>
 
 <button
@@ -32,21 +31,23 @@
 >
   <button class="node-table-text" style="--n: {n}">
     {#if data.level !== "root"}
-      <h1 style="color: {levelColors[n - 1]}">{getDataNumber(data)} {data.label}</h1>
+      <h1 style="color: {levelColors[n - 1]}">
+        {getDataNumber(data)}
+        {data.label}
+      </h1>
     {:else}
       <h1 class="node-table-title">Economies</h1>
     {/if}
   </button>
   {#if data.level === "root"}
-  <div class="scores">
-    <ScoreTable {data} {countries} countriesOnly={true} />
-  </div>
+    <div class="scores">
+      <ScoreTable {data} {countries} countriesOnly={true} />
+    </div>
   {:else}
-  <div class="scores">
-    <ScoreTable {data} {countries} showCountries={false}  />
-  </div>
+    <div class="scores">
+      <ScoreTable {data} {countries} showCountries={false} />
+    </div>
   {/if}
-  
 </button>
 
 <style>
@@ -60,11 +61,11 @@
     width: 100%;
   }
 
-  .node-table:hover{
+  .node-table:hover {
     background-color: #242424;
   }
 
-  .node-table.selectedTable{
+  .node-table.selectedTable {
     background-color: #242424;
     border-bottom: none;
     box-shadow: 0 5px 10px 0px rgb(18, 18, 18);
@@ -73,16 +74,14 @@
   }
 
   .scores {
-    padding-right: 3em;
+    padding-right: 2em;
   }
 
   .node-table-text {
     padding: 1.5em 2em 1.5em calc(2em + (var(--n) * 0.5em));
-
   }
 
   .node-table-text h1 {
     margin: 0;
   }
-
 </style>
