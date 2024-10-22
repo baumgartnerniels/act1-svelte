@@ -149,8 +149,8 @@
   button :global(svg) {
     color: var(--main-color);
     fill: var(--main-color);
-    width: 1em;
-    height: 1em;
+    width: 1.2em;
+    height: 1.2em;
     padding-bottom: 3px;
     vertical-align: middle;
   }
@@ -164,5 +164,9 @@
   }
   input[type="number"]:focus {
     outline: none;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
   }
 </style>
