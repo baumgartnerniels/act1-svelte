@@ -36,6 +36,7 @@
       maxZoom: 4,
       bounds: false,
       smoothScroll: false,
+      disableKeyboardInteraction: true,
     });
     let zoomcenter = { x: 0, y: 0, scale: 1 };
     pz.on("panend", function (e) {

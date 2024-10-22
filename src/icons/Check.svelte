@@ -1,12 +1,12 @@
 <svg
-  class="ArrowRight"
+  class="Check"
   xmlns="http://www.w3.org/2000/svg"
   version="1.1"
-  viewBox="0 0 11 22"
+  viewBox="0 0 24 24"
 >
   <g>
     <g id="Layer_1">
-      <path d="M0,22l11-11L0,0v22Z" />
+      <path d="M9,16.4L22,3.4l2,2-15,15L0,11.4l2-2,7,7Z" />
     </g>
   </g>
 </svg>

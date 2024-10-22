@@ -1,6 +1,8 @@
 <script>
   import { styleBgColorAuto } from "./colors.js";
   import { hoveredStore } from "./stores.js";
+  import Check from "./icons/Check.svelte";
+  import Cross from "./icons/Cross.svelte";
 
   export let data; // Object with country names as keys and scores as values
   export let countries; // Array of selected countries
@@ -17,14 +19,22 @@
           <div>{country}</div>
         {/if}
         {#if countriesOnly}
-        <button class="score-button" style="background-color: transparent; color: var(--main-color);">
-          {country}
-        </button>
+          <button
+            class="score-button"
+            style="background-color: transparent; color: var(--main-color);"
+          >
+            {country}
+          </button>
         {:else}
-        <button class="score-button" style={styleBgColorAuto(data, country)}>
-          {data.level !== "levels" ? score : (score > 0 ? "✔" : "✘")}
-        </button>
-        
+          <button class="score-button" style={styleBgColorAuto(data, country)}>
+            {#if data.level !== "levels"}
+              {score}
+            {:else if score > 0}
+              <Check />
+            {:else}
+              <Cross />
+            {/if}
+          </button>
         {/if}
       </div>
     {/if}
@@ -48,5 +58,15 @@
     text-align: center;
     color: rgb(22, 22, 22);
     flex-basis: 100%;
+    vertical-align: middle;
+  }
+  .score-button :global(.Check) {
+    margin-top: 8px;
+    width: 1em;
+  }
+  .score-button :global(.Cross) {
+    margin-top: 8px;
+    fill: var(--main-color);
+    width: 0.8em;
   }
 </style>
