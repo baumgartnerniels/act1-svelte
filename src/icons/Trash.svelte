@@ -1,9 +1,4 @@
-<svg
-  class="Trash"
-  xmlns="http://www.w3.org/2000/svg"
-  version="1.1"
-  viewBox="0 0 12 12"
->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 12 12">
   <defs>
     <style>
       .cls-1 {
@@ -11,14 +6,15 @@
       }
     </style>
   </defs>
-  <!-- Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 1.2.0 Build 142)  -->
   <g>
     <g id="Layer_1">
-      <path
-        d="M1.5,2.6v9.4h9V2.6H1.5ZM4.9,10.1h-.8v-5.6h.8v5.6ZM7.9,10.1h-.8v-5.6h.8v5.6Z"
-      />
-      <path d="M7.9,1.1V0h-3.8v1.1H.8v.8h10.4v-.8" />
-      <path class="cls-1" d="M0,0h12v12H0V0Z" />
+      <g id="Layer_1-2" data-name="Layer_1">
+        <path
+          d="M.7,2.6v9.4h10.6V2.6H.7ZM4.7,10.1h-.9v-5.6h.9v5.6ZM8.2,10.1h-.9v-5.6h.9v5.6Z"
+        />
+        <path d="M8.2,1.1V0H3.8v1.1H0v.8h12v-.8" />
+        <path class="cls-1" d="M0,0h12v12H0V0Z" />
+      </g>
     </g>
   </g>
 </svg>
