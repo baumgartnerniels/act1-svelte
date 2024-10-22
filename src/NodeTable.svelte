@@ -9,7 +9,6 @@
   export let n;
 
   function getCategoryNumber(data) {
-  function getCategoryNumber(data) {
     return data.parent.children.indexOf(data) + 1;
   }
 
