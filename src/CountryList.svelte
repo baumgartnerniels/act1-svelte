@@ -43,7 +43,7 @@
   }
   .countryList.hidden {
     text-align: left;
-    left: -218px;
+    left: -246px;
   }
 
   .country.active {
@@ -53,8 +53,8 @@
   }
   button {
     box-sizing: border-box;
-    padding-left: 0.1em;
-    padding-right: 0.1em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
     background-color: var(--background-color);
   }
   .country {
