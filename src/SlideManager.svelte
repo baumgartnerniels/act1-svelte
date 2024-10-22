@@ -23,16 +23,12 @@
     hidden = Boolean(document.fullscreenElement);
   }
 
-  // up = 38
-  // down = 40
-  // right = 39
-  // left = 37
   function onKeyDown(e) {
     switch (e.keyCode) {
-      case 37:
+      case 37: // left = 37
         prevSlide();
         break;
-      case 39:
+      case 39: // right = 39
         nextSlide();
         break;
     }
@@ -44,28 +40,33 @@
       loadSlide();
     }
   }
+
   function prevSlide() {
     if (currentSlide > 1) {
       currentSlide--;
       loadSlide();
     }
   }
+
   function loadSlide() {
     slide = slides[currentSlide - 1];
     selectedCountryStore.set(new Set(slide.countries));
     let node = dataStructureDim.findNodeByKey(slide.node);
     selectedNodeDimStore.set(node);
   }
+
   function addSlide() {
     slides.splice(currentSlide, 0, slide);
     slides = slides;
     currentSlide++;
     saveSlides();
   }
+
   function saveSlides() {
     slides[currentSlide - 1] = slide;
     localStorage.setItem("slides", JSON.stringify(slides));
   }
+
   function deleteSlide() {
     if (totalSlides > 1) {
       slides.splice(currentSlide - 1, 1);
@@ -78,6 +79,7 @@
       saveSlides();
     }
   }
+
   function loadSlides() {
     let slidesStr = localStorage.getItem("slides");
     return JSON.parse(slidesStr) || [slide];
@@ -101,21 +103,19 @@
 </script>
 
 <div class="slideManager" class:hidden>
-  <span>Slide</span><button on:click={prevSlide}> <ArrowLeft /></button>
-  <input type="number" bind:value={currentSlide} />
-  <button on:click={nextSlide}>
-    <ArrowRight />
-  </button>
-  <span>of &nbsp;</span>
+  <span>Slide</span>
+  <div class="current">
+    <button class="left" on:click={prevSlide}><ArrowLeft /></button>
+    <input type="number" bind:value={currentSlide} />
+    <button class="right" on:click={nextSlide}><ArrowRight /></button>
+  </div>
+  <span class="of">of &nbsp;</span>
   <input type="number" bind:value={totalSlides} />&nbsp;
-  <button on:click={addSlide}>
-    <Add />
-  </button>
-  <button on:click={saveSlides}>
-    <Save />
-  </button>
+  <button on:click={addSlide}><Add /></button>
+  <button on:click={saveSlides}><Save /></button>
   <button on:click={deleteSlide}><Trash /></button>
   <button on:click={startPresentation}><Presentation /></button>
+  <button class="help">?</button>
 </div>
 
 <svelte:window
@@ -140,7 +140,28 @@
   }
   .slideManager * {
     display: inline-block;
-    padding: 0.2em;
+    margin: 0.25em;
+  }
+  .slideManager *:last-child {
+    margin-right: 0;
+  }
+  .current * {
+    margin: 0;
+  }
+  .of {
+    margin-right: 0;
+  }
+  .current :global(svg) {
+    width: 1em;
+    padding-top: 2px;
+  }
+  .help {
+    background-color: var(--main-color);
+    color: var(--background-color);
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 1.5em;
+    height: 1.5em;
   }
   button {
     vertical-align: middle;
@@ -149,8 +170,8 @@
   button :global(svg) {
     color: var(--main-color);
     fill: var(--main-color);
-    width: 1.2em;
-    height: 1.2em;
+    width: 1.5em;
+    height: 1.5em;
     padding-bottom: 3px;
     vertical-align: middle;
   }
