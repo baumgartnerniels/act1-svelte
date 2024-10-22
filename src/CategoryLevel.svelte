@@ -166,7 +166,7 @@
     transform-origin: top left;
     left: 0;
     top: 0;
-    font-size: 1.6vh;
+    font-size: 2vh;
     transform: rotate(-90deg) translateX(-100%);
     margin: 0; /* Remove default margin */
   }
