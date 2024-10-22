@@ -6,9 +6,6 @@
   <div class="infoBar">
     <img class="logo" src="/oecd.svg" alt="OECD Logo" />
     <div class="infos">
-      <a href="https://westernbalkans-competitiveness.oecd.org/dimensions/"
-        >Policy Dimensions</a
-      >
       <a href="https://westernbalkans-competitiveness.oecd.org/methodology/"
         >Methodology</a
       >
@@ -28,6 +25,7 @@
     margin: 0;
     padding: 0.5em 0 0.5em 0.5em;
   }
+
   .infoBar {
     background-color: var(--main-color);
     color: var(--background-color);
