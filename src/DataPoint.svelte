@@ -1,6 +1,6 @@
 <script>
   import { hoveredStore, selectedNodeDimStore } from "./stores.js";
-  import { styleBgColorAuto } from "./colors.js";
+  import { styleBgColorAuto, levelColors } from "./colors.js";
 
   export let data = {};
   export let showLabels = false;
@@ -12,7 +12,7 @@
   data-score={data.scores[country]}
   data-id={data.id}
   data-key={data.key}
-  style={styleBgColorAuto(data, country)}
+  style="{styleBgColorAuto(data, country)} --levelColor: {levelColors[data.getDepth()-1]};"
   on:click={() => {
     selectedNodeDimStore.toggleSelection(data);
   }}
@@ -56,8 +56,13 @@
 }
   .active {
     opacity: 1;
+    outline: none;
   }
 
+  .selected {
+    box-shadow: 2px 2px var(--levelColor);
+    /* outline: 2px solid var(--parent-color); */
+  }
   .connected {
     transform: translate(-0.2em, -0.3em);
     text-shadow: 2px 2px 7px rgba(161, 68, 68, 0.363);
