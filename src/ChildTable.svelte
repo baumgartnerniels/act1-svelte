@@ -9,7 +9,6 @@
 
   let levelColor;
   $: levelColor = levelColors[n];
-
 </script>
 
 <div class="child-table" style="--n: {n}">
@@ -22,6 +21,7 @@
     {#each children as child}
       <button
         class="child-table-entries"
+        class:connected={$hoveredStore === child.label}
         style="--levelColor: {levelColor}22"
         on:click={() => {
           selectedNodeDimStore.toggleSelection(child);
@@ -88,10 +88,13 @@
     background-color: var(--levelColor);
     transform: translate(0, -2px);
   }
+  .child-table-entries.connected {
+    background-color: var(--levelColor);
+    transform: translate(0, -2px);
+  }
 
   h1 {
     margin: 0;
     text-transform: capitalize;
   }
-
 </style>
