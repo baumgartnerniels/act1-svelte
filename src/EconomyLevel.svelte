@@ -83,7 +83,7 @@
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 5px;
-    gap: 1px;
+    gap: 5px;
     padding: 5px;
     transition: height 0.2s;
   }
@@ -200,10 +200,10 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border: 1px solid var(--main-color);
+    /* border: 1px solid var(--main-color); */
   }
   .room.active {
-    border: 1px solid var(--highlight-color);
+    /* border: 1px solid var(--highlight-color); */
   }
 
   .room:hover {

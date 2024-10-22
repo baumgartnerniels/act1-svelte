@@ -1,5 +1,5 @@
 <script>
-  import { selectedNodeDimStore, selectedCountryStore } from "./stores.js";
+  import { selectedNodeDimStore, selectedCountryStore, categories } from "./stores.js";
   export let level = "";
   export let levelColor;
 
@@ -15,13 +15,14 @@
 <div class="level-container">
   <div
     class="level"
-    class:active={$selectedNodeDimStore.level === level}
+    class:active={$selectedNodeDimStore.level === categories[categories.indexOf(level) - 1] || $selectedNodeDimStore.level === level}
     class:rooms1
     class:rooms2
     class:rooms3
     class:rooms4
     class:rooms5
     class:rooms6
+    style="--levelColor: {levelColor}"
   >
     <slot />
   </div>
@@ -54,7 +55,7 @@
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 5px;
-    gap: 1px;
+    gap: 5px;
     padding: 5px;
     transition: height 0.2s;
   }
@@ -138,7 +139,10 @@
   }
 
   .level.active {
-    outline: 1px solid var(--main-color);
+    padding: 15px;
+    outline: 5px solid var(--levelColor);
+    background-color: var(--background-color);
+
   }
 
   .level-button {
