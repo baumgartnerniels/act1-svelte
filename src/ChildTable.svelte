@@ -49,11 +49,12 @@
     overflow: hidden;
     height: 100%;
     display: grid;
-    padding: 1.5em 2em 1.5em calc(2.5em + (var(--n) * 0.5em));
+    padding: 1.5em 2em 1.5em 4em;
     grid-template-columns: 1fr;
     grid-template-rows: max-content auto;
     gap: 2%;
-    background-color: #242424;
+    background-color: #343434;
+    margin-left: calc((var(--n) - 1) * 2% );
   }
 
   .sheet-table {
