@@ -82,7 +82,7 @@
 
   function startPresentation() {
     document
-      .querySelector("#app")
+      .querySelector("body")
       .requestFullscreen()
       .catch((err) => {
         alert(
