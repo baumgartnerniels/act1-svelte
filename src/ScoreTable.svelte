@@ -61,12 +61,12 @@
     vertical-align: middle;
   }
   .score-button :global(.check) {
-    margin-top: 5px;
-    width: 1.5em;
+    margin-top: 8px;
+    width: 1em;
   }
   .score-button :global(.cross) {
-    margin-top: 5px;
+    margin-top: 8px;
     fill: var(--main-color);
-    width: 1em;
+    width: 0.8em;
   }
 </style>
