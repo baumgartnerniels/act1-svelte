@@ -70,8 +70,12 @@
     if (totalSlides > 1) {
       slides.splice(currentSlide - 1, 1);
       slides = slides;
-      prevSlide();
-      console.log("delete", currentSlide);
+      if (currentSlide == 1) {
+        loadSlide();
+      } else {
+        prevSlide();
+      }
+      saveSlides();
     }
   }
   function loadSlides() {
