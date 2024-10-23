@@ -143,6 +143,7 @@
     outline: 4px solid var(--levelColor);
     box-shadow: 4px 4px 2px var(--levelColor);
     background-color: var(--background-color);
+    transform: translate(-0.75em, -1.27em);
 
   }
 
