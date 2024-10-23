@@ -15,13 +15,9 @@
   let data = [];
   let gridSize;
 
-  async function fetchData() {
+  onMount(() => {
     data = dataStructDim.findNodesBy("level", level);
     gridSize = Math.ceil(Math.sqrt(data.length));
-  }
-
-  onMount(async () => {
-    await fetchData();
     room.style = "--grid-size: " + gridSize;
   });
 </script>
@@ -47,7 +43,7 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-/*     border: 1px solid var(--main-color); */
+    /*     border: 1px solid var(--main-color); */
     display: grid;
     grid-template-columns: repeat(var(--grid-size), 1fr);
     grid-template-rows: repeat(var(--grid-size), 1fr);
