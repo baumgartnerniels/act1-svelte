@@ -68,6 +68,10 @@ h1 {
   font-weight: 700;
   text-align: left;
 }
+h2 {
+  font-size: 1.25em;
+  font-weight: 400;
+}
 
 #app {
   margin: 0 auto;
