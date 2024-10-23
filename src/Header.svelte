@@ -9,7 +9,7 @@
 
 <header>
   <div class="infoBar">
-    <img class="logo" src="/oecd.svg" alt="OECD Logo" />
+    <img class="logo" src="oecd.svg" alt="OECD Logo" />
     <div class="infos">
       <a href="https://westernbalkans-competitiveness.oecd.org/methodology/"
         >Methodology</a
