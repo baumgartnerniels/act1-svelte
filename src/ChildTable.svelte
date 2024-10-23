@@ -2,7 +2,7 @@
   import { selectedNodeDimStore, hoveredStore, levelTitles } from "./stores.js";
   import ScoreTable from "./ScoreTable.svelte";
   import { levelColors, styleBgColorAuto } from "./colors.js";
-  import "simplebar"; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
+  import SimpleBar from "simplebar";
   import "simplebar/dist/simplebar.css";
   import { onMount } from "svelte";
 
@@ -15,7 +15,9 @@
 
   onMount(() => {
     let bar = new SimpleBar(scrollContainer);
-    bar.removeObserver();
+    bar.recalculate();
+    bar.placeholderEl.remove();
+    SimpleBar.removeObserver();
   });
 </script>
 
