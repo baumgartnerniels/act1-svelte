@@ -179,6 +179,7 @@
     width: 1.5em;
     height: 1.5em;
   }
+
   button {
     vertical-align: middle;
     min-width: 0.5em;
@@ -189,6 +190,11 @@
     width: 1.5em;
     height: 1.5em;
     vertical-align: middle;
+  }
+
+  button :global(svg):hover, .help:hover {
+    opacity: 0.9;
+
   }
   input[type="number"] {
     appearance: textfield;
