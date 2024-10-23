@@ -21,21 +21,44 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="help-container" class:visible on:click|self={closeHelp}>
   <div class="help">
-    <button class="close" on:click={closeHelp}><Cross /></button>
-    <Add />
-    <span>Add a new slide with the current view</span>
-    <Save />
-    <span>Override the current slide with the current view</span>
-    <Trash />
-    <span>Delete the current slide</span>
-    <Presentation />
-    <span>Start presentation in full screen</span>
-    <span><ArrowLeft /><ArrowRight /></span>
-    <span>
-      Switch slide (You can also use the left and right arrow keys on your
-      keyboard)
-    </span>
+  <button class="close" on:click={closeHelp}><Cross /></button>
+  
+    
+    <div class="rows">
+      <div style="align-self: flex-start; font-size: 0.9em;">
+        <h1>Slide Editor</h1>
+        <div style="text-wrap: wrap; margin-bottom: 1em;">
+          <p>Save your selection as slides in the order you prefer to quickly switch between all the information you need.</p>
+        </div>
+      </div>
+    <div class="row">
+      <Add />
+      <span>Add a new slide with the current view</span>
+    </div>
+    
+    <div class="row">
+      <Save />
+      <span>Override the current slide with the current view</span>
+    </div>
+    
+    <div class="row">
+      <Trash />
+      <span>Delete the current slide</span>
+    </div>
+    
+    <div class="row">
+      <Presentation />
+      <span>Start presentation in full screen</span>
+    </div>
+    
+    <div class="row">
+      <div><ArrowLeft /><ArrowRight /></div>
+      <span>
+        Switch slide <span style="font-weight: bold;">OR</span> use arrow keys [⬅] [➡]
+      </span>
+    </div>
   </div>
+</div>
 </div>
 
 <style>
@@ -56,13 +79,33 @@
   .help {
     text-align: left;
     background-color: var(--background-color);
-    display: grid;
-    grid-template-columns: 1.5em 1fr;
+    display: flex;
+    flex-direction: column;
     position: relative;
-    height: 10em;
+    height: max-content;
     width: 30em;
-    padding: 2em;
+    gap: 2em;
+    padding: 4em;
     border: 1px solid var(--main-color);
+    align-items: center;
+    justify-content: center;
+}
+
+  .rows {
+    display: grid;
+    gap: 1em;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1.5em 3fr;
+    gap: 1.3em;
+    align-items: center;
+    padding: 0.5em;
+  }
+
+  span {
+    justify-self: start;
   }
   .help :global(.ArrowLeft),
   .help :global(.ArrowRight) {
@@ -78,13 +121,18 @@
     display: inline;
     height: 1em;
     vertical-align: middle;
-    padding-top: 3px;
   }
   .close {
     position: absolute;
     right: 0;
-    padding-right: 6px;
+    top: 0;
+    padding: 0.8em;
     margin: 0;
-    height: 1em;
   }
+
+  .close:hover{
+    opacity: 0.8;
+  }
+
+
 </style>
