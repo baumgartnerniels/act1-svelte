@@ -101,7 +101,6 @@
     grid-row: span 2;
     display: grid;
     align-items: center;
-    color: white;
     font-size: 1.2em;
     order: revert;
   }
