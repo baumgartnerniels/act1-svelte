@@ -19,9 +19,7 @@
   </div>
   <div class="titleBar">
     <div>
-      <a href="/"
-        ><h1 class="title">Western Balkans<br />Competitiveness Data Hub</h1></a
-      >
+      <h1 class="title">Western Balkans<br />Competitiveness Data Hub</h1>
     </div>
     <div><SlideManager /></div>
   </div>
@@ -32,7 +30,6 @@
     margin: 0;
     padding: 0.5em 0 0.5em 0.5em;
   }
-
   .infoBar {
     background-color: var(--main-color);
     color: var(--background-color);
