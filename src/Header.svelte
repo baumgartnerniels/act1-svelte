@@ -1,5 +1,10 @@
 <script>
   import SlideManager from "./SlideManager.svelte";
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+  function handleAbout() {
+    dispatch("about", {});
+  }
 </script>
 
 <header>
@@ -9,12 +14,14 @@
       <a href="https://westernbalkans-competitiveness.oecd.org/methodology/"
         >Methodology</a
       >
-      <a href="https://westernbalkans-competitiveness.oecd.org/about/">About</a>
+      <a href="#about" on:click|preventDefault={handleAbout}>About</a>
     </div>
   </div>
   <div class="titleBar">
     <div>
-      <h1 class="title">Western Balkans<br />Competitiveness Data Hub</h1>
+      <a href="/"
+        ><h1 class="title">Western Balkans<br />Competitiveness Data Hub</h1></a
+      >
     </div>
     <div><SlideManager /></div>
   </div>

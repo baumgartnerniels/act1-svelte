@@ -5,17 +5,27 @@
   import CountryList from "./CountryList.svelte";
   import ColorLegend from "./ColorLegend.svelte";
   import Header from "./Header.svelte";
+  import About from "./About.svelte";
+  $: showAbout = false;
+  function handleAbout() {
+    showAbout = !showAbout;
+    console.log("about");
+  }
 </script>
 
 <main>
-  <Header />
+  <Header on:about={handleAbout} />
   <Hover />
   <div class="tower">
     <CountryList />
     <Tower />
     <ColorLegend />
   </div>
-  <Details />
+  {#if showAbout}
+    <About on:about={handleAbout} />
+  {:else}
+    <Details />
+  {/if}
 </main>
 
 <style>

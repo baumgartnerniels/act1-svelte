@@ -51,8 +51,8 @@
   }
 
   .score-button {
-    width: 50px;
-    height: 50px;
+    width: 2.8em;
+    height: 2.8em;
     margin: 0.2em;
     padding: 0.2em;
     text-align: center;
