@@ -48,17 +48,17 @@
     justify-content: flex-end;
     align-items: stretch;
     text-align: center;
+    gap: 0.4em;
   }
 
   .score-button {
     width: 2.8em;
     height: 2.8em;
-    margin: 0.2em;
-    padding: 0.2em;
     text-align: center;
     color: rgb(22, 22, 22);
-    flex-basis: 100%;
     vertical-align: middle;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
   }
   .score-button :global(.Check) {
     margin-top: 8px;

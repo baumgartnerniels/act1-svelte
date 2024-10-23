@@ -65,9 +65,9 @@
   }
 
   .table-scrollbar {
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
-    padding-right: 1.4em;
+    padding-right: 1.5em;
   }
 
   .table-scrollbar::-webkit-scrollbar {

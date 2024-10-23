@@ -62,6 +62,7 @@
     align-items: center;
     height: fit-content;
     width: 100%;
+    padding-right: 1.98em;
   }
 
   .node-table:hover .node-table-text {
@@ -102,9 +103,9 @@
     box-shadow: none;
   }
 
-  .scores {
+  /* .scores {
     padding-right: 2em;
-  }
+  } */
 
   .node-table-text {
     padding: 1.5em 2em 1.5em 0em;
