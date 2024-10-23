@@ -138,14 +138,13 @@
 
 <style>
   .slideManager {
-    padding-right: 2em;
+    padding-right: 0.5em;
     height: 100%;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
     display: flex;
     opacity: 1;
-    transition: all 1s;
   }
   .slideManager.hidden {
     opacity: 0;
@@ -192,9 +191,9 @@
     vertical-align: middle;
   }
 
-  button :global(svg):hover, .help:hover {
+  button :global(svg):hover,
+  .help:hover {
     opacity: 0.9;
-
   }
   input[type="number"] {
     appearance: textfield;
