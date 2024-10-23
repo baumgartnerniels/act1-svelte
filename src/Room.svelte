@@ -56,7 +56,7 @@
   }
 
   .room:hover {
-    cursor: pointer;
+    cursor: default;
   }
 
   .room.inactive {

@@ -12,9 +12,8 @@
   data-score={data.scores[country]}
   data-id={data.id}
   data-key={data.key}
-  style="{styleBgColorAuto(data, country)} --levelColor: {levelColors[data.getDepth()-1]}; cursor: {data.level === 'levels' ? 'default' : 'pointer'}"
+  style="{styleBgColorAuto(data, country)} --levelColor: {levelColors[data.getDepth()-1]};"
   on:click={() => {
-    if (data.level === "levels") return;
     selectedNodeDimStore.toggleSelection(data);
   }}
   on:mouseenter={() => {
@@ -46,7 +45,7 @@
 
   button:hover {
     border: 1px solid var(--levelColor);
-    cursor: pointer;
+    cursor: default;
   }
   .active {
     opacity: 1;

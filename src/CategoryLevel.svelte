@@ -152,10 +152,11 @@
     margin-top: 3vh;
     padding-left: 3vh;
     grid-column: 2;
+    cursor: default;
   }
 
   .level-button.selectable {
-    cursor: pointer;
+    cursor: default;
   }
 
   .level-button:focus {

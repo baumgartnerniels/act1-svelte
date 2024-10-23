@@ -162,8 +162,7 @@
     grid-column: 2;
   }
 
-  .level-button.selectable,
-  .level-container.selectable {
+  .level-button.selectable {
     cursor: pointer;
   }
 
@@ -204,8 +203,12 @@
     font-size: 1.7vh;
     text-align: center;
     font-weight: 300;
-    cursor: pointer;
+    cursor: default;
 
+  }
+
+  .room button:hover {
+    cursor: pointer;
   }
 
   .inactive {
