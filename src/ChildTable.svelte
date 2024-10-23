@@ -16,6 +16,7 @@
       <h1>{levelTitles[children[0].level]} Scoring</h1>
     {/if}
   </div>
+  <div class="table-scrollbar">
   <div class="sheet-table">
     {#each children as child}
       <button
@@ -39,6 +40,7 @@
       </button>
     {/each}
   </div>
+  </div>
 </div>
 
 <style>
@@ -47,7 +49,7 @@
     overflow: hidden;
     height: 100%;
     display: grid;
-    padding: 1.5em 1.1em 1.5em 4em;
+    padding: 1.5em 0em 1.5em 4em;
     grid-template-columns: 1fr;
     grid-template-rows: max-content auto;
     gap: 2%;
@@ -60,9 +62,23 @@
     width: 100%;
     flex-direction: column;
     height: 100%;
-    overflow: scroll;
-    overflow-x: hidden;
   }
+
+  .table-scrollbar {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 1.4em;
+  }
+
+  .table-scrollbar::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0.5em;
+}
+
+.table-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 1em;
+}
 
   .child-table-entries {
     display: flex;
