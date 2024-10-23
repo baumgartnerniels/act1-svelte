@@ -195,6 +195,9 @@
   .help:hover {
     opacity: 0.9;
   }
+  input {
+    color: var(--main-color);
+  }
   input[type="number"] {
     appearance: textfield;
     font: inherit;
