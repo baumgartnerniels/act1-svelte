@@ -2,6 +2,12 @@
   import { selectedNodeDimStore, hoveredStore, levelTitles } from "./stores.js";
   import ScoreTable from "./ScoreTable.svelte";
   import { levelColors, styleBgColorAuto } from "./colors.js";
+  import "simplebar"; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
+  import "simplebar/dist/simplebar.css";
+
+  // You will need a ResizeObserver polyfill for browsers that don't support it! (iOS Safari, Edge, ...)
+  import ResizeObserver from "resize-observer-polyfill";
+  window.ResizeObserver = ResizeObserver;
 
   export let children;
   export let countries;
@@ -16,30 +22,30 @@
       <h1>{levelTitles[children[0].level]} Scoring</h1>
     {/if}
   </div>
-  <div class="table-scrollbar">
-  <div class="sheet-table">
-    {#each children as child}
-      <button
-        class="child-table-entries"
-        class:connected={$hoveredStore === child.label}
-        on:click={() => {
-          selectedNodeDimStore.toggleSelection(child);
-        }}
-        on:mouseenter={() => {
-          if (child.level === "levels") return;
-          hoveredStore.set(child.label);
-        }}
-        on:mouseleave={() => {
-          hoveredStore.set("");
-        }}
-      >
-        <div>
-          {child.label}
-        </div>
-        <ScoreTable data={child} {countries} />
-      </button>
-    {/each}
-  </div>
+  <div class="table-scrollbar" data-simplebar>
+    <div class="sheet-table">
+      {#each children as child}
+        <button
+          class="child-table-entries"
+          class:connected={$hoveredStore === child.label}
+          on:click={() => {
+            selectedNodeDimStore.toggleSelection(child);
+          }}
+          on:mouseenter={() => {
+            if (child.level === "levels") return;
+            hoveredStore.set(child.label);
+          }}
+          on:mouseleave={() => {
+            hoveredStore.set("");
+          }}
+        >
+          <div>
+            {child.label}
+          </div>
+          <ScoreTable data={child} {countries} />
+        </button>
+      {/each}
+    </div>
   </div>
 </div>
 
@@ -54,7 +60,7 @@
     grid-template-rows: max-content auto;
     gap: 2%;
     background-color: var(--background-color);
-    margin-left: calc((var(--n) - 1) * 2% );
+    margin-left: calc((var(--n) - 1) * 2%);
   }
 
   .sheet-table {
@@ -66,19 +72,9 @@
 
   .table-scrollbar {
     overflow-y: scroll;
-    overflow-x: hidden;
-    padding-right: 1.5em;
+    /* overflow-x: hidden; */
+    padding-right: 2em;
   }
-
-  .table-scrollbar::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 0.5em;
-}
-
-.table-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 1em;
-}
 
   .child-table-entries {
     display: flex;
@@ -103,7 +99,7 @@
     background-color: transparent;
     transform: translate(0, -2px);
     text-decoration: underline;
-    cursor: pointer
+    cursor: pointer;
   }
   .child-table-entries.connected {
     transform: translate(0, -2px);
@@ -112,5 +108,9 @@
   h1 {
     margin: 0;
     text-transform: capitalize;
+  }
+
+  :global(.simplebar-scrollbar::before) {
+    background-color: var(--main-color);
   }
 </style>
