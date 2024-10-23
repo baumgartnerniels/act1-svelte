@@ -4,12 +4,19 @@
   import { levelColors, styleBgColorAuto } from "./colors.js";
   import "simplebar"; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
   import "simplebar/dist/simplebar.css";
+  import { onMount } from "svelte";
 
   export let children;
   export let countries;
   export let n;
+  let scrollContainer;
 
   $: levelColor = levelColors[n];
+
+  onMount(() => {
+    let bar = new SimpleBar(scrollContainer);
+    bar.removeObserver();
+  });
 </script>
 
 <div class="child-table" style="--n: {n}">
@@ -18,7 +25,7 @@
       <h1>{levelTitles[children[0].level]} Scoring</h1>
     {/if}
   </div>
-  <div class="table-scrollbar" data-simplebar>
+  <div class="table-scrollbar" bind:this={scrollContainer}>
     <div class="sheet-table">
       {#each children as child}
         <button
