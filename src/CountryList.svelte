@@ -22,9 +22,9 @@
       on:mouseleave={() => {
         hoveredStore.set("");
       }}>{country}</button
-    >{/each}<button class="close" on:click={() => (hidden = !hidden)}
+    >{/each}<button class="country" on:click={() => selectedCountryStore.resetSelection()} >ALL</button><button class="close" on:click={() => (hidden = !hidden)}
     ><ArrowLeft />
-  </button><button class="open" on:click={() => (hidden = !hidden)}>
+</button><button class="open" on:click={() => (hidden = !hidden)}>
     <ArrowRight />
   </button>
 </div>
@@ -43,7 +43,7 @@
   }
   .countryList.hidden {
     text-align: left;
-    left: -18.4em;
+    left: -21.2em;
   }
 
   .country.active {
