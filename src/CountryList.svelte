@@ -43,7 +43,7 @@
   }
   .countryList.hidden {
     text-align: left;
-    left: -246px;
+    left: -18.4em;
   }
 
   .country.active {
@@ -67,6 +67,12 @@
   }
   .open {
     display: none;
+    width: 1.5em;
+    text-align: center;
+  }
+  .close {
+    width: 1.5em;
+    text-align: center;
   }
   .hidden .open {
     display: inline-block;
@@ -76,9 +82,7 @@
   }
   button :global(svg) {
     fill: var(--main-color);
-    width: 1em;
-    height: 1em;
-    padding-bottom: 3px;
-    vertical-align: middle;
+    height: 0.8em;
+    vertical-align: baseline;
   }
 </style>
