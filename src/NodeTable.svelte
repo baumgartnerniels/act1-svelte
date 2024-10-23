@@ -27,8 +27,8 @@
     }}
     style="--border-width: {n * 3}%; --n: {n}"
   >
-    <div>
-      <button class="node-table-text" style="--n: {n}; --levelColor: {levelColors[n - 1]};">
+    <div >
+      <button class="node-table-text" class:connected={$hoveredStore === data.label} style="--n: {n}; --levelColor: {levelColors[n - 1]};">
         {#if data.level !== "root"}
           {#if data.level == "dimensions" || data.level == "subdimensions"}
             <h1 style="color: {levelColors[n - 1]}">
@@ -38,7 +38,7 @@
             <h1 style="color: {levelColors[n - 1]}">{data.label}</h1>
           {/if}
         {:else}
-          <h1 class="node-table-title">Economies</h1>
+          <h1 class="node-table-title" class:connected={$hoveredStore === data.label}>Economies</h1>
         {/if}
       </button>
     </div>
@@ -65,7 +65,7 @@
     padding-right: 1.98em;
   }
 
-  .node-table:hover .node-table-text {
+  .node-table:hover .node-table-text, .connected {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-decoration-color: var(--levelColor);
@@ -121,4 +121,5 @@
   .node-table.selectedTable .node-table-title {
     padding-left: 1em;
   }
+
 </style>

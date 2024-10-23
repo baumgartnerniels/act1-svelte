@@ -19,7 +19,10 @@
   $: rooms6 = nCountries == 6;
 </script>
 
-<div class="level-container">
+<button
+  class="level-container selectable"
+  on:click={() => selectedNodeDimStore.clearSelection()}
+>
   <div
     class="level"
     class:hovered
@@ -54,7 +57,7 @@
   >
     <p class="level-label">Economies</p>
   </button>
-</div>
+</button>
 
 <style>
   .level-container {
@@ -159,7 +162,8 @@
     grid-column: 2;
   }
 
-  .level-button.selectable {
+  .level-button.selectable,
+  .level-container.selectable {
     cursor: pointer;
   }
 
@@ -200,6 +204,8 @@
     font-size: 1.7vh;
     text-align: center;
     font-weight: 300;
+    cursor: pointer;
+
   }
 
   .inactive {
