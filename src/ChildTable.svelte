@@ -5,10 +5,6 @@
   import "simplebar"; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
   import "simplebar/dist/simplebar.css";
 
-  // You will need a ResizeObserver polyfill for browsers that don't support it! (iOS Safari, Edge, ...)
-  import ResizeObserver from "resize-observer-polyfill";
-  window.ResizeObserver = ResizeObserver;
-
   export let children;
   export let countries;
   export let n;
@@ -72,8 +68,9 @@
 
   .table-scrollbar {
     overflow-y: scroll;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     padding-right: 2em;
+    scrollbar-width: none;
   }
 
   .child-table-entries {
