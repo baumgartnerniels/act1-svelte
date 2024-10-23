@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
@@ -15,7 +16,14 @@
   },
   "dependencies": {
     "d3": "^7.9.0",
+    "gh-pages": "^6.2.0",
     "panzoom": "^9.4.3",
     "simplebar": "^6.2.7"
+  },
+  "homepage": {
+    "name": "OECD WB6 Tower",
+    "version": 1,
+    "homepage": "https://baumgartnerniels.github.io/act1-svelte",
+    "private": true
   }
 }
